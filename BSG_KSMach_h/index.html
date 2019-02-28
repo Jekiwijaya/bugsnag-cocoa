@@ -1,0 +1,1359 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head>
+    <title>BSG_KSMach.h</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta name="generator" content="HeaderDoc">
+<meta name="xcode-display" content="render">
+<style type="text/css"><!--.char {background: #ffffff; color:#0000ff;}.comment {background:#ffffff; color:#236e25}.function {background:#ffffff; color:#000000;}.keyword {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.param {background:#ffffff; color:#000000;}.preprocessor {background:#ffffff; color:#236e25}.string {background: #ffffff; color:#891315;}.template {background:#ffffff; color:#761550;}.type {background:#ffffff; color:#761550;}.var {background:#ffffff; color:#000000;}body {border: 0px; margin: 0px;}div {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}td {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}span.hd_tocAccessSpace { display: block; font-size: 1px; height: 3px; min-height: 3px; }span.hd_tocGroupSpace { display: block; font-size: 1px; height: 3px; min-height: 3px; }span.hd_tocGroup { display: block; font-weight: bold; font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000; margin-left: 0px; padding-left: 40px; }span.hd_tocGroup + span.hd_tocAccess { padding-top: 5px; }td.toc_contents_text {font-size: 11pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000; }li.tocSubEntry {font-size: 11pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}p {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}h2.h2tight { margin-top: 0px; padding-top: 0px; }h1 { margin-top: 13px; padding-top: 0px; }h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}h5 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10.1pt; font-weight: bold;}pre {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666; font-size: 10pt;}pre a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}pre a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}code a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}code a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}tt a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}tt a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}body  {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt; padding-left: 0px; padding-top: 0px; margin-left: 0px; margin-top: 0px; border: none; }#hd_outermost_table { margin-left: 0px; border-spacing: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; }#hd_outermost_table > tbody > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tbody > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-top: 3px; }.afterName { display: none; }.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px; min-height: 12px; vertical-align: middle; }.declaration_indent pre { margin-top: 20px; padding-top: 0px; margin-bottom: 20px; padding-bottom: 0px; }.gapBeforeFooter { display: none; }hr { height: 0px; min-height: 0px; border-top: none; border-left: none; border-right: none; border-bottom: 1px solid #909090;}hr.afterHeader { display: none }.param_group_indent { margin-left: 25px; }.param_indent { margin-left: 40px; margin-top: 0px; padding-top: 0px; }.param_indent dl { margin-top: 4px; padding-top: 0px; }dl dd > p:first-child { margin-top: 2px; padding-top: 0px; }.param_indent dl dd > p:first-child { margin-top: 2px; padding-top: 0px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.note_indent { margin-left: 40px; }h3 {       color: #3C4C6C;}.tight {       margin-top: 2px; margin-bottom: 0px;       padding-top: 0px; padding-bottom: 0px;}h3 a {       color: #3C4C6C;	font-size: 16px;	font-style: normal;	font-variant: normal;	font-weight: bold;	height: 0px;	line-height: normal;}.hd_tocAccess { display: block; margin-left: 40px; font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }.tocSubheading { margin-bottom: 4px; }--></style>
+<style><!--
+body {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+.toc_contents_text {
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+ul.tocSubEntryList li.tocSubEntry {
+    list-style: none;
+}
+
+#colorbox {
+		display: none;
+}
+.spec_sheet_line {
+		margin-bottom: 1px;
+}
+.collapsible {
+		display: none;
+}
+.toc_leadspace {
+		width: 10; min-width: 10;
+}
+.disclosure_triangle_td {
+		width: 14; min-width: 14;
+		font-size: 10px;
+		vertical-align: middle;
+}
+.specbox td {
+		font-size: 13px;
+}
+.specbox td a {
+		font-size: 13px;
+}
+.specbox td code {
+		font-size: 13px;
+}
+.specbox td tt {
+		font-size: 13px;
+}
+.specbox td pre {
+		font-size: 13px;
+}
+.specbox a {
+		font-size: 12px;
+}
+.disclosure_triangle_td a {
+		text-decoration: none;
+}
+.disclosure_triangle_td a:link {
+		text-decoration: none;
+}
+.disclosure_triangle_td a:active {
+		text-decoration: none;
+}
+.disclosure_triangle_td a:visited:hover {
+		text-decoration: none;
+}
+.disclosure_triangle_td a:hover {
+		text-decoration: none;
+}
+.hd_toc_box {
+		padding-top: 10px;
+		padding-right: 15px;
+}.tocSeparator {
+		margin-top: 15px;
+		padding-bottom: 0px;
+		margin-bottom: 0px;
+}
+.tocSubEntryList {
+		margin-left: 0px;
+		padding-left: 40px;
+		padding-top: 0px;
+		margin-top: 2px;
+		padding-bottom: 0px;
+		margin-bottom: 8px;
+}
+.hd_toc_heading_table {
+		margin-top: 2px;
+		margin-bottom: 2px;
+}
+.hd_toc_entry_table {
+		margin-top: 2px;
+		margin-bottom: 2px;
+}
+.tocSubEntry {
+		margin-left: 0px;
+		padding-left: 0px;
+		margin-top: 0px;
+		margin-bottom: 1px;
+}
+.tocSubEntry a {
+		font-size: 10pt;
+}
+.tocSubheading {
+		padding-left: 14px;
+		margin-left: 0px;
+		margin-top: 5px;
+		padding-top: 0px;
+		font-size: 16px;
+		color: #808080;
+}
+
+#hd_outermost_table { margin-left: 0px; border-spacing: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }
+#hd_outermost_table > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }
+#hd_outermost_table > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; }
+#hd_outermost_table > tbody > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }
+#hd_outermost_table > tbody > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-top: 3px; }
+
+#tocMenu {
+		border-right: 1px solid #c0c0c0;
+		background-color: #f4f4ff;
+		top:0px;
+		left:0px;
+		width:230px;
+		height:100%;
+}
+#bodyContents {
+		width: auto;
+		padding-left: 15px;
+}
+--></style>
+<style id="disable_before_iOS_5"><!--
+#tocMenu {
+		position: fixed;
+		height: 100%;
+		overflow: auto;
+}
+#bodyContents {
+		width: auto;
+		left: 235px;
+		right: 0;
+		padding-left: 15px;
+		position: fixed;
+		height: 100%;
+		overflow-y: scroll;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+    if (navigator.platform && (navigator.platform.match(/iPad/) || navigator.platform.match(/iPhone/) || navigator.platform.match(/iPod/))) {
+        if (navigator.userAgent.match(/OS 1(_\d)+/) ||
+            navigator.userAgent.match(/OS 2(_\d)+/) ||
+            navigator.userAgent.match(/OS 3(_\d)+/) ||
+            navigator.userAgent.match(/OS 4(_\d)+/)) {
+                /* Earlier iOS versions require different scrolling gestures with position: fixed. */
+                var del_style_elt = document.getElementById("disable_before_iOS_5");
+                if (del_style_elt) del_style_elt.parentNode.removeChild(del_style_elt);
+        }
+    }
+// --></script>
+<script language="JavaScript" type="text/javascript"><!--
+function getNewHTTPObject()
+{
+        var xmlhttp;
+
+        /** Special IE only code ... */
+        /*@cc_on
+          @if (@_jscript_version >= 5)
+              try
+              {
+                  xmlhttp = new ActiveXObject('Msxml2.XMLHTTP');
+              }
+              catch (e)
+              {
+                  try
+                  {
+                      xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+                  }
+                  catch (E)
+                  {
+                      xmlhttp = false;
+                  }
+             }
+          @else
+             xmlhttp = false;
+        @end @*/
+
+        /** Every other browser on the planet */
+        if (!xmlhttp && typeof XMLHttpRequest != 'undefined')
+        {
+            try
+            {
+                xmlhttp = new XMLHttpRequest();
+            }
+            catch (e)
+            {
+                xmlhttp = false;
+            }
+        }
+
+        return xmlhttp;
+}
+
+function hidetoc() {
+	var toc = document.getElementById('tocMenu');
+	var src = toc.getAttribute('src');
+	var xhr = getNewHTTPObject();
+	xhr.open('GET', src, true);
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState == 4) {
+			var toc = document.getElementById('tocMenu');
+			toc.innerHTML = xhr.responseText;
+		}
+	}
+	xhr.send(null);
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var body = document.getElementById('bodyContents');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+
+function disclosure_triangle(elt) {
+   var linkelt = elt;
+   while (elt && elt.tagName != 'TABLE') { elt = elt.parentNode;}
+   if (!elt) { return; }
+   while (elt && elt.tagName != 'DIV') { elt = elt.nextSibling;}
+   if (!elt) { return; }
+   if (parseInt(linkelt.getAttribute('state'))) {
+      // It's open.  Close it
+      linkelt.innerHTML = '&#x25B7;';
+      linkelt.setAttribute('state', 0);
+      linkelt.setAttribute('class', 'closed_disclosure_triangle');
+      elt.style.display = 'none';
+   } else {
+      // It's closed.  Open it
+      linkelt.innerHTML = '&#x25BC;';
+      linkelt.setAttribute('state', 1);
+      linkelt.setAttribute('class', 'open_disclosure_triangle');
+      elt.style.display = 'block';
+   }
+}
+--></script>
+<style type="text/css"><!--.char {background: #ffffff; color:#0000ff;}.comment {background:#ffffff; color:#236e25}.function {background:#ffffff; color:#000000;}.keyword {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.param {background:#ffffff; color:#000000;}.preprocessor {background:#ffffff; color:#236e25}.string {background: #ffffff; color:#891315;}.template {background:#ffffff; color:#761550;}.type {background:#ffffff; color:#761550;}.var {background:#ffffff; color:#000000;}body {border: 0px; margin: 0px;}div {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}td {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}span.hd_tocAccessSpace { display: block; font-size: 1px; height: 3px; min-height: 3px; }span.hd_tocGroupSpace { display: block; font-size: 1px; height: 3px; min-height: 3px; }span.hd_tocGroup { display: block; font-weight: bold; font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000; margin-left: 0px; padding-left: 40px; }span.hd_tocGroup + span.hd_tocAccess { padding-top: 5px; }td.toc_contents_text {font-size: 11pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000; }li.tocSubEntry {font-size: 11pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}p {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}h2.h2tight { margin-top: 0px; padding-top: 0px; }h1 { margin-top: 13px; padding-top: 0px; }h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}h5 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10.1pt; font-weight: bold;}pre {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666; font-size: 10pt;}pre a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}pre a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}code a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}code a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}tt a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}tt a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}body  {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt; padding-left: 0px; padding-top: 0px; margin-left: 0px; margin-top: 0px; border: none; }#hd_outermost_table { margin-left: 0px; border-spacing: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; }#hd_outermost_table > tbody > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tbody > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-top: 3px; }.afterName { display: none; }.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px; min-height: 12px; vertical-align: middle; }.declaration_indent pre { margin-top: 20px; padding-top: 0px; margin-bottom: 20px; padding-bottom: 0px; }.gapBeforeFooter { display: none; }hr { height: 0px; min-height: 0px; border-top: none; border-left: none; border-right: none; border-bottom: 1px solid #909090;}hr.afterHeader { display: none }.param_group_indent { margin-left: 25px; }.param_indent { margin-left: 40px; margin-top: 0px; padding-top: 0px; }.param_indent dl { margin-top: 4px; padding-top: 0px; }dl dd > p:first-child { margin-top: 2px; padding-top: 0px; }.param_indent dl dd > p:first-child { margin-top: 2px; padding-top: 0px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.note_indent { margin-left: 40px; }h3 {       color: #3C4C6C;}.tight {       margin-top: 2px; margin-bottom: 0px;       padding-top: 0px; padding-bottom: 0px;}h3 a {       color: #3C4C6C;	font-size: 16px;	font-style: normal;	font-variant: normal;	font-weight: bold;	height: 0px;	line-height: normal;}.hd_tocAccess { display: block; margin-left: 40px; font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }.tocSubheading { margin-bottom: 4px; }--></style>
+</head>
+<body bgcolor="#ffffff" onload="hidetoc();">
+<!-- headerDoc=Header;  uid=//apple_ref/doc/header/BSG_KSMach.h;   name=BSG_KSMach.h -->
+<a name="//apple_ref/doc/header/BSG_KSMach.h"></a>
+<table id="hd_outermost_table" height="100%" width="100%"><tr>
+<td valign="top" id="tocMenu" src="toc.html"></td>
+<td id="bodyContents" valign="top">
+<a name="top"></a>
+<h1><a name="BSG_KSMach.h">BSG_KSMach.h</a></h1>
+<div class="spec_sheet_info_box"><table cellspacing="0" class="specbox">
+<tr>
+<td scope="row"><b>Includes:</b></td>
+<td><div style="margin-bottom:1px"><div class="content_text">
+<!-- a logicalPath="//apple_ref/doc/header/BSG_KSArchSpecific.h" machineGenerated="true" -->"BSG_KSArchSpecific.h"<!-- /a --><br>
+<!-- a logicalPath="//apple_ref/doc/header/mach.h" machineGenerated="true" -->&lt;mach/mach.h&gt;<!-- /a --><br>
+<!-- a logicalPath="//apple_ref/doc/header/pthread.h" machineGenerated="true" -->&lt;pthread.h&gt;<!-- /a --><br>
+<!-- a logicalPath="//apple_ref/doc/header/stdbool.h" machineGenerated="true" -->&lt;stdbool.h&gt;<!-- /a --><br>
+<!-- a logicalPath="//apple_ref/doc/header/ucontext.h" machineGenerated="true" -->&lt;sys/ucontext.h&gt;<!-- /a -->
+</div></div></td>
+</tr>
+</table></div>
+<h2>Introduction</h2>
+<p><!-- headerDoc=abstract;uid=//apple_ref/doc/header/BSG_KSMach.h;name=start --><!-- begin abstract -->Use the links in the table of contents to the left to access the documentation.<br>
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/doc/header/BSG_KSMach.h;name=end --></p>
+<hr class="afterClassOrHeaderInfo">
+<br><a name="HeaderDoc_functions"></a>
+<h2 class="h2tight">Functions</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmach_init" target="_top">bsg_ksmach_init</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachcopyMaxPossibleMem" target="_top">bsg_ksmachcopyMaxPossibleMem</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachcopyMem" target="_top">bsg_ksmachcopyMem</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachcurrentCPUArch" target="_top">bsg_ksmachcurrentCPUArch</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachexceptionName" target="_top">bsg_ksmachexceptionName</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachexceptionRegisterName" target="_top">bsg_ksmachexceptionRegisterName</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachexceptionRegisterValue" target="_top">bsg_ksmachexceptionRegisterValue</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachexceptionState" target="_top">bsg_ksmachexceptionState</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachfaultAddress" target="_top">bsg_ksmachfaultAddress</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachfillState" target="_top">bsg_ksmachfillState</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachfloatState" target="_top">bsg_ksmachfloatState</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachframePointer" target="_top">bsg_ksmachframePointer</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachfreeMemory" target="_top">bsg_ksmachfreeMemory</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachgetThreadName" target="_top">bsg_ksmachgetThreadName</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachgetThreadQueueName" target="_top">bsg_ksmachgetThreadQueueName</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachinstructionAddress" target="_top">bsg_ksmachinstructionAddress</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachisBeingTraced" target="_top">bsg_ksmachisBeingTraced</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachkernelReturnCodeName" target="_top">bsg_ksmachkernelReturnCodeName</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachlinkRegister" target="_top">bsg_ksmachlinkRegister</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachmachThreadFromPThread" target="_top">bsg_ksmachmachThreadFromPThread</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachnumExceptionRegisters" target="_top">bsg_ksmachnumExceptionRegisters</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachnumRegisters" target="_top">bsg_ksmachnumRegisters</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachpthreadFromMachThread" target="_top">bsg_ksmachpthreadFromMachThread</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachregisterName" target="_top">bsg_ksmachregisterName</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachregisterValue" target="_top">bsg_ksmachregisterValue</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachresumeAllThreads" target="_top">bsg_ksmachresumeAllThreads</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachresumeAllThreadsExcept" target="_top">bsg_ksmachresumeAllThreadsExcept</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachstackGrowDirection" target="_top">bsg_ksmachstackGrowDirection</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachstackPointer" target="_top">bsg_ksmachstackPointer</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachsuspendAllThreads" target="_top">bsg_ksmachsuspendAllThreads</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachsuspendAllThreadsExcept" target="_top">bsg_ksmachsuspendAllThreadsExcept</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachthreadState" target="_top">bsg_ksmachthreadState</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachtimeDifferenceInSeconds" target="_top">bsg_ksmachtimeDifferenceInSeconds</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachusableMemory" target="_top">bsg_ksmachusableMemory</a></tt></dt>
+<dd></dd>
+</dl>
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmach_init;   name=bsg_ksmach_init -->
+<a name="//apple_ref/c/func/bsg_ksmach_init"></a>
+<h3><a name="bsg_ksmach_init">bsg_ksmach_init</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmach_init;name=start --><!-- a logicalPath="//apple_ref/c/cl/void //apple_ref/c/tdef/void //apple_ref/c/tag/void //apple_ref/c/struct/void //apple_ref/c/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmach_init" logicalPath="//apple_ref/c/instm/bsg_ksmach_init //apple_ref/c/clm/bsg_ksmach_init //apple_ref/c/intfcm/bsg_ksmach_init //apple_ref/c/intfm/bsg_ksmach_init //apple_ref/c/func/bsg_ksmach_init" target="_top"><span class="function">bsg_ksmach_init</span></a>(
+    <span class="param">void</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmach_init;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmach_init;name=start --><p>Initializes KSMach.
+Some functions (currently only bsg_ksmachpthreadFromMachThread) require
+initialization before use.
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmach_init;name=end --><!-- end discussion -->
+</p>
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachcopyMaxPossibleMem;   name=bsg_ksmachcopyMaxPossibleMem -->
+<a name="//apple_ref/c/func/bsg_ksmachcopyMaxPossibleMem"></a>
+<h3><a name="bsg_ksmachcopyMaxPossibleMem">bsg_ksmachcopyMaxPossibleMem</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachcopyMaxPossibleMem;name=start --><!-- a logicalPath="//apple_ref/c/cl/size_t //apple_ref/c/tdef/size_t //apple_ref/c/tag/size_t //apple_ref/c/struct/size_t //apple_ref/c/intf/size_t //apple_ref/doc/anysymbol/size_t" machineGenerated="true" --><span class="type">size_t</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachcopyMaxPossibleMem" logicalPath="//apple_ref/c/instm/bsg_ksmachcopyMaxPossibleMem //apple_ref/c/clm/bsg_ksmachcopyMaxPossibleMem //apple_ref/c/intfcm/bsg_ksmachcopyMaxPossibleMem //apple_ref/c/intfm/bsg_ksmachcopyMaxPossibleMem //apple_ref/c/func/bsg_ksmachcopyMaxPossibleMem" target="_top"><span class="function">bsg_ksmachcopyMaxPossibleMem</span></a>(
+    <span class="keyword">const</span> <!-- a logicalPath="//apple_ref/c/cl/void //apple_ref/c/tdef/void //apple_ref/c/tag/void //apple_ref/c/struct/void //apple_ref/c/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a --> <span class="type">*</span><span class="param">src</span>,
+    <!-- a logicalPath="//apple_ref/c/cl/void //apple_ref/c/tdef/void //apple_ref/c/tag/void //apple_ref/c/struct/void //apple_ref/c/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a --> <span class="type">*</span><span class="param">dst</span>, 
+    <!-- a logicalPath="//apple_ref/c/cl/size_t //apple_ref/c/tdef/size_t //apple_ref/c/tag/size_t //apple_ref/c/struct/size_t //apple_ref/c/intf/size_t //apple_ref/doc/anysymbol/size_t" machineGenerated="true" --><span class="type">size_t</span><!-- /a --> <span class="param">numBytes</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachcopyMaxPossibleMem;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachcopyMaxPossibleMem/src;   name=src -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachcopyMaxPossibleMem/src"></a>
+<code>src</code>
+</dt>
+<dd><p>The source location to copy from.</p></dd>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachcopyMaxPossibleMem/dst;   name=dst -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachcopyMaxPossibleMem/dst"></a>
+<code>dst</code>
+</dt>
+<dd><p>The location to copy to.</p></dd>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachcopyMaxPossibleMem/numBytes;   name=numBytes -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachcopyMaxPossibleMem/numBytes"></a>
+<code>numBytes</code>
+</dt>
+<dd><p>The number of bytes to copy.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>The number of bytes actually copied.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachcopyMaxPossibleMem;name=start --><p>Copies up to numBytes of data from src to dest, stopping if memory
+becomes inaccessible.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachcopyMaxPossibleMem;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachcopyMem;   name=bsg_ksmachcopyMem -->
+<a name="//apple_ref/c/func/bsg_ksmachcopyMem"></a>
+<h3><a name="bsg_ksmachcopyMem">bsg_ksmachcopyMem</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachcopyMem;name=start --><!-- a logicalPath="//apple_ref/c/cl/kern_return_t //apple_ref/c/tdef/kern_return_t //apple_ref/c/tag/kern_return_t //apple_ref/c/struct/kern_return_t //apple_ref/c/intf/kern_return_t //apple_ref/doc/anysymbol/kern_return_t" machineGenerated="true" --><span class="type">kern_return_t</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachcopyMem" logicalPath="//apple_ref/c/instm/bsg_ksmachcopyMem //apple_ref/c/clm/bsg_ksmachcopyMem //apple_ref/c/intfcm/bsg_ksmachcopyMem //apple_ref/c/intfm/bsg_ksmachcopyMem //apple_ref/c/func/bsg_ksmachcopyMem" target="_top"><span class="function">bsg_ksmachcopyMem</span></a>(
+    <span class="keyword">const</span> <!-- a logicalPath="//apple_ref/c/cl/void //apple_ref/c/tdef/void //apple_ref/c/tag/void //apple_ref/c/struct/void //apple_ref/c/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a --> <span class="type">*</span><span class="param">src</span>,
+    <!-- a logicalPath="//apple_ref/c/cl/void //apple_ref/c/tdef/void //apple_ref/c/tag/void //apple_ref/c/struct/void //apple_ref/c/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a --> <span class="type">*</span><span class="param">dst</span>,
+    <!-- a logicalPath="//apple_ref/c/cl/size_t //apple_ref/c/tdef/size_t //apple_ref/c/tag/size_t //apple_ref/c/struct/size_t //apple_ref/c/intf/size_t //apple_ref/doc/anysymbol/size_t" machineGenerated="true" --><span class="type">size_t</span><!-- /a --> <span class="param">numBytes</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachcopyMem;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachcopyMem/src;   name=src -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachcopyMem/src"></a>
+<code>src</code>
+</dt>
+<dd><p>The source location to copy from.</p></dd>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachcopyMem/dst;   name=dst -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachcopyMem/dst"></a>
+<code>dst</code>
+</dt>
+<dd><p>The location to copy to.</p></dd>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachcopyMem/numBytes;   name=numBytes -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachcopyMem/numBytes"></a>
+<code>numBytes</code>
+</dt>
+<dd><p>The number of bytes to copy.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>KERN_SUCCESS or an error code.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachcopyMem;name=start --><p>Copy memory safely. If the memory is not accessible, returns false
+rather than crashing.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachcopyMem;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachcurrentCPUArch;   name=bsg_ksmachcurrentCPUArch -->
+<a name="//apple_ref/c/func/bsg_ksmachcurrentCPUArch"></a>
+<h3><a name="bsg_ksmachcurrentCPUArch">bsg_ksmachcurrentCPUArch</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachcurrentCPUArch;name=start --><span class="keyword">const</span> <!-- a logicalPath="//apple_ref/c/cl/char //apple_ref/c/tdef/char //apple_ref/c/tag/char //apple_ref/c/struct/char //apple_ref/c/intf/char //apple_ref/doc/anysymbol/char" machineGenerated="true" --><span class="type">char</span><!-- /a --> <span class="type">*</span><a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachcurrentCPUArch" logicalPath="//apple_ref/c/instm/bsg_ksmachcurrentCPUArch //apple_ref/c/clm/bsg_ksmachcurrentCPUArch //apple_ref/c/intfcm/bsg_ksmachcurrentCPUArch //apple_ref/c/intfm/bsg_ksmachcurrentCPUArch //apple_ref/c/func/bsg_ksmachcurrentCPUArch" target="_top"><span class="function">bsg_ksmachcurrentCPUArch</span></a>(
+    <span class="param">void</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachcurrentCPUArch;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>The current architecture.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachcurrentCPUArch;name=start --><p>Get the current CPU architecture.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachcurrentCPUArch;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachexceptionName;   name=bsg_ksmachexceptionName -->
+<a name="//apple_ref/c/func/bsg_ksmachexceptionName"></a>
+<h3><a name="bsg_ksmachexceptionName">bsg_ksmachexceptionName</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachexceptionName;name=start --><span class="keyword">const</span> <!-- a logicalPath="//apple_ref/c/cl/char //apple_ref/c/tdef/char //apple_ref/c/tag/char //apple_ref/c/struct/char //apple_ref/c/intf/char //apple_ref/doc/anysymbol/char" machineGenerated="true" --><span class="type">char</span><!-- /a --> <span class="type">*</span><a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachexceptionName" logicalPath="//apple_ref/c/instm/bsg_ksmachexceptionName //apple_ref/c/clm/bsg_ksmachexceptionName //apple_ref/c/intfcm/bsg_ksmachexceptionName //apple_ref/c/intfm/bsg_ksmachexceptionName //apple_ref/c/func/bsg_ksmachexceptionName" target="_top"><span class="function">bsg_ksmachexceptionName</span></a>(
+    <!-- a logicalPath="//apple_ref/c/cl/exception_type_t //apple_ref/c/tdef/exception_type_t //apple_ref/c/tag/exception_type_t //apple_ref/c/struct/exception_type_t //apple_ref/c/intf/exception_type_t //apple_ref/doc/anysymbol/exception_type_t" machineGenerated="true" --><span class="type">exception_type_t</span><!-- /a --> <span class="param">exceptionType</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachexceptionName;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachexceptionName/exceptionType;   name=exceptionType -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachexceptionName/exceptionType"></a>
+<code>exceptionType</code>
+</dt>
+<dd><p>The exception type.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>The exception's name or NULL if not found.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachexceptionName;name=start --><p>Get the name of a mach exception.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachexceptionName;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachexceptionRegisterName;   name=bsg_ksmachexceptionRegisterName -->
+<a name="//apple_ref/c/func/bsg_ksmachexceptionRegisterName"></a>
+<h3><a name="bsg_ksmachexceptionRegisterName">bsg_ksmachexceptionRegisterName</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachexceptionRegisterName;name=start --><span class="keyword">const</span> <!-- a logicalPath="//apple_ref/c/cl/char //apple_ref/c/tdef/char //apple_ref/c/tag/char //apple_ref/c/struct/char //apple_ref/c/intf/char //apple_ref/doc/anysymbol/char" machineGenerated="true" --><span class="type">char</span><!-- /a --> <span class="type">*</span><a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachexceptionRegisterName" logicalPath="//apple_ref/c/instm/bsg_ksmachexceptionRegisterName //apple_ref/c/clm/bsg_ksmachexceptionRegisterName //apple_ref/c/intfcm/bsg_ksmachexceptionRegisterName //apple_ref/c/intfm/bsg_ksmachexceptionRegisterName //apple_ref/c/func/bsg_ksmachexceptionRegisterName" target="_top"><span class="function">bsg_ksmachexceptionRegisterName</span></a>(
+    <!-- a logicalPath="//apple_ref/c/cl/int //apple_ref/c/tdef/int //apple_ref/c/tag/int //apple_ref/c/struct/int //apple_ref/c/intf/int //apple_ref/doc/anysymbol/int" machineGenerated="true" --><span class="type">int</span><!-- /a --> <span class="param">regNumber</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachexceptionRegisterName;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachexceptionRegisterName/regNumber;   name=regNumber -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachexceptionRegisterName/regNumber"></a>
+<code>regNumber</code>
+</dt>
+<dd><p>The register index.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>The register's name or NULL if not found.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachexceptionRegisterName;name=start --><p>Get the name of an exception register.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachexceptionRegisterName;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachexceptionRegisterValue;   name=bsg_ksmachexceptionRegisterValue -->
+<a name="//apple_ref/c/func/bsg_ksmachexceptionRegisterValue"></a>
+<h3><a name="bsg_ksmachexceptionRegisterValue">bsg_ksmachexceptionRegisterValue</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachexceptionRegisterValue;name=start --><!-- a logicalPath="//apple_ref/c/cl/uint64_t //apple_ref/c/tdef/uint64_t //apple_ref/c/tag/uint64_t //apple_ref/c/struct/uint64_t //apple_ref/c/intf/uint64_t //apple_ref/doc/anysymbol/uint64_t" machineGenerated="true" --><span class="type">uint64_t</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachexceptionRegisterValue" logicalPath="//apple_ref/c/instm/bsg_ksmachexceptionRegisterValue //apple_ref/c/clm/bsg_ksmachexceptionRegisterValue //apple_ref/c/intfcm/bsg_ksmachexceptionRegisterValue //apple_ref/c/intfm/bsg_ksmachexceptionRegisterValue //apple_ref/c/func/bsg_ksmachexceptionRegisterValue" target="_top"><span class="function">bsg_ksmachexceptionRegisterValue</span></a>(
+    <span class="keyword">const</span> <!-- a logicalPath="//apple_ref/c/cl/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tdef/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tag/BSG_STRUCT_MCONTEXT_L //apple_ref/c/struct/BSG_STRUCT_MCONTEXT_L //apple_ref/c/intf/BSG_STRUCT_MCONTEXT_L //apple_ref/doc/anysymbol/BSG_STRUCT_MCONTEXT_L" machineGenerated="true" --><span class="type">BSG_STRUCT_MCONTEXT_L</span><!-- /a --> <span class="type">*</span><span class="param">machineContext</span>, 
+    <!-- a logicalPath="//apple_ref/c/cl/int //apple_ref/c/tdef/int //apple_ref/c/tag/int //apple_ref/c/struct/int //apple_ref/c/intf/int //apple_ref/doc/anysymbol/int" machineGenerated="true" --><span class="type">int</span><!-- /a --> <span class="param">regNumber</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachexceptionRegisterValue;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachexceptionRegisterValue/regNumber;   name=regNumber -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachexceptionRegisterValue/regNumber"></a>
+<code>regNumber</code>
+</dt>
+<dd><p>The register index.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>The register's current value.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachexceptionRegisterValue;name=start --><p>Get the value stored in an exception register.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachexceptionRegisterValue;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachexceptionState;   name=bsg_ksmachexceptionState -->
+<a name="//apple_ref/c/func/bsg_ksmachexceptionState"></a>
+<h3><a name="bsg_ksmachexceptionState">bsg_ksmachexceptionState</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachexceptionState;name=start --><!-- a logicalPath="//apple_ref/c/cl/bool //apple_ref/c/tdef/bool //apple_ref/c/tag/bool //apple_ref/c/struct/bool //apple_ref/c/intf/bool //apple_ref/doc/anysymbol/bool" machineGenerated="true" --><span class="type">bool</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachexceptionState" logicalPath="//apple_ref/c/instm/bsg_ksmachexceptionState //apple_ref/c/clm/bsg_ksmachexceptionState //apple_ref/c/intfcm/bsg_ksmachexceptionState //apple_ref/c/intfm/bsg_ksmachexceptionState //apple_ref/c/func/bsg_ksmachexceptionState" target="_top"><span class="function">bsg_ksmachexceptionState</span></a>(
+    <!-- a logicalPath="//apple_ref/c/cl/thread_t //apple_ref/c/tdef/thread_t //apple_ref/c/tag/thread_t //apple_ref/c/struct/thread_t //apple_ref/c/intf/thread_t //apple_ref/doc/anysymbol/thread_t" machineGenerated="true" --><span class="type">thread_t</span><!-- /a --> <span class="param">thread</span>, 
+    <!-- a logicalPath="//apple_ref/c/cl/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tdef/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tag/BSG_STRUCT_MCONTEXT_L //apple_ref/c/struct/BSG_STRUCT_MCONTEXT_L //apple_ref/c/intf/BSG_STRUCT_MCONTEXT_L //apple_ref/doc/anysymbol/BSG_STRUCT_MCONTEXT_L" machineGenerated="true" --><span class="type">BSG_STRUCT_MCONTEXT_L</span><!-- /a --> <span class="type">*</span><span class="param">machineContext</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachexceptionState;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachexceptionState/thread;   name=thread -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachexceptionState/thread"></a>
+<code>thread</code>
+</dt>
+<dd><p>The thread to fetch state for.</p></dd>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachexceptionState/machineContext;   name=machineContext -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachexceptionState/machineContext"></a>
+<code>machineContext</code>
+</dt>
+<dd><p>The machine context to store the state in.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>true if successful.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachexceptionState;name=start --><p>Get a thread's exception state and place it in a machine context.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachexceptionState;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachfaultAddress;   name=bsg_ksmachfaultAddress -->
+<a name="//apple_ref/c/func/bsg_ksmachfaultAddress"></a>
+<h3><a name="bsg_ksmachfaultAddress">bsg_ksmachfaultAddress</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachfaultAddress;name=start --><!-- a logicalPath="//apple_ref/c/cl/uintptr_t //apple_ref/c/tdef/uintptr_t //apple_ref/c/tag/uintptr_t //apple_ref/c/struct/uintptr_t //apple_ref/c/intf/uintptr_t //apple_ref/doc/anysymbol/uintptr_t" machineGenerated="true" --><span class="type">uintptr_t</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachfaultAddress" logicalPath="//apple_ref/c/instm/bsg_ksmachfaultAddress //apple_ref/c/clm/bsg_ksmachfaultAddress //apple_ref/c/intfcm/bsg_ksmachfaultAddress //apple_ref/c/intfm/bsg_ksmachfaultAddress //apple_ref/c/func/bsg_ksmachfaultAddress" target="_top"><span class="function">bsg_ksmachfaultAddress</span></a>(
+    <span class="keyword">const</span> <!-- a logicalPath="//apple_ref/c/cl/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tdef/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tag/BSG_STRUCT_MCONTEXT_L //apple_ref/c/struct/BSG_STRUCT_MCONTEXT_L //apple_ref/c/intf/BSG_STRUCT_MCONTEXT_L //apple_ref/doc/anysymbol/BSG_STRUCT_MCONTEXT_L" machineGenerated="true" --><span class="type">BSG_STRUCT_MCONTEXT_L</span><!-- /a --> <span class="type">*</span><span class="param">machineContext</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachfaultAddress;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachfaultAddress/machineContext;   name=machineContext -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachfaultAddress/machineContext"></a>
+<code>machineContext</code>
+</dt>
+<dd><p>The machine context.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>The faulting address.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachfaultAddress;name=start --><p>Get the address whose access caused the last fault.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachfaultAddress;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachfillState;   name=bsg_ksmachfillState -->
+<a name="//apple_ref/c/func/bsg_ksmachfillState"></a>
+<h3><a name="bsg_ksmachfillState">bsg_ksmachfillState</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachfillState;name=start --><!-- a logicalPath="//apple_ref/c/cl/bool //apple_ref/c/tdef/bool //apple_ref/c/tag/bool //apple_ref/c/struct/bool //apple_ref/c/intf/bool //apple_ref/doc/anysymbol/bool" machineGenerated="true" --><span class="type">bool</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachfillState" logicalPath="//apple_ref/c/instm/bsg_ksmachfillState //apple_ref/c/clm/bsg_ksmachfillState //apple_ref/c/intfcm/bsg_ksmachfillState //apple_ref/c/intfm/bsg_ksmachfillState //apple_ref/c/func/bsg_ksmachfillState" target="_top"><span class="function">bsg_ksmachfillState</span></a>(
+    <!-- a logicalPath="//apple_ref/c/cl/thread_t //apple_ref/c/tdef/thread_t //apple_ref/c/tag/thread_t //apple_ref/c/struct/thread_t //apple_ref/c/intf/thread_t //apple_ref/doc/anysymbol/thread_t" machineGenerated="true" --><span class="type">thread_t</span><!-- /a --> <span class="param">thread</span>,
+    <!-- a logicalPath="//apple_ref/c/cl/thread_state_t //apple_ref/c/tdef/thread_state_t //apple_ref/c/tag/thread_state_t //apple_ref/c/struct/thread_state_t //apple_ref/c/intf/thread_state_t //apple_ref/doc/anysymbol/thread_state_t" machineGenerated="true" --><span class="type">thread_state_t</span><!-- /a --> <span class="param">state</span>, 
+    <!-- a logicalPath="//apple_ref/c/cl/thread_state_flavor_t //apple_ref/c/tdef/thread_state_flavor_t //apple_ref/c/tag/thread_state_flavor_t //apple_ref/c/struct/thread_state_flavor_t //apple_ref/c/intf/thread_state_flavor_t //apple_ref/doc/anysymbol/thread_state_flavor_t" machineGenerated="true" --><span class="type">thread_state_flavor_t</span><!-- /a --> <span class="param">flavor</span>, 
+    <!-- a logicalPath="//apple_ref/c/cl/mach_msg_type_number_t //apple_ref/c/tdef/mach_msg_type_number_t //apple_ref/c/tag/mach_msg_type_number_t //apple_ref/c/struct/mach_msg_type_number_t //apple_ref/c/intf/mach_msg_type_number_t //apple_ref/doc/anysymbol/mach_msg_type_number_t" machineGenerated="true" --><span class="type">mach_msg_type_number_t</span><!-- /a --> <span class="param">stateCount</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachfillState;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachfillState/thread;   name=thread -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachfillState/thread"></a>
+<code>thread</code>
+</dt>
+<dd><p>The thread to get information about.</p></dd>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachfillState/state;   name=state -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachfillState/state"></a>
+<code>state</code>
+</dt>
+<dd><p>Pointer to buffer for state information.</p></dd>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachfillState/flavor;   name=flavor -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachfillState/flavor"></a>
+<code>flavor</code>
+</dt>
+<dd><p>The kind of information to get (arch specific).</p></dd>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachfillState/stateCount;   name=stateCount -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachfillState/stateCount"></a>
+<code>stateCount</code>
+</dt>
+<dd><p>Number of entries in the state information buffer.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>true if state fetching was successful.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachfillState;name=start --><p>Fill in state information about a thread.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachfillState;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachfloatState;   name=bsg_ksmachfloatState -->
+<a name="//apple_ref/c/func/bsg_ksmachfloatState"></a>
+<h3><a name="bsg_ksmachfloatState">bsg_ksmachfloatState</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachfloatState;name=start --><!-- a logicalPath="//apple_ref/c/cl/bool //apple_ref/c/tdef/bool //apple_ref/c/tag/bool //apple_ref/c/struct/bool //apple_ref/c/intf/bool //apple_ref/doc/anysymbol/bool" machineGenerated="true" --><span class="type">bool</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachfloatState" logicalPath="//apple_ref/c/instm/bsg_ksmachfloatState //apple_ref/c/clm/bsg_ksmachfloatState //apple_ref/c/intfcm/bsg_ksmachfloatState //apple_ref/c/intfm/bsg_ksmachfloatState //apple_ref/c/func/bsg_ksmachfloatState" target="_top"><span class="function">bsg_ksmachfloatState</span></a>(
+    <!-- a logicalPath="//apple_ref/c/cl/thread_t //apple_ref/c/tdef/thread_t //apple_ref/c/tag/thread_t //apple_ref/c/struct/thread_t //apple_ref/c/intf/thread_t //apple_ref/doc/anysymbol/thread_t" machineGenerated="true" --><span class="type">thread_t</span><!-- /a --> <span class="param">thread</span>, 
+    <!-- a logicalPath="//apple_ref/c/cl/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tdef/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tag/BSG_STRUCT_MCONTEXT_L //apple_ref/c/struct/BSG_STRUCT_MCONTEXT_L //apple_ref/c/intf/BSG_STRUCT_MCONTEXT_L //apple_ref/doc/anysymbol/BSG_STRUCT_MCONTEXT_L" machineGenerated="true" --><span class="type">BSG_STRUCT_MCONTEXT_L</span><!-- /a --> <span class="type">*</span><span class="param">machineContext</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachfloatState;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachfloatState/thread;   name=thread -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachfloatState/thread"></a>
+<code>thread</code>
+</dt>
+<dd><p>The thread to fetch state for.</p></dd>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachfloatState/machineContext;   name=machineContext -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachfloatState/machineContext"></a>
+<code>machineContext</code>
+</dt>
+<dd><p>The machine context to store the state in.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>true if successful.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachfloatState;name=start --><p>Get a thread's floating point state and place it in a machine context.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachfloatState;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachframePointer;   name=bsg_ksmachframePointer -->
+<a name="//apple_ref/c/func/bsg_ksmachframePointer"></a>
+<h3><a name="bsg_ksmachframePointer">bsg_ksmachframePointer</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachframePointer;name=start --><!-- a logicalPath="//apple_ref/c/cl/uintptr_t //apple_ref/c/tdef/uintptr_t //apple_ref/c/tag/uintptr_t //apple_ref/c/struct/uintptr_t //apple_ref/c/intf/uintptr_t //apple_ref/doc/anysymbol/uintptr_t" machineGenerated="true" --><span class="type">uintptr_t</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachframePointer" logicalPath="//apple_ref/c/instm/bsg_ksmachframePointer //apple_ref/c/clm/bsg_ksmachframePointer //apple_ref/c/intfcm/bsg_ksmachframePointer //apple_ref/c/intfm/bsg_ksmachframePointer //apple_ref/c/func/bsg_ksmachframePointer" target="_top"><span class="function">bsg_ksmachframePointer</span></a>(
+    <span class="keyword">const</span> <!-- a logicalPath="//apple_ref/c/cl/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tdef/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tag/BSG_STRUCT_MCONTEXT_L //apple_ref/c/struct/BSG_STRUCT_MCONTEXT_L //apple_ref/c/intf/BSG_STRUCT_MCONTEXT_L //apple_ref/doc/anysymbol/BSG_STRUCT_MCONTEXT_L" machineGenerated="true" --><span class="type">BSG_STRUCT_MCONTEXT_L</span><!-- /a --> <span class="type">*</span><span class="param">machineContext</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachframePointer;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachframePointer/machineContext;   name=machineContext -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachframePointer/machineContext"></a>
+<code>machineContext</code>
+</dt>
+<dd><p>The machine context.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>The context's frame pointer.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachframePointer;name=start --><p>Get the frame pointer for a machine context.
+The frame pointer marks the top of the call stack.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachframePointer;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachfreeMemory;   name=bsg_ksmachfreeMemory -->
+<a name="//apple_ref/c/func/bsg_ksmachfreeMemory"></a>
+<h3><a name="bsg_ksmachfreeMemory">bsg_ksmachfreeMemory</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachfreeMemory;name=start --><!-- a logicalPath="//apple_ref/c/cl/uint64_t //apple_ref/c/tdef/uint64_t //apple_ref/c/tag/uint64_t //apple_ref/c/struct/uint64_t //apple_ref/c/intf/uint64_t //apple_ref/doc/anysymbol/uint64_t" machineGenerated="true" --><span class="type">uint64_t</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachfreeMemory" logicalPath="//apple_ref/c/instm/bsg_ksmachfreeMemory //apple_ref/c/clm/bsg_ksmachfreeMemory //apple_ref/c/intfcm/bsg_ksmachfreeMemory //apple_ref/c/intfm/bsg_ksmachfreeMemory //apple_ref/c/func/bsg_ksmachfreeMemory" target="_top"><span class="function">bsg_ksmachfreeMemory</span></a>(
+    <span class="param">void</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachfreeMemory;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>total free memory.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachfreeMemory;name=start --><p>Get the total memory that is currently free.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachfreeMemory;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachgetThreadName;   name=bsg_ksmachgetThreadName -->
+<a name="//apple_ref/c/func/bsg_ksmachgetThreadName"></a>
+<h3><a name="bsg_ksmachgetThreadName">bsg_ksmachgetThreadName</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachgetThreadName;name=start --><!-- a logicalPath="//apple_ref/c/cl/bool //apple_ref/c/tdef/bool //apple_ref/c/tag/bool //apple_ref/c/struct/bool //apple_ref/c/intf/bool //apple_ref/doc/anysymbol/bool" machineGenerated="true" --><span class="type">bool</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachgetThreadName" logicalPath="//apple_ref/c/instm/bsg_ksmachgetThreadName //apple_ref/c/clm/bsg_ksmachgetThreadName //apple_ref/c/intfcm/bsg_ksmachgetThreadName //apple_ref/c/intfm/bsg_ksmachgetThreadName //apple_ref/c/func/bsg_ksmachgetThreadName" target="_top"><span class="function">bsg_ksmachgetThreadName</span></a>(
+    <span class="keyword">const</span> <!-- a logicalPath="//apple_ref/c/cl/thread_t //apple_ref/c/tdef/thread_t //apple_ref/c/tag/thread_t //apple_ref/c/struct/thread_t //apple_ref/c/intf/thread_t //apple_ref/doc/anysymbol/thread_t" machineGenerated="true" --><span class="type">thread_t</span><!-- /a --> <span class="param">thread</span>,
+    <!-- a logicalPath="//apple_ref/c/cl/char //apple_ref/c/tdef/char //apple_ref/c/tag/char //apple_ref/c/struct/char //apple_ref/c/intf/char //apple_ref/doc/anysymbol/char" machineGenerated="true" --><span class="type">char</span><!-- /a --> <span class="type">*</span><span class="keyword">const</span> <span class="param">buffer</span>, 
+    <!-- a logicalPath="//apple_ref/c/cl/size_t //apple_ref/c/tdef/size_t //apple_ref/c/tag/size_t //apple_ref/c/struct/size_t //apple_ref/c/intf/size_t //apple_ref/doc/anysymbol/size_t" machineGenerated="true" --><span class="type">size_t</span><!-- /a --> <span class="param">bufLength</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachgetThreadName;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachgetThreadName/thread;   name=thread -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachgetThreadName/thread"></a>
+<code>thread</code>
+</dt>
+<dd>
+<p>The thread whose name to get.
+</p>
+<p>@oaram buffer Buffer to hold the name.</p>
+</dd>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachgetThreadName/bufLength;   name=bufLength -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachgetThreadName/bufLength"></a>
+<code>bufLength</code>
+</dt>
+<dd><p>The length of the buffer.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>true if a name was found.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachgetThreadName;name=start --><p>Get a thread's name. Internally, a thread name will
+never be more than 64 characters long.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachgetThreadName;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachgetThreadQueueName;   name=bsg_ksmachgetThreadQueueName -->
+<a name="//apple_ref/c/func/bsg_ksmachgetThreadQueueName"></a>
+<h3><a name="bsg_ksmachgetThreadQueueName">bsg_ksmachgetThreadQueueName</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachgetThreadQueueName;name=start --><!-- a logicalPath="//apple_ref/c/cl/bool //apple_ref/c/tdef/bool //apple_ref/c/tag/bool //apple_ref/c/struct/bool //apple_ref/c/intf/bool //apple_ref/doc/anysymbol/bool" machineGenerated="true" --><span class="type">bool</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachgetThreadQueueName" logicalPath="//apple_ref/c/instm/bsg_ksmachgetThreadQueueName //apple_ref/c/clm/bsg_ksmachgetThreadQueueName //apple_ref/c/intfcm/bsg_ksmachgetThreadQueueName //apple_ref/c/intfm/bsg_ksmachgetThreadQueueName //apple_ref/c/func/bsg_ksmachgetThreadQueueName" target="_top"><span class="function">bsg_ksmachgetThreadQueueName</span></a>(
+    <!-- a logicalPath="//apple_ref/c/cl/thread_t //apple_ref/c/tdef/thread_t //apple_ref/c/tag/thread_t //apple_ref/c/struct/thread_t //apple_ref/c/intf/thread_t //apple_ref/doc/anysymbol/thread_t" machineGenerated="true" --><span class="type">thread_t</span><!-- /a --> <span class="param">thread</span>,
+    <!-- a logicalPath="//apple_ref/c/cl/char //apple_ref/c/tdef/char //apple_ref/c/tag/char //apple_ref/c/struct/char //apple_ref/c/intf/char //apple_ref/doc/anysymbol/char" machineGenerated="true" --><span class="type">char</span><!-- /a --> <span class="type">*</span><span class="param">buffer</span>, 
+    <!-- a logicalPath="//apple_ref/c/cl/size_t //apple_ref/c/tdef/size_t //apple_ref/c/tag/size_t //apple_ref/c/struct/size_t //apple_ref/c/intf/size_t //apple_ref/doc/anysymbol/size_t" machineGenerated="true" --><span class="type">size_t</span><!-- /a --> <span class="param">bufLength</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachgetThreadQueueName;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachgetThreadQueueName/thread;   name=thread -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachgetThreadQueueName/thread"></a>
+<code>thread</code>
+</dt>
+<dd>
+<p>The thread whose queue name to get.
+</p>
+<p>@oaram buffer Buffer to hold the name.</p>
+</dd>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachgetThreadQueueName/bufLength;   name=bufLength -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachgetThreadQueueName/bufLength"></a>
+<code>bufLength</code>
+</dt>
+<dd><p>The length of the buffer.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>true if a name or label was found.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachgetThreadQueueName;name=start --><p>Get the name of a thread's dispatch queue. Internally, a queue name will
+never be more than 64 characters long.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachgetThreadQueueName;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachinstructionAddress;   name=bsg_ksmachinstructionAddress -->
+<a name="//apple_ref/c/func/bsg_ksmachinstructionAddress"></a>
+<h3><a name="bsg_ksmachinstructionAddress">bsg_ksmachinstructionAddress</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachinstructionAddress;name=start --><!-- a logicalPath="//apple_ref/c/cl/uintptr_t //apple_ref/c/tdef/uintptr_t //apple_ref/c/tag/uintptr_t //apple_ref/c/struct/uintptr_t //apple_ref/c/intf/uintptr_t //apple_ref/doc/anysymbol/uintptr_t" machineGenerated="true" --><span class="type">uintptr_t</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachinstructionAddress" logicalPath="//apple_ref/c/instm/bsg_ksmachinstructionAddress //apple_ref/c/clm/bsg_ksmachinstructionAddress //apple_ref/c/intfcm/bsg_ksmachinstructionAddress //apple_ref/c/intfm/bsg_ksmachinstructionAddress //apple_ref/c/func/bsg_ksmachinstructionAddress" target="_top"><span class="function">bsg_ksmachinstructionAddress</span></a>(
+    <span class="keyword">const</span> <!-- a logicalPath="//apple_ref/c/cl/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tdef/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tag/BSG_STRUCT_MCONTEXT_L //apple_ref/c/struct/BSG_STRUCT_MCONTEXT_L //apple_ref/c/intf/BSG_STRUCT_MCONTEXT_L //apple_ref/doc/anysymbol/BSG_STRUCT_MCONTEXT_L" machineGenerated="true" --><span class="type">BSG_STRUCT_MCONTEXT_L</span><!-- /a --> <span class="type">*</span><span class="param">machineContext</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachinstructionAddress;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachinstructionAddress/machineContext;   name=machineContext -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachinstructionAddress/machineContext"></a>
+<code>machineContext</code>
+</dt>
+<dd><p>The machine context.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>The context's next instruction address.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachinstructionAddress;name=start --><p>Get the address of the instruction about to be, or being executed by a
+machine context.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachinstructionAddress;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachisBeingTraced;   name=bsg_ksmachisBeingTraced -->
+<a name="//apple_ref/c/func/bsg_ksmachisBeingTraced"></a>
+<h3><a name="bsg_ksmachisBeingTraced">bsg_ksmachisBeingTraced</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachisBeingTraced;name=start --><!-- a logicalPath="//apple_ref/c/cl/bool //apple_ref/c/tdef/bool //apple_ref/c/tag/bool //apple_ref/c/struct/bool //apple_ref/c/intf/bool //apple_ref/doc/anysymbol/bool" machineGenerated="true" --><span class="type">bool</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachisBeingTraced" logicalPath="//apple_ref/c/instm/bsg_ksmachisBeingTraced //apple_ref/c/clm/bsg_ksmachisBeingTraced //apple_ref/c/intfcm/bsg_ksmachisBeingTraced //apple_ref/c/intfm/bsg_ksmachisBeingTraced //apple_ref/c/func/bsg_ksmachisBeingTraced" target="_top"><span class="function">bsg_ksmachisBeingTraced</span></a>(
+    <span class="param">void</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachisBeingTraced;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>true if we're being traced.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachisBeingTraced;name=start --><p>Check if the current process is being traced or not.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachisBeingTraced;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachkernelReturnCodeName;   name=bsg_ksmachkernelReturnCodeName -->
+<a name="//apple_ref/c/func/bsg_ksmachkernelReturnCodeName"></a>
+<h3><a name="bsg_ksmachkernelReturnCodeName">bsg_ksmachkernelReturnCodeName</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachkernelReturnCodeName;name=start --><span class="keyword">const</span> <!-- a logicalPath="//apple_ref/c/cl/char //apple_ref/c/tdef/char //apple_ref/c/tag/char //apple_ref/c/struct/char //apple_ref/c/intf/char //apple_ref/doc/anysymbol/char" machineGenerated="true" --><span class="type">char</span><!-- /a --> <span class="type">*</span><a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachkernelReturnCodeName" logicalPath="//apple_ref/c/instm/bsg_ksmachkernelReturnCodeName //apple_ref/c/clm/bsg_ksmachkernelReturnCodeName //apple_ref/c/intfcm/bsg_ksmachkernelReturnCodeName //apple_ref/c/intfm/bsg_ksmachkernelReturnCodeName //apple_ref/c/func/bsg_ksmachkernelReturnCodeName" target="_top"><span class="function">bsg_ksmachkernelReturnCodeName</span></a>(
+    <!-- a logicalPath="//apple_ref/c/cl/kern_return_t //apple_ref/c/tdef/kern_return_t //apple_ref/c/tag/kern_return_t //apple_ref/c/struct/kern_return_t //apple_ref/c/intf/kern_return_t //apple_ref/doc/anysymbol/kern_return_t" machineGenerated="true" --><span class="type">kern_return_t</span><!-- /a --> <span class="param">returnCode</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachkernelReturnCodeName;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachkernelReturnCodeName/returnCode;   name=returnCode -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachkernelReturnCodeName/returnCode"></a>
+<code>returnCode</code>
+</dt>
+<dd><p>The return code.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>The code's name or NULL if not found.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachkernelReturnCodeName;name=start --><p>Get the name of a mach kernel return code.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachkernelReturnCodeName;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachlinkRegister;   name=bsg_ksmachlinkRegister -->
+<a name="//apple_ref/c/func/bsg_ksmachlinkRegister"></a>
+<h3><a name="bsg_ksmachlinkRegister">bsg_ksmachlinkRegister</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachlinkRegister;name=start --><!-- a logicalPath="//apple_ref/c/cl/uintptr_t //apple_ref/c/tdef/uintptr_t //apple_ref/c/tag/uintptr_t //apple_ref/c/struct/uintptr_t //apple_ref/c/intf/uintptr_t //apple_ref/doc/anysymbol/uintptr_t" machineGenerated="true" --><span class="type">uintptr_t</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachlinkRegister" logicalPath="//apple_ref/c/instm/bsg_ksmachlinkRegister //apple_ref/c/clm/bsg_ksmachlinkRegister //apple_ref/c/intfcm/bsg_ksmachlinkRegister //apple_ref/c/intfm/bsg_ksmachlinkRegister //apple_ref/c/func/bsg_ksmachlinkRegister" target="_top"><span class="function">bsg_ksmachlinkRegister</span></a>(
+    <span class="keyword">const</span> <!-- a logicalPath="//apple_ref/c/cl/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tdef/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tag/BSG_STRUCT_MCONTEXT_L //apple_ref/c/struct/BSG_STRUCT_MCONTEXT_L //apple_ref/c/intf/BSG_STRUCT_MCONTEXT_L //apple_ref/doc/anysymbol/BSG_STRUCT_MCONTEXT_L" machineGenerated="true" --><span class="type">BSG_STRUCT_MCONTEXT_L</span><!-- /a --> <span class="type">*</span><span class="param">machineContext</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachlinkRegister;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachlinkRegister/machineContext;   name=machineContext -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachlinkRegister/machineContext"></a>
+<code>machineContext</code>
+</dt>
+<dd><p>The machine context.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>The link register value.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachlinkRegister;name=start --><p>Get the address stored in the link register (arm only). This may
+contain the first return address of the stack.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachlinkRegister;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachmachThreadFromPThread;   name=bsg_ksmachmachThreadFromPThread -->
+<a name="//apple_ref/c/func/bsg_ksmachmachThreadFromPThread"></a>
+<h3><a name="bsg_ksmachmachThreadFromPThread">bsg_ksmachmachThreadFromPThread</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachmachThreadFromPThread;name=start --><!-- a logicalPath="//apple_ref/c/cl/thread_t //apple_ref/c/tdef/thread_t //apple_ref/c/tag/thread_t //apple_ref/c/struct/thread_t //apple_ref/c/intf/thread_t //apple_ref/doc/anysymbol/thread_t" machineGenerated="true" --><span class="type">thread_t</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachmachThreadFromPThread" logicalPath="//apple_ref/c/instm/bsg_ksmachmachThreadFromPThread //apple_ref/c/clm/bsg_ksmachmachThreadFromPThread //apple_ref/c/intfcm/bsg_ksmachmachThreadFromPThread //apple_ref/c/intfm/bsg_ksmachmachThreadFromPThread //apple_ref/c/func/bsg_ksmachmachThreadFromPThread" target="_top"><span class="function">bsg_ksmachmachThreadFromPThread</span></a>(
+    <span class="keyword">const</span> <!-- a logicalPath="//apple_ref/c/cl/pthread_t //apple_ref/c/tdef/pthread_t //apple_ref/c/tag/pthread_t //apple_ref/c/struct/pthread_t //apple_ref/c/intf/pthread_t //apple_ref/doc/anysymbol/pthread_t" machineGenerated="true" --><span class="type">pthread_t</span><!-- /a --> <span class="param">pthread</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachmachThreadFromPThread;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachmachThreadFromPThread/pthread;   name=pthread -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachmachThreadFromPThread/pthread"></a>
+<code>pthread</code>
+</dt>
+<dd><p>The posix thread.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>The corresponding mach thread, or 0 if an error occurred.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachmachThreadFromPThread;name=start --><p>Get a posix thread's corresponding mach thread.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachmachThreadFromPThread;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachnumExceptionRegisters;   name=bsg_ksmachnumExceptionRegisters -->
+<a name="//apple_ref/c/func/bsg_ksmachnumExceptionRegisters"></a>
+<h3><a name="bsg_ksmachnumExceptionRegisters">bsg_ksmachnumExceptionRegisters</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachnumExceptionRegisters;name=start --><!-- a logicalPath="//apple_ref/c/cl/int //apple_ref/c/tdef/int //apple_ref/c/tag/int //apple_ref/c/struct/int //apple_ref/c/intf/int //apple_ref/doc/anysymbol/int" machineGenerated="true" --><span class="type">int</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachnumExceptionRegisters" logicalPath="//apple_ref/c/instm/bsg_ksmachnumExceptionRegisters //apple_ref/c/clm/bsg_ksmachnumExceptionRegisters //apple_ref/c/intfcm/bsg_ksmachnumExceptionRegisters //apple_ref/c/intfm/bsg_ksmachnumExceptionRegisters //apple_ref/c/func/bsg_ksmachnumExceptionRegisters" target="_top"><span class="function">bsg_ksmachnumExceptionRegisters</span></a>(
+    <span class="param">void</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachnumExceptionRegisters;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>The number of registers.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachnumExceptionRegisters;name=start --><p>Get the number of exception registers the currently running CPU has.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachnumExceptionRegisters;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachnumRegisters;   name=bsg_ksmachnumRegisters -->
+<a name="//apple_ref/c/func/bsg_ksmachnumRegisters"></a>
+<h3><a name="bsg_ksmachnumRegisters">bsg_ksmachnumRegisters</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachnumRegisters;name=start --><!-- a logicalPath="//apple_ref/c/cl/int //apple_ref/c/tdef/int //apple_ref/c/tag/int //apple_ref/c/struct/int //apple_ref/c/intf/int //apple_ref/doc/anysymbol/int" machineGenerated="true" --><span class="type">int</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachnumRegisters" logicalPath="//apple_ref/c/instm/bsg_ksmachnumRegisters //apple_ref/c/clm/bsg_ksmachnumRegisters //apple_ref/c/intfcm/bsg_ksmachnumRegisters //apple_ref/c/intfm/bsg_ksmachnumRegisters //apple_ref/c/func/bsg_ksmachnumRegisters" target="_top"><span class="function">bsg_ksmachnumRegisters</span></a>(
+    <span class="param">void</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachnumRegisters;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>The number of registers.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachnumRegisters;name=start --><p>Get the number of normal (not floating point or exception) registers the
+currently running CPU has.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachnumRegisters;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachpthreadFromMachThread;   name=bsg_ksmachpthreadFromMachThread -->
+<a name="//apple_ref/c/func/bsg_ksmachpthreadFromMachThread"></a>
+<h3><a name="bsg_ksmachpthreadFromMachThread">bsg_ksmachpthreadFromMachThread</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachpthreadFromMachThread;name=start --><!-- a logicalPath="//apple_ref/c/cl/pthread_t //apple_ref/c/tdef/pthread_t //apple_ref/c/tag/pthread_t //apple_ref/c/struct/pthread_t //apple_ref/c/intf/pthread_t //apple_ref/doc/anysymbol/pthread_t" machineGenerated="true" --><span class="type">pthread_t</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachpthreadFromMachThread" logicalPath="//apple_ref/c/instm/bsg_ksmachpthreadFromMachThread //apple_ref/c/clm/bsg_ksmachpthreadFromMachThread //apple_ref/c/intfcm/bsg_ksmachpthreadFromMachThread //apple_ref/c/intfm/bsg_ksmachpthreadFromMachThread //apple_ref/c/func/bsg_ksmachpthreadFromMachThread" target="_top"><span class="function">bsg_ksmachpthreadFromMachThread</span></a>(
+    <span class="keyword">const</span> <!-- a logicalPath="//apple_ref/c/cl/thread_t //apple_ref/c/tdef/thread_t //apple_ref/c/tag/thread_t //apple_ref/c/struct/thread_t //apple_ref/c/intf/thread_t //apple_ref/doc/anysymbol/thread_t" machineGenerated="true" --><span class="type">thread_t</span><!-- /a --> <span class="param">thread</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachpthreadFromMachThread;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachpthreadFromMachThread/thread;   name=thread -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachpthreadFromMachThread/thread"></a>
+<code>thread</code>
+</dt>
+<dd><p>The mach thread.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>The corresponding posix thread, or 0 if an error occurred.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachpthreadFromMachThread;name=start --><p>Get a mach thread's corresponding posix thread.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachpthreadFromMachThread;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachregisterName;   name=bsg_ksmachregisterName -->
+<a name="//apple_ref/c/func/bsg_ksmachregisterName"></a>
+<h3><a name="bsg_ksmachregisterName">bsg_ksmachregisterName</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachregisterName;name=start --><span class="keyword">const</span> <!-- a logicalPath="//apple_ref/c/cl/char //apple_ref/c/tdef/char //apple_ref/c/tag/char //apple_ref/c/struct/char //apple_ref/c/intf/char //apple_ref/doc/anysymbol/char" machineGenerated="true" --><span class="type">char</span><!-- /a --> <span class="type">*</span><a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachregisterName" logicalPath="//apple_ref/c/instm/bsg_ksmachregisterName //apple_ref/c/clm/bsg_ksmachregisterName //apple_ref/c/intfcm/bsg_ksmachregisterName //apple_ref/c/intfm/bsg_ksmachregisterName //apple_ref/c/func/bsg_ksmachregisterName" target="_top"><span class="function">bsg_ksmachregisterName</span></a>(
+    <!-- a logicalPath="//apple_ref/c/cl/int //apple_ref/c/tdef/int //apple_ref/c/tag/int //apple_ref/c/struct/int //apple_ref/c/intf/int //apple_ref/doc/anysymbol/int" machineGenerated="true" --><span class="type">int</span><!-- /a --> <span class="param">regNumber</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachregisterName;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachregisterName/regNumber;   name=regNumber -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachregisterName/regNumber"></a>
+<code>regNumber</code>
+</dt>
+<dd><p>The register index.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>The register's name or NULL if not found.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachregisterName;name=start --><p>Get the name of a normal register.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachregisterName;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachregisterValue;   name=bsg_ksmachregisterValue -->
+<a name="//apple_ref/c/func/bsg_ksmachregisterValue"></a>
+<h3><a name="bsg_ksmachregisterValue">bsg_ksmachregisterValue</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachregisterValue;name=start --><!-- a logicalPath="//apple_ref/c/cl/uint64_t //apple_ref/c/tdef/uint64_t //apple_ref/c/tag/uint64_t //apple_ref/c/struct/uint64_t //apple_ref/c/intf/uint64_t //apple_ref/doc/anysymbol/uint64_t" machineGenerated="true" --><span class="type">uint64_t</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachregisterValue" logicalPath="//apple_ref/c/instm/bsg_ksmachregisterValue //apple_ref/c/clm/bsg_ksmachregisterValue //apple_ref/c/intfcm/bsg_ksmachregisterValue //apple_ref/c/intfm/bsg_ksmachregisterValue //apple_ref/c/func/bsg_ksmachregisterValue" target="_top"><span class="function">bsg_ksmachregisterValue</span></a>(
+    <span class="keyword">const</span> <!-- a logicalPath="//apple_ref/c/cl/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tdef/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tag/BSG_STRUCT_MCONTEXT_L //apple_ref/c/struct/BSG_STRUCT_MCONTEXT_L //apple_ref/c/intf/BSG_STRUCT_MCONTEXT_L //apple_ref/doc/anysymbol/BSG_STRUCT_MCONTEXT_L" machineGenerated="true" --><span class="type">BSG_STRUCT_MCONTEXT_L</span><!-- /a --> <span class="type">*</span><span class="param">machineContext</span>, 
+    <!-- a logicalPath="//apple_ref/c/cl/int //apple_ref/c/tdef/int //apple_ref/c/tag/int //apple_ref/c/struct/int //apple_ref/c/intf/int //apple_ref/doc/anysymbol/int" machineGenerated="true" --><span class="type">int</span><!-- /a --> <span class="param">regNumber</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachregisterValue;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachregisterValue/regNumber;   name=regNumber -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachregisterValue/regNumber"></a>
+<code>regNumber</code>
+</dt>
+<dd><p>The register index.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>The register's current value.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachregisterValue;name=start --><p>Get the value stored in a normal register.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachregisterValue;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachresumeAllThreads;   name=bsg_ksmachresumeAllThreads -->
+<a name="//apple_ref/c/func/bsg_ksmachresumeAllThreads"></a>
+<h3><a name="bsg_ksmachresumeAllThreads">bsg_ksmachresumeAllThreads</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachresumeAllThreads;name=start --><!-- a logicalPath="//apple_ref/c/cl/bool //apple_ref/c/tdef/bool //apple_ref/c/tag/bool //apple_ref/c/struct/bool //apple_ref/c/intf/bool //apple_ref/doc/anysymbol/bool" machineGenerated="true" --><span class="type">bool</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachresumeAllThreads" logicalPath="//apple_ref/c/instm/bsg_ksmachresumeAllThreads //apple_ref/c/clm/bsg_ksmachresumeAllThreads //apple_ref/c/intfcm/bsg_ksmachresumeAllThreads //apple_ref/c/intfm/bsg_ksmachresumeAllThreads //apple_ref/c/func/bsg_ksmachresumeAllThreads" target="_top"><span class="function">bsg_ksmachresumeAllThreads</span></a>(
+    <span class="param">void</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachresumeAllThreads;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>true if thread resumption was at least partially successful.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachresumeAllThreads;name=start --><p>Resume all threads except for the current one.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachresumeAllThreads;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachresumeAllThreadsExcept;   name=bsg_ksmachresumeAllThreadsExcept -->
+<a name="//apple_ref/c/func/bsg_ksmachresumeAllThreadsExcept"></a>
+<h3><a name="bsg_ksmachresumeAllThreadsExcept">bsg_ksmachresumeAllThreadsExcept</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachresumeAllThreadsExcept;name=start --><!-- a logicalPath="//apple_ref/c/cl/bool //apple_ref/c/tdef/bool //apple_ref/c/tag/bool //apple_ref/c/struct/bool //apple_ref/c/intf/bool //apple_ref/doc/anysymbol/bool" machineGenerated="true" --><span class="type">bool</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachresumeAllThreadsExcept" logicalPath="//apple_ref/c/instm/bsg_ksmachresumeAllThreadsExcept //apple_ref/c/clm/bsg_ksmachresumeAllThreadsExcept //apple_ref/c/intfcm/bsg_ksmachresumeAllThreadsExcept //apple_ref/c/intfm/bsg_ksmachresumeAllThreadsExcept //apple_ref/c/func/bsg_ksmachresumeAllThreadsExcept" target="_top"><span class="function">bsg_ksmachresumeAllThreadsExcept</span></a>(
+    <!-- a logicalPath="//apple_ref/c/cl/thread_t //apple_ref/c/tdef/thread_t //apple_ref/c/tag/thread_t //apple_ref/c/struct/thread_t //apple_ref/c/intf/thread_t //apple_ref/doc/anysymbol/thread_t" machineGenerated="true" --><span class="type">thread_t</span><!-- /a --> <span class="type">*</span><span class="param">exceptThreads</span>, 
+    <!-- a logicalPath="//apple_ref/c/cl/int //apple_ref/c/tdef/int //apple_ref/c/tag/int //apple_ref/c/struct/int //apple_ref/c/intf/int //apple_ref/doc/anysymbol/int" machineGenerated="true" --><span class="type">int</span><!-- /a --> <span class="param">exceptThreadsCount</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachresumeAllThreadsExcept;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachresumeAllThreadsExcept/exceptThreads;   name=exceptThreads -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachresumeAllThreadsExcept/exceptThreads"></a>
+<code>exceptThreads</code>
+</dt>
+<dd><p>The threads to avoid resuming.</p></dd>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachresumeAllThreadsExcept/exceptThreadsCount;   name=exceptThreadsCount -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachresumeAllThreadsExcept/exceptThreadsCount"></a>
+<code>exceptThreadsCount</code>
+</dt>
+<dd><p>The number of threads to avoid resuming.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>true if thread resumption was at least partially successful.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachresumeAllThreadsExcept;name=start --><p>Resume all threads except for the current one and the specified threads.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachresumeAllThreadsExcept;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachstackGrowDirection;   name=bsg_ksmachstackGrowDirection -->
+<a name="//apple_ref/c/func/bsg_ksmachstackGrowDirection"></a>
+<h3><a name="bsg_ksmachstackGrowDirection">bsg_ksmachstackGrowDirection</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachstackGrowDirection;name=start --><!-- a logicalPath="//apple_ref/c/cl/int //apple_ref/c/tdef/int //apple_ref/c/tag/int //apple_ref/c/struct/int //apple_ref/c/intf/int //apple_ref/doc/anysymbol/int" machineGenerated="true" --><span class="type">int</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachstackGrowDirection" logicalPath="//apple_ref/c/instm/bsg_ksmachstackGrowDirection //apple_ref/c/clm/bsg_ksmachstackGrowDirection //apple_ref/c/intfcm/bsg_ksmachstackGrowDirection //apple_ref/c/intfm/bsg_ksmachstackGrowDirection //apple_ref/c/func/bsg_ksmachstackGrowDirection" target="_top"><span class="function">bsg_ksmachstackGrowDirection</span></a>(
+    <span class="param">void</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachstackGrowDirection;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>1 or -1, depending on which direction the stack grows in.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachstackGrowDirection;name=start --><p>Get the direction in which the stack grows on the current architecture.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachstackGrowDirection;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachstackPointer;   name=bsg_ksmachstackPointer -->
+<a name="//apple_ref/c/func/bsg_ksmachstackPointer"></a>
+<h3><a name="bsg_ksmachstackPointer">bsg_ksmachstackPointer</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachstackPointer;name=start --><!-- a logicalPath="//apple_ref/c/cl/uintptr_t //apple_ref/c/tdef/uintptr_t //apple_ref/c/tag/uintptr_t //apple_ref/c/struct/uintptr_t //apple_ref/c/intf/uintptr_t //apple_ref/doc/anysymbol/uintptr_t" machineGenerated="true" --><span class="type">uintptr_t</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachstackPointer" logicalPath="//apple_ref/c/instm/bsg_ksmachstackPointer //apple_ref/c/clm/bsg_ksmachstackPointer //apple_ref/c/intfcm/bsg_ksmachstackPointer //apple_ref/c/intfm/bsg_ksmachstackPointer //apple_ref/c/func/bsg_ksmachstackPointer" target="_top"><span class="function">bsg_ksmachstackPointer</span></a>(
+    <span class="keyword">const</span> <!-- a logicalPath="//apple_ref/c/cl/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tdef/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tag/BSG_STRUCT_MCONTEXT_L //apple_ref/c/struct/BSG_STRUCT_MCONTEXT_L //apple_ref/c/intf/BSG_STRUCT_MCONTEXT_L //apple_ref/doc/anysymbol/BSG_STRUCT_MCONTEXT_L" machineGenerated="true" --><span class="type">BSG_STRUCT_MCONTEXT_L</span><!-- /a --> <span class="type">*</span><span class="param">machineContext</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachstackPointer;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachstackPointer/machineContext;   name=machineContext -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachstackPointer/machineContext"></a>
+<code>machineContext</code>
+</dt>
+<dd><p>The machine context.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>The context's stack pointer.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachstackPointer;name=start --><p>Get the current stack pointer for a machine context.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachstackPointer;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachsuspendAllThreads;   name=bsg_ksmachsuspendAllThreads -->
+<a name="//apple_ref/c/func/bsg_ksmachsuspendAllThreads"></a>
+<h3><a name="bsg_ksmachsuspendAllThreads">bsg_ksmachsuspendAllThreads</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachsuspendAllThreads;name=start --><!-- a logicalPath="//apple_ref/c/cl/bool //apple_ref/c/tdef/bool //apple_ref/c/tag/bool //apple_ref/c/struct/bool //apple_ref/c/intf/bool //apple_ref/doc/anysymbol/bool" machineGenerated="true" --><span class="type">bool</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachsuspendAllThreads" logicalPath="//apple_ref/c/instm/bsg_ksmachsuspendAllThreads //apple_ref/c/clm/bsg_ksmachsuspendAllThreads //apple_ref/c/intfcm/bsg_ksmachsuspendAllThreads //apple_ref/c/intfm/bsg_ksmachsuspendAllThreads //apple_ref/c/func/bsg_ksmachsuspendAllThreads" target="_top"><span class="function">bsg_ksmachsuspendAllThreads</span></a>(
+    <span class="param">void</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachsuspendAllThreads;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>true if thread suspention was at least partially successful.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachsuspendAllThreads;name=start --><p>Suspend all threads except for the current one.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachsuspendAllThreads;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachsuspendAllThreadsExcept;   name=bsg_ksmachsuspendAllThreadsExcept -->
+<a name="//apple_ref/c/func/bsg_ksmachsuspendAllThreadsExcept"></a>
+<h3><a name="bsg_ksmachsuspendAllThreadsExcept">bsg_ksmachsuspendAllThreadsExcept</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachsuspendAllThreadsExcept;name=start --><!-- a logicalPath="//apple_ref/c/cl/bool //apple_ref/c/tdef/bool //apple_ref/c/tag/bool //apple_ref/c/struct/bool //apple_ref/c/intf/bool //apple_ref/doc/anysymbol/bool" machineGenerated="true" --><span class="type">bool</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachsuspendAllThreadsExcept" logicalPath="//apple_ref/c/instm/bsg_ksmachsuspendAllThreadsExcept //apple_ref/c/clm/bsg_ksmachsuspendAllThreadsExcept //apple_ref/c/intfcm/bsg_ksmachsuspendAllThreadsExcept //apple_ref/c/intfm/bsg_ksmachsuspendAllThreadsExcept //apple_ref/c/func/bsg_ksmachsuspendAllThreadsExcept" target="_top"><span class="function">bsg_ksmachsuspendAllThreadsExcept</span></a>(
+    <!-- a logicalPath="//apple_ref/c/cl/thread_t //apple_ref/c/tdef/thread_t //apple_ref/c/tag/thread_t //apple_ref/c/struct/thread_t //apple_ref/c/intf/thread_t //apple_ref/doc/anysymbol/thread_t" machineGenerated="true" --><span class="type">thread_t</span><!-- /a --> <span class="type">*</span><span class="param">exceptThreads</span>, 
+    <!-- a logicalPath="//apple_ref/c/cl/int //apple_ref/c/tdef/int //apple_ref/c/tag/int //apple_ref/c/struct/int //apple_ref/c/intf/int //apple_ref/doc/anysymbol/int" machineGenerated="true" --><span class="type">int</span><!-- /a --> <span class="param">exceptThreadsCount</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachsuspendAllThreadsExcept;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachsuspendAllThreadsExcept/exceptThreads;   name=exceptThreads -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachsuspendAllThreadsExcept/exceptThreads"></a>
+<code>exceptThreads</code>
+</dt>
+<dd><p>The threads to avoid suspending.</p></dd>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachsuspendAllThreadsExcept/exceptThreadsCount;   name=exceptThreadsCount -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachsuspendAllThreadsExcept/exceptThreadsCount"></a>
+<code>exceptThreadsCount</code>
+</dt>
+<dd><p>The number of threads to avoid suspending.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>true if thread suspention was at least partially successful.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachsuspendAllThreadsExcept;name=start --><p>Suspend all threads except for the current one and the specified threads.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachsuspendAllThreadsExcept;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachthreadState;   name=bsg_ksmachthreadState -->
+<a name="//apple_ref/c/func/bsg_ksmachthreadState"></a>
+<h3><a name="bsg_ksmachthreadState">bsg_ksmachthreadState</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachthreadState;name=start --><!-- a logicalPath="//apple_ref/c/cl/bool //apple_ref/c/tdef/bool //apple_ref/c/tag/bool //apple_ref/c/struct/bool //apple_ref/c/intf/bool //apple_ref/doc/anysymbol/bool" machineGenerated="true" --><span class="type">bool</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachthreadState" logicalPath="//apple_ref/c/instm/bsg_ksmachthreadState //apple_ref/c/clm/bsg_ksmachthreadState //apple_ref/c/intfcm/bsg_ksmachthreadState //apple_ref/c/intfm/bsg_ksmachthreadState //apple_ref/c/func/bsg_ksmachthreadState" target="_top"><span class="function">bsg_ksmachthreadState</span></a>(
+    <!-- a logicalPath="//apple_ref/c/cl/thread_t //apple_ref/c/tdef/thread_t //apple_ref/c/tag/thread_t //apple_ref/c/struct/thread_t //apple_ref/c/intf/thread_t //apple_ref/doc/anysymbol/thread_t" machineGenerated="true" --><span class="type">thread_t</span><!-- /a --> <span class="param">thread</span>, 
+    <!-- a logicalPath="//apple_ref/c/cl/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tdef/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tag/BSG_STRUCT_MCONTEXT_L //apple_ref/c/struct/BSG_STRUCT_MCONTEXT_L //apple_ref/c/intf/BSG_STRUCT_MCONTEXT_L //apple_ref/doc/anysymbol/BSG_STRUCT_MCONTEXT_L" machineGenerated="true" --><span class="type">BSG_STRUCT_MCONTEXT_L</span><!-- /a --> <span class="type">*</span><span class="param">machineContext</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachthreadState;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachthreadState/thread;   name=thread -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachthreadState/thread"></a>
+<code>thread</code>
+</dt>
+<dd><p>The thread to fetch state for.</p></dd>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachthreadState/machineContext;   name=machineContext -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachthreadState/machineContext"></a>
+<code>machineContext</code>
+</dt>
+<dd><p>The machine context to store the state in.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>true if successful.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachthreadState;name=start --><p>Get a thread's thread state and place it in a machine context.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachthreadState;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachtimeDifferenceInSeconds;   name=bsg_ksmachtimeDifferenceInSeconds -->
+<a name="//apple_ref/c/func/bsg_ksmachtimeDifferenceInSeconds"></a>
+<h3><a name="bsg_ksmachtimeDifferenceInSeconds">bsg_ksmachtimeDifferenceInSeconds</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachtimeDifferenceInSeconds;name=start --><!-- a logicalPath="//apple_ref/c/cl/double //apple_ref/c/tdef/double //apple_ref/c/tag/double //apple_ref/c/struct/double //apple_ref/c/intf/double //apple_ref/doc/anysymbol/double" machineGenerated="true" --><span class="type">double</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachtimeDifferenceInSeconds" logicalPath="//apple_ref/c/instm/bsg_ksmachtimeDifferenceInSeconds //apple_ref/c/clm/bsg_ksmachtimeDifferenceInSeconds //apple_ref/c/intfcm/bsg_ksmachtimeDifferenceInSeconds //apple_ref/c/intfm/bsg_ksmachtimeDifferenceInSeconds //apple_ref/c/func/bsg_ksmachtimeDifferenceInSeconds" target="_top"><span class="function">bsg_ksmachtimeDifferenceInSeconds</span></a>(
+    <!-- a logicalPath="//apple_ref/c/cl/uint64_t //apple_ref/c/tdef/uint64_t //apple_ref/c/tag/uint64_t //apple_ref/c/struct/uint64_t //apple_ref/c/intf/uint64_t //apple_ref/doc/anysymbol/uint64_t" machineGenerated="true" --><span class="type">uint64_t</span><!-- /a --> <span class="param">endTime</span>,
+    <!-- a logicalPath="//apple_ref/c/cl/uint64_t //apple_ref/c/tdef/uint64_t //apple_ref/c/tag/uint64_t //apple_ref/c/struct/uint64_t //apple_ref/c/intf/uint64_t //apple_ref/doc/anysymbol/uint64_t" machineGenerated="true" --><span class="type">uint64_t</span><!-- /a --> <span class="param">startTime</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachtimeDifferenceInSeconds;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachtimeDifferenceInSeconds/endTime;   name=endTime -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachtimeDifferenceInSeconds/endTime"></a>
+<code>endTime</code>
+</dt>
+<dd><p>The greater of the two times.</p></dd>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachtimeDifferenceInSeconds/startTime;   name=startTime -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachtimeDifferenceInSeconds/startTime"></a>
+<code>startTime</code>
+</dt>
+<dd><p>The lesser of the two times.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>The difference between the two timestamps in seconds.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachtimeDifferenceInSeconds;name=start --><p>Get the difference in seconds between two timestamps fetched via
+mach_absolute_time().
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachtimeDifferenceInSeconds;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachusableMemory;   name=bsg_ksmachusableMemory -->
+<a name="//apple_ref/c/func/bsg_ksmachusableMemory"></a>
+<h3><a name="bsg_ksmachusableMemory">bsg_ksmachusableMemory</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachusableMemory;name=start --><!-- a logicalPath="//apple_ref/c/cl/uint64_t //apple_ref/c/tdef/uint64_t //apple_ref/c/tag/uint64_t //apple_ref/c/struct/uint64_t //apple_ref/c/intf/uint64_t //apple_ref/doc/anysymbol/uint64_t" machineGenerated="true" --><span class="type">uint64_t</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachusableMemory" logicalPath="//apple_ref/c/instm/bsg_ksmachusableMemory //apple_ref/c/clm/bsg_ksmachusableMemory //apple_ref/c/intfcm/bsg_ksmachusableMemory //apple_ref/c/intfm/bsg_ksmachusableMemory //apple_ref/c/func/bsg_ksmachusableMemory" target="_top"><span class="function">bsg_ksmachusableMemory</span></a>(
+    <span class="param">void</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachusableMemory;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>total usable memory.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachusableMemory;name=start --><p>Get the total memory that is currently usable.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachusableMemory;name=end --><!-- end discussion -->
+<p class="gapBeforeFooter">&nbsp;</p>
+<hr class="afterFooter">
+<div class="hd_copyright_and_timestamp">
+<p class="hd_timestamp">Last Updated: Thursday, February 28, 2019
+</p>
+</div>
+</td>
+</tr></table>
+</body>
+</html>

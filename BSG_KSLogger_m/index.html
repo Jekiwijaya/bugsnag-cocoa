@@ -1,0 +1,467 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head>
+    <title>BSG_KSLogger.m</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta name="generator" content="HeaderDoc">
+<meta name="xcode-display" content="render">
+<style type="text/css"><!--.char {background: #ffffff; color:#0000ff;}.comment {background:#ffffff; color:#236e25}.function {background:#ffffff; color:#000000;}.keyword {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.param {background:#ffffff; color:#000000;}.preprocessor {background:#ffffff; color:#236e25}.string {background: #ffffff; color:#891315;}.template {background:#ffffff; color:#761550;}.type {background:#ffffff; color:#761550;}.var {background:#ffffff; color:#000000;}body {border: 0px; margin: 0px;}div {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}td {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}span.hd_tocAccessSpace { display: block; font-size: 1px; height: 3px; min-height: 3px; }span.hd_tocGroupSpace { display: block; font-size: 1px; height: 3px; min-height: 3px; }span.hd_tocGroup { display: block; font-weight: bold; font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000; margin-left: 0px; padding-left: 40px; }span.hd_tocGroup + span.hd_tocAccess { padding-top: 5px; }td.toc_contents_text {font-size: 11pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000; }li.tocSubEntry {font-size: 11pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}p {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}h2.h2tight { margin-top: 0px; padding-top: 0px; }h1 { margin-top: 13px; padding-top: 0px; }h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}h5 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10.1pt; font-weight: bold;}pre {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666; font-size: 10pt;}pre a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}pre a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}code a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}code a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}tt a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}tt a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}body  {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt; padding-left: 0px; padding-top: 0px; margin-left: 0px; margin-top: 0px; border: none; }#hd_outermost_table { margin-left: 0px; border-spacing: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; }#hd_outermost_table > tbody > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tbody > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-top: 3px; }.afterName { display: none; }.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px; min-height: 12px; vertical-align: middle; }.declaration_indent pre { margin-top: 20px; padding-top: 0px; margin-bottom: 20px; padding-bottom: 0px; }.gapBeforeFooter { display: none; }hr { height: 0px; min-height: 0px; border-top: none; border-left: none; border-right: none; border-bottom: 1px solid #909090;}hr.afterHeader { display: none }.param_group_indent { margin-left: 25px; }.param_indent { margin-left: 40px; margin-top: 0px; padding-top: 0px; }.param_indent dl { margin-top: 4px; padding-top: 0px; }dl dd > p:first-child { margin-top: 2px; padding-top: 0px; }.param_indent dl dd > p:first-child { margin-top: 2px; padding-top: 0px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.note_indent { margin-left: 40px; }h3 {       color: #3C4C6C;}.tight {       margin-top: 2px; margin-bottom: 0px;       padding-top: 0px; padding-bottom: 0px;}h3 a {       color: #3C4C6C;	font-size: 16px;	font-style: normal;	font-variant: normal;	font-weight: bold;	height: 0px;	line-height: normal;}.hd_tocAccess { display: block; margin-left: 40px; font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }.tocSubheading { margin-bottom: 4px; }--></style>
+<style><!--
+body {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+.toc_contents_text {
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+ul.tocSubEntryList li.tocSubEntry {
+    list-style: none;
+}
+
+#colorbox {
+		display: none;
+}
+.spec_sheet_line {
+		margin-bottom: 1px;
+}
+.collapsible {
+		display: none;
+}
+.toc_leadspace {
+		width: 10; min-width: 10;
+}
+.disclosure_triangle_td {
+		width: 14; min-width: 14;
+		font-size: 10px;
+		vertical-align: middle;
+}
+.specbox td {
+		font-size: 13px;
+}
+.specbox td a {
+		font-size: 13px;
+}
+.specbox td code {
+		font-size: 13px;
+}
+.specbox td tt {
+		font-size: 13px;
+}
+.specbox td pre {
+		font-size: 13px;
+}
+.specbox a {
+		font-size: 12px;
+}
+.disclosure_triangle_td a {
+		text-decoration: none;
+}
+.disclosure_triangle_td a:link {
+		text-decoration: none;
+}
+.disclosure_triangle_td a:active {
+		text-decoration: none;
+}
+.disclosure_triangle_td a:visited:hover {
+		text-decoration: none;
+}
+.disclosure_triangle_td a:hover {
+		text-decoration: none;
+}
+.hd_toc_box {
+		padding-top: 10px;
+		padding-right: 15px;
+}.tocSeparator {
+		margin-top: 15px;
+		padding-bottom: 0px;
+		margin-bottom: 0px;
+}
+.tocSubEntryList {
+		margin-left: 0px;
+		padding-left: 40px;
+		padding-top: 0px;
+		margin-top: 2px;
+		padding-bottom: 0px;
+		margin-bottom: 8px;
+}
+.hd_toc_heading_table {
+		margin-top: 2px;
+		margin-bottom: 2px;
+}
+.hd_toc_entry_table {
+		margin-top: 2px;
+		margin-bottom: 2px;
+}
+.tocSubEntry {
+		margin-left: 0px;
+		padding-left: 0px;
+		margin-top: 0px;
+		margin-bottom: 1px;
+}
+.tocSubEntry a {
+		font-size: 10pt;
+}
+.tocSubheading {
+		padding-left: 14px;
+		margin-left: 0px;
+		margin-top: 5px;
+		padding-top: 0px;
+		font-size: 16px;
+		color: #808080;
+}
+
+#hd_outermost_table { margin-left: 0px; border-spacing: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }
+#hd_outermost_table > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }
+#hd_outermost_table > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; }
+#hd_outermost_table > tbody > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }
+#hd_outermost_table > tbody > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-top: 3px; }
+
+#tocMenu {
+		border-right: 1px solid #c0c0c0;
+		background-color: #f4f4ff;
+		top:0px;
+		left:0px;
+		width:230px;
+		height:100%;
+}
+#bodyContents {
+		width: auto;
+		padding-left: 15px;
+}
+--></style>
+<style id="disable_before_iOS_5"><!--
+#tocMenu {
+		position: fixed;
+		height: 100%;
+		overflow: auto;
+}
+#bodyContents {
+		width: auto;
+		left: 235px;
+		right: 0;
+		padding-left: 15px;
+		position: fixed;
+		height: 100%;
+		overflow-y: scroll;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+    if (navigator.platform && (navigator.platform.match(/iPad/) || navigator.platform.match(/iPhone/) || navigator.platform.match(/iPod/))) {
+        if (navigator.userAgent.match(/OS 1(_\d)+/) ||
+            navigator.userAgent.match(/OS 2(_\d)+/) ||
+            navigator.userAgent.match(/OS 3(_\d)+/) ||
+            navigator.userAgent.match(/OS 4(_\d)+/)) {
+                /* Earlier iOS versions require different scrolling gestures with position: fixed. */
+                var del_style_elt = document.getElementById("disable_before_iOS_5");
+                if (del_style_elt) del_style_elt.parentNode.removeChild(del_style_elt);
+        }
+    }
+// --></script>
+<script language="JavaScript" type="text/javascript"><!--
+function getNewHTTPObject()
+{
+        var xmlhttp;
+
+        /** Special IE only code ... */
+        /*@cc_on
+          @if (@_jscript_version >= 5)
+              try
+              {
+                  xmlhttp = new ActiveXObject('Msxml2.XMLHTTP');
+              }
+              catch (e)
+              {
+                  try
+                  {
+                      xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+                  }
+                  catch (E)
+                  {
+                      xmlhttp = false;
+                  }
+             }
+          @else
+             xmlhttp = false;
+        @end @*/
+
+        /** Every other browser on the planet */
+        if (!xmlhttp && typeof XMLHttpRequest != 'undefined')
+        {
+            try
+            {
+                xmlhttp = new XMLHttpRequest();
+            }
+            catch (e)
+            {
+                xmlhttp = false;
+            }
+        }
+
+        return xmlhttp;
+}
+
+function hidetoc() {
+	var toc = document.getElementById('tocMenu');
+	var src = toc.getAttribute('src');
+	var xhr = getNewHTTPObject();
+	xhr.open('GET', src, true);
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState == 4) {
+			var toc = document.getElementById('tocMenu');
+			toc.innerHTML = xhr.responseText;
+		}
+	}
+	xhr.send(null);
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var body = document.getElementById('bodyContents');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+
+function disclosure_triangle(elt) {
+   var linkelt = elt;
+   while (elt && elt.tagName != 'TABLE') { elt = elt.parentNode;}
+   if (!elt) { return; }
+   while (elt && elt.tagName != 'DIV') { elt = elt.nextSibling;}
+   if (!elt) { return; }
+   if (parseInt(linkelt.getAttribute('state'))) {
+      // It's open.  Close it
+      linkelt.innerHTML = '&#x25B7;';
+      linkelt.setAttribute('state', 0);
+      linkelt.setAttribute('class', 'closed_disclosure_triangle');
+      elt.style.display = 'none';
+   } else {
+      // It's closed.  Open it
+      linkelt.innerHTML = '&#x25BC;';
+      linkelt.setAttribute('state', 1);
+      linkelt.setAttribute('class', 'open_disclosure_triangle');
+      elt.style.display = 'block';
+   }
+}
+--></script>
+<style type="text/css"><!--.char {background: #ffffff; color:#0000ff;}.comment {background:#ffffff; color:#236e25}.function {background:#ffffff; color:#000000;}.keyword {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.param {background:#ffffff; color:#000000;}.preprocessor {background:#ffffff; color:#236e25}.string {background: #ffffff; color:#891315;}.template {background:#ffffff; color:#761550;}.type {background:#ffffff; color:#761550;}.var {background:#ffffff; color:#000000;}body {border: 0px; margin: 0px;}div {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}td {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}span.hd_tocAccessSpace { display: block; font-size: 1px; height: 3px; min-height: 3px; }span.hd_tocGroupSpace { display: block; font-size: 1px; height: 3px; min-height: 3px; }span.hd_tocGroup { display: block; font-weight: bold; font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000; margin-left: 0px; padding-left: 40px; }span.hd_tocGroup + span.hd_tocAccess { padding-top: 5px; }td.toc_contents_text {font-size: 11pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000; }li.tocSubEntry {font-size: 11pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}p {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}h2.h2tight { margin-top: 0px; padding-top: 0px; }h1 { margin-top: 13px; padding-top: 0px; }h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}h5 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10.1pt; font-weight: bold;}pre {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666; font-size: 10pt;}pre a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}pre a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}code a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}code a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}tt a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}tt a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}body  {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt; padding-left: 0px; padding-top: 0px; margin-left: 0px; margin-top: 0px; border: none; }#hd_outermost_table { margin-left: 0px; border-spacing: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; }#hd_outermost_table > tbody > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tbody > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-top: 3px; }.afterName { display: none; }.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px; min-height: 12px; vertical-align: middle; }.declaration_indent pre { margin-top: 20px; padding-top: 0px; margin-bottom: 20px; padding-bottom: 0px; }.gapBeforeFooter { display: none; }hr { height: 0px; min-height: 0px; border-top: none; border-left: none; border-right: none; border-bottom: 1px solid #909090;}hr.afterHeader { display: none }.param_group_indent { margin-left: 25px; }.param_indent { margin-left: 40px; margin-top: 0px; padding-top: 0px; }.param_indent dl { margin-top: 4px; padding-top: 0px; }dl dd > p:first-child { margin-top: 2px; padding-top: 0px; }.param_indent dl dd > p:first-child { margin-top: 2px; padding-top: 0px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.note_indent { margin-left: 40px; }h3 {       color: #3C4C6C;}.tight {       margin-top: 2px; margin-bottom: 0px;       padding-top: 0px; padding-bottom: 0px;}h3 a {       color: #3C4C6C;	font-size: 16px;	font-style: normal;	font-variant: normal;	font-weight: bold;	height: 0px;	line-height: normal;}.hd_tocAccess { display: block; margin-left: 40px; font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }.tocSubheading { margin-bottom: 4px; }--></style>
+</head>
+<body bgcolor="#ffffff" onload="hidetoc();">
+<!-- headerDoc=Header;  uid=//apple_ref/doc/header/BSG_KSLogger.m;   name=BSG_KSLogger.m -->
+<a name="//apple_ref/doc/header/BSG_KSLogger.m"></a>
+<table id="hd_outermost_table" height="100%" width="100%"><tr>
+<td valign="top" id="tocMenu" src="toc.html"></td>
+<td id="bodyContents" valign="top">
+<a name="top"></a>
+<h1><a name="BSG_KSLogger.m">BSG_KSLogger.m</a></h1>
+<div class="spec_sheet_info_box"><table cellspacing="0" class="specbox">
+<tr>
+<td scope="row"><b>Includes:</b></td>
+<td><div style="margin-bottom:1px"><div class="content_text">
+<a machinegenerated="true" href="../BSG_KSLogger_h/index.html#//apple_ref/doc/header/BSG_KSLogger.h" logicalPath="//apple_ref/doc/header/BSG_KSLogger.h" target="_top">"BSG_KSLogger.h"</a></div></div></td>
+</tr>
+</table></div>
+<h2>Introduction</h2>
+<p><!-- headerDoc=abstract;uid=//apple_ref/doc/header/BSG_KSLogger.m;name=start --><!-- begin abstract -->Use the links in the table of contents to the left to access the documentation.<br>
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/doc/header/BSG_KSLogger.m;name=end --></p>
+<hr class="afterClassOrHeaderInfo">
+<br><a name="HeaderDoc_functions"></a>
+<h2 class="h2tight">Functions</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/c/func/BSG_KSLogger.m/flushLog" target="_top">flushLog</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/BSG_KSLogger.m/lastPathEntry" target="_top">lastPathEntry</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/BSG_KSLogger.m/writeFmtArgsToLog" target="_top">writeFmtArgsToLog</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/BSG_KSLogger.m/writeFmtToLog" target="_top">writeFmtToLog</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/BSG_KSLogger.m/writeToLog" target="_top">writeToLog</a></tt></dt>
+<dd></dd>
+</dl>
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/BSG_KSLogger.m/flushLog;   name=flushLog -->
+<a name="//apple_ref/c/func/BSG_KSLogger.m/flushLog"></a>
+<h3><a name="flushLog">flushLog</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/BSG_KSLogger.m/flushLog;name=start --><span class="keyword">static</span> <!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/struct/void //apple_ref/occ/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a --> <!-- a logicalPath="//apple_ref/occ/instm/flushLog //apple_ref/occ/clm/flushLog //apple_ref/occ/intfcm/flushLog //apple_ref/occ/intfm/flushLog //apple_ref/occ/func/flushLog //apple_ref/occ/ftmplt/flushLog //apple_ref/occ/defn/flushLog //apple_ref/occ/macro/flushLog //apple_ref/doc/anysymbol/flushLog" machineGenerated="true" --><span class="function">flushLog</span><!-- /a -->(
+    <span class="param">void</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/BSG_KSLogger.m/flushLog;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/BSG_KSLogger.m/flushLog;name=start --><p>Flush the log stream.
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/BSG_KSLogger.m/flushLog;name=end --><!-- end discussion -->
+</p>
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/BSG_KSLogger.m/lastPathEntry;   name=lastPathEntry -->
+<a name="//apple_ref/c/func/BSG_KSLogger.m/lastPathEntry"></a>
+<h3><a name="lastPathEntry">lastPathEntry</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/BSG_KSLogger.m/lastPathEntry;name=start --><span class="keyword">static</span> <span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/cl/char //apple_ref/occ/tdef/char //apple_ref/occ/tag/char //apple_ref/occ/struct/char //apple_ref/occ/intf/char //apple_ref/doc/anysymbol/char" machineGenerated="true" --><span class="type">char</span><!-- /a --> <span class="type">*</span><!-- a logicalPath="//apple_ref/occ/instm/lastPathEntry //apple_ref/occ/clm/lastPathEntry //apple_ref/occ/intfcm/lastPathEntry //apple_ref/occ/intfm/lastPathEntry //apple_ref/occ/func/lastPathEntry //apple_ref/occ/ftmplt/lastPathEntry //apple_ref/occ/defn/lastPathEntry //apple_ref/occ/macro/lastPathEntry //apple_ref/doc/anysymbol/lastPathEntry" machineGenerated="true" --><span class="function">lastPathEntry</span><!-- /a -->(
+    <span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/cl/char //apple_ref/occ/tdef/char //apple_ref/occ/tag/char //apple_ref/occ/struct/char //apple_ref/occ/intf/char //apple_ref/doc/anysymbol/char" machineGenerated="true" --><span class="type">char</span><!-- /a --> <span class="type">*</span><span class="keyword">const</span> <span class="param">path</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/BSG_KSLogger.m/lastPathEntry;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/lastPathEntry/path;   name=lastPathEntry::path -->
+<a name="//apple_ref/doc/functionparam/lastPathEntry/path"></a>
+<code>path</code>
+</dt>
+<dd><p>The path to interpret.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Return Value</font></h5>
+<p><!-- begin return value --></p>
+<p>The last path entry.
+
+<!-- end return value --></p>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/BSG_KSLogger.m/lastPathEntry;name=start --><p>Interpret the path as a unix file path and return the last path entry.
+e.g. "/some/path/to/a/file.txt" will result in "file.txt"
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/BSG_KSLogger.m/lastPathEntry;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/BSG_KSLogger.m/writeFmtArgsToLog;   name=writeFmtArgsToLog -->
+<a name="//apple_ref/c/func/BSG_KSLogger.m/writeFmtArgsToLog"></a>
+<h3><a name="writeFmtArgsToLog">writeFmtArgsToLog</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/BSG_KSLogger.m/writeFmtArgsToLog;name=start --><span class="keyword">static</span> <!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/struct/void //apple_ref/occ/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a --> <!-- a logicalPath="//apple_ref/occ/instm/writeFmtArgsToLog //apple_ref/occ/clm/writeFmtArgsToLog //apple_ref/occ/intfcm/writeFmtArgsToLog //apple_ref/occ/intfm/writeFmtArgsToLog //apple_ref/occ/func/writeFmtArgsToLog //apple_ref/occ/ftmplt/writeFmtArgsToLog //apple_ref/occ/defn/writeFmtArgsToLog //apple_ref/occ/macro/writeFmtArgsToLog //apple_ref/doc/anysymbol/writeFmtArgsToLog" machineGenerated="true" --><span class="function">writeFmtArgsToLog</span><!-- /a -->(
+    <span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/cl/char //apple_ref/occ/tdef/char //apple_ref/occ/tag/char //apple_ref/occ/struct/char //apple_ref/occ/intf/char //apple_ref/doc/anysymbol/char" machineGenerated="true" --><span class="type">char</span><!-- /a --> <span class="type">*</span><span class="param">fmt</span>,
+    <!-- a logicalPath="//apple_ref/occ/cl/va_list //apple_ref/occ/tdef/va_list //apple_ref/occ/tag/va_list //apple_ref/occ/struct/va_list //apple_ref/occ/intf/va_list //apple_ref/doc/anysymbol/va_list" machineGenerated="true" --><span class="type">va_list</span><!-- /a --> <span class="param">args</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/BSG_KSLogger.m/writeFmtArgsToLog;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/writeFmtArgsToLog/fmt;   name=writeFmtArgsToLog::fmt -->
+<a name="//apple_ref/doc/functionparam/writeFmtArgsToLog/fmt"></a>
+<code>fmt</code>
+</dt>
+<dd><p>The format string.</p></dd>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/writeFmtArgsToLog/args;   name=writeFmtArgsToLog::args -->
+<a name="//apple_ref/doc/functionparam/writeFmtArgsToLog/args"></a>
+<code>args</code>
+</dt>
+<dd><p>The variable arguments.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/BSG_KSLogger.m/writeFmtArgsToLog;name=start --><p>Write a formatted string to the log using a vararg list.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/BSG_KSLogger.m/writeFmtArgsToLog;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/BSG_KSLogger.m/writeFmtToLog;   name=writeFmtToLog -->
+<a name="//apple_ref/c/func/BSG_KSLogger.m/writeFmtToLog"></a>
+<h3><a name="writeFmtToLog">writeFmtToLog</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/BSG_KSLogger.m/writeFmtToLog;name=start --><span class="keyword">static</span> <!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/struct/void //apple_ref/occ/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a --> <!-- a logicalPath="//apple_ref/occ/instm/writeFmtToLog //apple_ref/occ/clm/writeFmtToLog //apple_ref/occ/intfcm/writeFmtToLog //apple_ref/occ/intfm/writeFmtToLog //apple_ref/occ/func/writeFmtToLog //apple_ref/occ/ftmplt/writeFmtToLog //apple_ref/occ/defn/writeFmtToLog //apple_ref/occ/macro/writeFmtToLog //apple_ref/doc/anysymbol/writeFmtToLog" machineGenerated="true" --><span class="function">writeFmtToLog</span><!-- /a -->(
+    <span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/cl/char //apple_ref/occ/tdef/char //apple_ref/occ/tag/char //apple_ref/occ/struct/char //apple_ref/occ/intf/char //apple_ref/doc/anysymbol/char" machineGenerated="true" --><span class="type">char</span><!-- /a --> <span class="type">*</span><span class="param">fmt</span>,
+    ...);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/BSG_KSLogger.m/writeFmtToLog;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/writeFmtToLog/fmt;   name=writeFmtToLog::fmt -->
+<a name="//apple_ref/doc/functionparam/writeFmtToLog/fmt"></a>
+<code>fmt</code>
+</dt>
+<dd><p>The format string, followed by its arguments.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/BSG_KSLogger.m/writeFmtToLog;name=start --><p>Write a formatted string to the log.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/BSG_KSLogger.m/writeFmtToLog;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/BSG_KSLogger.m/writeToLog;   name=writeToLog -->
+<a name="//apple_ref/c/func/BSG_KSLogger.m/writeToLog"></a>
+<h3><a name="writeToLog">writeToLog</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/BSG_KSLogger.m/writeToLog;name=start --><span class="keyword">static</span> <!-- a logicalPath="//apple_ref/occ/cl/void //apple_ref/occ/tdef/void //apple_ref/occ/tag/void //apple_ref/occ/struct/void //apple_ref/occ/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a --> <!-- a logicalPath="//apple_ref/occ/instm/writeToLog //apple_ref/occ/clm/writeToLog //apple_ref/occ/intfcm/writeToLog //apple_ref/occ/intfm/writeToLog //apple_ref/occ/func/writeToLog //apple_ref/occ/ftmplt/writeToLog //apple_ref/occ/defn/writeToLog //apple_ref/occ/macro/writeToLog //apple_ref/doc/anysymbol/writeToLog" machineGenerated="true" --><span class="function">writeToLog</span><!-- /a -->(
+    <span class="keyword">const</span> <!-- a logicalPath="//apple_ref/occ/cl/char //apple_ref/occ/tdef/char //apple_ref/occ/tag/char //apple_ref/occ/struct/char //apple_ref/occ/intf/char //apple_ref/doc/anysymbol/char" machineGenerated="true" --><span class="type">char</span><!-- /a --> <span class="type">*</span><span class="keyword">const</span> <span class="param">str</span>);  <!-- headerDoc=declaration;uid=//apple_ref/c/func/BSG_KSLogger.m/writeToLog;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/writeToLog/str;   name=writeToLog::str -->
+<a name="//apple_ref/doc/functionparam/writeToLog/str"></a>
+<code>str</code>
+</dt>
+<dd><p>The string to write.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/BSG_KSLogger.m/writeToLog;name=start --><p>Write a string to the log.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/BSG_KSLogger.m/writeToLog;name=end --><!-- end discussion -->
+<hr class="betweenSections">
+<a name="HeaderDoc_vars"></a>
+<h2 class="h2tight">Globals</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/c/data/BSG_KSLogger.m/bsg_g_fd" target="_top">bsg_g_fd</a></tt></dt>
+<dd></dd>
+</dl>
+<hr class="betweenAPIEntries">
+<!-- headerDoc=data;  uid=//apple_ref/c/data/BSG_KSLogger.m/bsg_g_fd;   name=bsg_g_fd -->
+<a name="//apple_ref/c/data/BSG_KSLogger.m/bsg_g_fd"></a>
+<h3><a name="bsg_g_fd">bsg_g_fd</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/data/BSG_KSLogger.m/bsg_g_fd;name=start --><span class="keyword">static</span> <!-- a logicalPath="//apple_ref/occ/cl/int //apple_ref/occ/tdef/int //apple_ref/occ/tag/int //apple_ref/occ/struct/int //apple_ref/occ/intf/int //apple_ref/doc/anysymbol/int" machineGenerated="true" --><span class="type">int</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/data/BSG_KSLogger.m/bsg_g_fd" logicalPath="//apple_ref/occ/cl/bsg_g_fd //apple_ref/occ/tdef/bsg_g_fd //apple_ref/occ/tag/bsg_g_fd //apple_ref/occ/struct/bsg_g_fd //apple_ref/occ/intf/bsg_g_fd //apple_ref/doc/anysymbol/bsg_g_fd" target="_top"><span class="type">bsg_g_fd</span></a> = <!-- a logicalPath="//apple_ref/occ/econst/STDOUT_FILENO //apple_ref/occ/data/STDOUT_FILENO //apple_ref/occ/clconst/STDOUT_FILENO " machineGenerated="true" --><span class="var">STDOUT_FILENO</span><!-- /a -->;  <!-- headerDoc=declaration;uid=//apple_ref/c/data/BSG_KSLogger.m/bsg_g_fd;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/data/BSG_KSLogger.m/bsg_g_fd;name=start --><p>The file descriptor where log entries get written. <!-- headerDoc=discussion;uid=//apple_ref/c/data/BSG_KSLogger.m/bsg_g_fd;name=end --><!-- end discussion -->
+</p>
+<hr class="betweenSections">
+<a name="HeaderDoc_pdefines"></a>
+<h2 class="h2tight">Macro Definitions</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/c/macro/BSG_KSLOGGER_CBufferSize" target="_top">BSG_KSLOGGER_CBufferSize</a></tt></dt>
+<dd></dd>
+</dl>
+<hr class="betweenAPIEntries">
+<!-- headerDoc=macro;  uid=//apple_ref/c/macro/BSG_KSLOGGER_CBufferSize;   name=BSG_KSLOGGER_CBufferSize -->
+<a name="//apple_ref/c/macro/BSG_KSLOGGER_CBufferSize"></a>
+<h3><a name="BSG_KSLOGGER_CBufferSize">BSG_KSLOGGER_CBufferSize</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/macro/BSG_KSLOGGER_CBufferSize;name=start --><span class="preprocessor">#ifndef</span> <a machinegenerated="true" href="index.html#//apple_ref/c/macro/BSG_KSLOGGER_CBufferSize" logicalPath="//apple_ref/occ/cl/BSG_KSLOGGER_CBufferSize //apple_ref/occ/tdef/BSG_KSLOGGER_CBufferSize //apple_ref/occ/tag/BSG_KSLOGGER_CBufferSize //apple_ref/occ/struct/BSG_KSLOGGER_CBufferSize //apple_ref/occ/intf/BSG_KSLOGGER_CBufferSize //apple_ref/occ/econst/BSG_KSLOGGER_CBufferSize //apple_ref/occ/data/BSG_KSLOGGER_CBufferSize //apple_ref/occ/clconst/BSG_KSLOGGER_CBufferSize //apple_ref/occ/instm/BSG_KSLOGGER_CBufferSize //apple_ref/occ/clm/BSG_KSLOGGER_CBufferSize //apple_ref/occ/intfcm/BSG_KSLOGGER_CBufferSize //apple_ref/occ/intfm/BSG_KSLOGGER_CBufferSize //apple_ref/occ/func/BSG_KSLOGGER_CBufferSize //apple_ref/occ/ftmplt/BSG_KSLOGGER_CBufferSize //apple_ref/occ/defn/BSG_KSLOGGER_CBufferSize //apple_ref/occ/macro/BSG_KSLOGGER_CBufferSize" target="_top"><span class="preprocessor">BSG_KSLOGGER_CBufferSize</span></a> 
+<span class="preprocessor">#define</span> <a machinegenerated="true" href="index.html#//apple_ref/c/macro/BSG_KSLOGGER_CBufferSize" logicalPath="//apple_ref/occ/cl/BSG_KSLOGGER_CBufferSize //apple_ref/occ/tdef/BSG_KSLOGGER_CBufferSize //apple_ref/occ/tag/BSG_KSLOGGER_CBufferSize //apple_ref/occ/struct/BSG_KSLOGGER_CBufferSize //apple_ref/occ/intf/BSG_KSLOGGER_CBufferSize //apple_ref/occ/econst/BSG_KSLOGGER_CBufferSize //apple_ref/occ/data/BSG_KSLOGGER_CBufferSize //apple_ref/occ/clconst/BSG_KSLOGGER_CBufferSize //apple_ref/occ/instm/BSG_KSLOGGER_CBufferSize //apple_ref/occ/clm/BSG_KSLOGGER_CBufferSize //apple_ref/occ/intfcm/BSG_KSLOGGER_CBufferSize //apple_ref/occ/intfm/BSG_KSLOGGER_CBufferSize //apple_ref/occ/func/BSG_KSLOGGER_CBufferSize //apple_ref/occ/ftmplt/BSG_KSLOGGER_CBufferSize //apple_ref/occ/defn/BSG_KSLOGGER_CBufferSize //apple_ref/occ/macro/BSG_KSLOGGER_CBufferSize" target="_top"><span class="preprocessor">BSG_KSLOGGER_CBufferSize</span></a> <span class="preprocessor">1024</span> 
+<span class="preprocessor">#endif</span>  
+<!-- headerDoc=declaration;uid=//apple_ref/c/macro/BSG_KSLOGGER_CBufferSize;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/macro/BSG_KSLOGGER_CBufferSize;name=start --><p>The buffer size to use when writing log entries.
+</p>
+<p>If this value is &gt; 0, any log entries that expand beyond this length will
+be truncated.
+If this value = 0, the logging system will dynamically allocate memory
+and never truncate. However, the log functions won't be async-safe.
+</p>
+<p>Unless you're logging from within signal handlers, it's safe to set it to 0.
+<!-- headerDoc=discussion;uid=//apple_ref/c/macro/BSG_KSLOGGER_CBufferSize;name=end --><!-- end discussion -->
+</p>
+<p class="gapBeforeFooter">&nbsp;</p>
+<hr class="afterFooter">
+<div class="hd_copyright_and_timestamp">
+<p class="hd_timestamp">Last Updated: Thursday, February 28, 2019
+</p>
+</div>
+</td>
+</tr></table>
+</body>
+</html>

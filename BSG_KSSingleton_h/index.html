@@ -1,0 +1,359 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head>
+    <title>BSG_KSSingleton.h</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta name="generator" content="HeaderDoc">
+<meta name="xcode-display" content="render">
+<style type="text/css"><!--.char {background: #ffffff; color:#0000ff;}.comment {background:#ffffff; color:#236e25}.function {background:#ffffff; color:#000000;}.keyword {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.param {background:#ffffff; color:#000000;}.preprocessor {background:#ffffff; color:#236e25}.string {background: #ffffff; color:#891315;}.template {background:#ffffff; color:#761550;}.type {background:#ffffff; color:#761550;}.var {background:#ffffff; color:#000000;}body {border: 0px; margin: 0px;}div {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}td {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}span.hd_tocAccessSpace { display: block; font-size: 1px; height: 3px; min-height: 3px; }span.hd_tocGroupSpace { display: block; font-size: 1px; height: 3px; min-height: 3px; }span.hd_tocGroup { display: block; font-weight: bold; font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000; margin-left: 0px; padding-left: 40px; }span.hd_tocGroup + span.hd_tocAccess { padding-top: 5px; }td.toc_contents_text {font-size: 11pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000; }li.tocSubEntry {font-size: 11pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}p {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}h2.h2tight { margin-top: 0px; padding-top: 0px; }h1 { margin-top: 13px; padding-top: 0px; }h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}h5 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10.1pt; font-weight: bold;}pre {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666; font-size: 10pt;}pre a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}pre a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}code a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}code a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}tt a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}tt a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}body  {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt; padding-left: 0px; padding-top: 0px; margin-left: 0px; margin-top: 0px; border: none; }#hd_outermost_table { margin-left: 0px; border-spacing: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; }#hd_outermost_table > tbody > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tbody > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-top: 3px; }.afterName { display: none; }.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px; min-height: 12px; vertical-align: middle; }.declaration_indent pre { margin-top: 20px; padding-top: 0px; margin-bottom: 20px; padding-bottom: 0px; }.gapBeforeFooter { display: none; }hr { height: 0px; min-height: 0px; border-top: none; border-left: none; border-right: none; border-bottom: 1px solid #909090;}hr.afterHeader { display: none }.param_group_indent { margin-left: 25px; }.param_indent { margin-left: 40px; margin-top: 0px; padding-top: 0px; }.param_indent dl { margin-top: 4px; padding-top: 0px; }dl dd > p:first-child { margin-top: 2px; padding-top: 0px; }.param_indent dl dd > p:first-child { margin-top: 2px; padding-top: 0px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.note_indent { margin-left: 40px; }h3 {       color: #3C4C6C;}.tight {       margin-top: 2px; margin-bottom: 0px;       padding-top: 0px; padding-bottom: 0px;}h3 a {       color: #3C4C6C;	font-size: 16px;	font-style: normal;	font-variant: normal;	font-weight: bold;	height: 0px;	line-height: normal;}.hd_tocAccess { display: block; margin-left: 40px; font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }.tocSubheading { margin-bottom: 4px; }--></style>
+<style><!--
+body {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+.toc_contents_text {
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+ul.tocSubEntryList li.tocSubEntry {
+    list-style: none;
+}
+
+#colorbox {
+		display: none;
+}
+.spec_sheet_line {
+		margin-bottom: 1px;
+}
+.collapsible {
+		display: none;
+}
+.toc_leadspace {
+		width: 10; min-width: 10;
+}
+.disclosure_triangle_td {
+		width: 14; min-width: 14;
+		font-size: 10px;
+		vertical-align: middle;
+}
+.specbox td {
+		font-size: 13px;
+}
+.specbox td a {
+		font-size: 13px;
+}
+.specbox td code {
+		font-size: 13px;
+}
+.specbox td tt {
+		font-size: 13px;
+}
+.specbox td pre {
+		font-size: 13px;
+}
+.specbox a {
+		font-size: 12px;
+}
+.disclosure_triangle_td a {
+		text-decoration: none;
+}
+.disclosure_triangle_td a:link {
+		text-decoration: none;
+}
+.disclosure_triangle_td a:active {
+		text-decoration: none;
+}
+.disclosure_triangle_td a:visited:hover {
+		text-decoration: none;
+}
+.disclosure_triangle_td a:hover {
+		text-decoration: none;
+}
+.hd_toc_box {
+		padding-top: 10px;
+		padding-right: 15px;
+}.tocSeparator {
+		margin-top: 15px;
+		padding-bottom: 0px;
+		margin-bottom: 0px;
+}
+.tocSubEntryList {
+		margin-left: 0px;
+		padding-left: 40px;
+		padding-top: 0px;
+		margin-top: 2px;
+		padding-bottom: 0px;
+		margin-bottom: 8px;
+}
+.hd_toc_heading_table {
+		margin-top: 2px;
+		margin-bottom: 2px;
+}
+.hd_toc_entry_table {
+		margin-top: 2px;
+		margin-bottom: 2px;
+}
+.tocSubEntry {
+		margin-left: 0px;
+		padding-left: 0px;
+		margin-top: 0px;
+		margin-bottom: 1px;
+}
+.tocSubEntry a {
+		font-size: 10pt;
+}
+.tocSubheading {
+		padding-left: 14px;
+		margin-left: 0px;
+		margin-top: 5px;
+		padding-top: 0px;
+		font-size: 16px;
+		color: #808080;
+}
+
+#hd_outermost_table { margin-left: 0px; border-spacing: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }
+#hd_outermost_table > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }
+#hd_outermost_table > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; }
+#hd_outermost_table > tbody > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }
+#hd_outermost_table > tbody > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-top: 3px; }
+
+#tocMenu {
+		border-right: 1px solid #c0c0c0;
+		background-color: #f4f4ff;
+		top:0px;
+		left:0px;
+		width:230px;
+		height:100%;
+}
+#bodyContents {
+		width: auto;
+		padding-left: 15px;
+}
+--></style>
+<style id="disable_before_iOS_5"><!--
+#tocMenu {
+		position: fixed;
+		height: 100%;
+		overflow: auto;
+}
+#bodyContents {
+		width: auto;
+		left: 235px;
+		right: 0;
+		padding-left: 15px;
+		position: fixed;
+		height: 100%;
+		overflow-y: scroll;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+    if (navigator.platform && (navigator.platform.match(/iPad/) || navigator.platform.match(/iPhone/) || navigator.platform.match(/iPod/))) {
+        if (navigator.userAgent.match(/OS 1(_\d)+/) ||
+            navigator.userAgent.match(/OS 2(_\d)+/) ||
+            navigator.userAgent.match(/OS 3(_\d)+/) ||
+            navigator.userAgent.match(/OS 4(_\d)+/)) {
+                /* Earlier iOS versions require different scrolling gestures with position: fixed. */
+                var del_style_elt = document.getElementById("disable_before_iOS_5");
+                if (del_style_elt) del_style_elt.parentNode.removeChild(del_style_elt);
+        }
+    }
+// --></script>
+<script language="JavaScript" type="text/javascript"><!--
+function getNewHTTPObject()
+{
+        var xmlhttp;
+
+        /** Special IE only code ... */
+        /*@cc_on
+          @if (@_jscript_version >= 5)
+              try
+              {
+                  xmlhttp = new ActiveXObject('Msxml2.XMLHTTP');
+              }
+              catch (e)
+              {
+                  try
+                  {
+                      xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+                  }
+                  catch (E)
+                  {
+                      xmlhttp = false;
+                  }
+             }
+          @else
+             xmlhttp = false;
+        @end @*/
+
+        /** Every other browser on the planet */
+        if (!xmlhttp && typeof XMLHttpRequest != 'undefined')
+        {
+            try
+            {
+                xmlhttp = new XMLHttpRequest();
+            }
+            catch (e)
+            {
+                xmlhttp = false;
+            }
+        }
+
+        return xmlhttp;
+}
+
+function hidetoc() {
+	var toc = document.getElementById('tocMenu');
+	var src = toc.getAttribute('src');
+	var xhr = getNewHTTPObject();
+	xhr.open('GET', src, true);
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState == 4) {
+			var toc = document.getElementById('tocMenu');
+			toc.innerHTML = xhr.responseText;
+		}
+	}
+	xhr.send(null);
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var body = document.getElementById('bodyContents');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+
+function disclosure_triangle(elt) {
+   var linkelt = elt;
+   while (elt && elt.tagName != 'TABLE') { elt = elt.parentNode;}
+   if (!elt) { return; }
+   while (elt && elt.tagName != 'DIV') { elt = elt.nextSibling;}
+   if (!elt) { return; }
+   if (parseInt(linkelt.getAttribute('state'))) {
+      // It's open.  Close it
+      linkelt.innerHTML = '&#x25B7;';
+      linkelt.setAttribute('state', 0);
+      linkelt.setAttribute('class', 'closed_disclosure_triangle');
+      elt.style.display = 'none';
+   } else {
+      // It's closed.  Open it
+      linkelt.innerHTML = '&#x25BC;';
+      linkelt.setAttribute('state', 1);
+      linkelt.setAttribute('class', 'open_disclosure_triangle');
+      elt.style.display = 'block';
+   }
+}
+--></script>
+<style type="text/css"><!--.char {background: #ffffff; color:#0000ff;}.comment {background:#ffffff; color:#236e25}.function {background:#ffffff; color:#000000;}.keyword {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.param {background:#ffffff; color:#000000;}.preprocessor {background:#ffffff; color:#236e25}.string {background: #ffffff; color:#891315;}.template {background:#ffffff; color:#761550;}.type {background:#ffffff; color:#761550;}.var {background:#ffffff; color:#000000;}body {border: 0px; margin: 0px;}div {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}td {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}span.hd_tocAccessSpace { display: block; font-size: 1px; height: 3px; min-height: 3px; }span.hd_tocGroupSpace { display: block; font-size: 1px; height: 3px; min-height: 3px; }span.hd_tocGroup { display: block; font-weight: bold; font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000; margin-left: 0px; padding-left: 40px; }span.hd_tocGroup + span.hd_tocAccess { padding-top: 5px; }td.toc_contents_text {font-size: 11pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000; }li.tocSubEntry {font-size: 11pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}p {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}h2.h2tight { margin-top: 0px; padding-top: 0px; }h1 { margin-top: 13px; padding-top: 0px; }h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}h5 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10.1pt; font-weight: bold;}pre {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666; font-size: 10pt;}pre a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}pre a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}code a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}code a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}tt a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}tt a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}body  {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt; padding-left: 0px; padding-top: 0px; margin-left: 0px; margin-top: 0px; border: none; }#hd_outermost_table { margin-left: 0px; border-spacing: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; }#hd_outermost_table > tbody > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tbody > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-top: 3px; }.afterName { display: none; }.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px; min-height: 12px; vertical-align: middle; }.declaration_indent pre { margin-top: 20px; padding-top: 0px; margin-bottom: 20px; padding-bottom: 0px; }.gapBeforeFooter { display: none; }hr { height: 0px; min-height: 0px; border-top: none; border-left: none; border-right: none; border-bottom: 1px solid #909090;}hr.afterHeader { display: none }.param_group_indent { margin-left: 25px; }.param_indent { margin-left: 40px; margin-top: 0px; padding-top: 0px; }.param_indent dl { margin-top: 4px; padding-top: 0px; }dl dd > p:first-child { margin-top: 2px; padding-top: 0px; }.param_indent dl dd > p:first-child { margin-top: 2px; padding-top: 0px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.note_indent { margin-left: 40px; }h3 {       color: #3C4C6C;}.tight {       margin-top: 2px; margin-bottom: 0px;       padding-top: 0px; padding-bottom: 0px;}h3 a {       color: #3C4C6C;	font-size: 16px;	font-style: normal;	font-variant: normal;	font-weight: bold;	height: 0px;	line-height: normal;}.hd_tocAccess { display: block; margin-left: 40px; font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }.tocSubheading { margin-bottom: 4px; }--></style>
+</head>
+<body bgcolor="#ffffff" onload="hidetoc();">
+<!-- headerDoc=Header;  uid=//apple_ref/doc/header/BSG_KSSingleton.h;   name=BSG_KSSingleton.h -->
+<a name="//apple_ref/doc/header/BSG_KSSingleton.h"></a>
+<table id="hd_outermost_table" height="100%" width="100%"><tr>
+<td valign="top" id="tocMenu" src="toc.html"></td>
+<td id="bodyContents" valign="top">
+<a name="top"></a>
+<h1><a name="BSG_KSSingleton.h">BSG_KSSingleton.h</a></h1>
+<h2>Introduction</h2>
+<p><!-- headerDoc=abstract;uid=//apple_ref/doc/header/BSG_KSSingleton.h;name=start --><!-- begin abstract -->Use the links in the table of contents to the left to access the documentation.<br>
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/doc/header/BSG_KSSingleton.h;name=end --></p>
+<hr class="afterClassOrHeaderInfo">
+<br><a name="HeaderDoc_pdefines"></a>
+<h2 class="h2tight">Macro Definitions</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/c/macro/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE" target="_top">IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/macro/IMPLEMENT_SHARED_INSTANCE" target="_top">IMPLEMENT_SHARED_INSTANCE</a></tt></dt>
+<dd></dd>
+</dl>
+<hr class="betweenAPIEntries">
+<!-- headerDoc=macro;  uid=//apple_ref/c/macro/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE;   name=IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE -->
+<a name="//apple_ref/c/macro/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE"></a>
+<h3><a name="IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE">IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/macro/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE;name=start --><span class="preprocessor">#define</span> <a machinegenerated="true" href="index.html#//apple_ref/c/macro/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE" logicalPath="//apple_ref/c/cl/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE //apple_ref/c/tdef/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE //apple_ref/c/tag/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE //apple_ref/c/struct/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE //apple_ref/c/intf/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE //apple_ref/c/econst/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE //apple_ref/c/data/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE //apple_ref/c/clconst/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE //apple_ref/c/instm/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE //apple_ref/c/clm/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE //apple_ref/c/intfcm/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE //apple_ref/c/intfm/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE //apple_ref/c/func/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE //apple_ref/c/ftmplt/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE //apple_ref/c/defn/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE //apple_ref/c/macro/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE" target="_top"><span class="preprocessor">IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE</span></a><span class="preprocessor">(</span><a machinegenerated="true" href="index.html#//apple_ref/doc/defineparam/IMPLEMENT_SHARED_INSTANCE/TYPE" logicalPath="//apple_ref/c/cl/TYPE //apple_ref/c/tdef/TYPE //apple_ref/c/tag/TYPE //apple_ref/c/struct/TYPE //apple_ref/c/intf/TYPE //apple_ref/c/econst/TYPE //apple_ref/c/data/TYPE //apple_ref/c/clconst/TYPE //apple_ref/c/instm/TYPE //apple_ref/c/clm/TYPE //apple_ref/c/intfcm/TYPE //apple_ref/c/intfm/TYPE //apple_ref/c/func/TYPE //apple_ref/c/ftmplt/TYPE //apple_ref/c/defn/TYPE //apple_ref/c/macro/TYPE //apple_ref/doc/com/intfm/TYPE //apple_ref/doc/anysymbol/TYPE" target="_top"><span class="preprocessor">TYPE</span></a><span class="preprocessor">)</span> <span class="preprocessor">\</span> 
+    <a machinegenerated="true" href="index.html#//apple_ref/c/macro/IMPLEMENT_SHARED_INSTANCE" logicalPath="//apple_ref/c/cl/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/tdef/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/tag/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/struct/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/intf/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/econst/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/data/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/clconst/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/instm/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/clm/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/intfcm/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/intfm/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/func/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/ftmplt/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/defn/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/macro/IMPLEMENT_SHARED_INSTANCE" target="_top"><span class="preprocessor">IMPLEMENT_SHARED_INSTANCE</span></a><span class="preprocessor">(</span><a machinegenerated="true" href="index.html#//apple_ref/doc/defineparam/IMPLEMENT_SHARED_INSTANCE/TYPE" logicalPath="//apple_ref/c/cl/TYPE //apple_ref/c/tdef/TYPE //apple_ref/c/tag/TYPE //apple_ref/c/struct/TYPE //apple_ref/c/intf/TYPE //apple_ref/c/econst/TYPE //apple_ref/c/data/TYPE //apple_ref/c/clconst/TYPE //apple_ref/c/instm/TYPE //apple_ref/c/clm/TYPE //apple_ref/c/intfcm/TYPE //apple_ref/c/intfm/TYPE //apple_ref/c/func/TYPE //apple_ref/c/ftmplt/TYPE //apple_ref/c/defn/TYPE //apple_ref/c/macro/TYPE //apple_ref/doc/com/intfm/TYPE //apple_ref/doc/anysymbol/TYPE" target="_top"><span class="preprocessor">TYPE</span></a><span class="preprocessor">)</span> <span class="preprocessor">\</span> 
+    <span class="preprocessor">\</span> 
+    <span class="preprocessor">+</span><span class="preprocessor">(</span><!-- a logicalPath="//apple_ref/c/cl/id //apple_ref/c/tdef/id //apple_ref/c/tag/id //apple_ref/c/struct/id //apple_ref/c/intf/id //apple_ref/c/econst/id //apple_ref/c/data/id //apple_ref/c/clconst/id //apple_ref/c/instm/id //apple_ref/c/clm/id //apple_ref/c/intfcm/id //apple_ref/c/intfm/id //apple_ref/c/func/id //apple_ref/c/ftmplt/id //apple_ref/c/defn/id //apple_ref/c/macro/id //apple_ref/doc/com/intfm/id //apple_ref/doc/anysymbol/id" machineGenerated="true" --><span class="preprocessor">id</span><!-- /a --><span class="preprocessor">)</span><!-- a logicalPath="//apple_ref/c/cl/allocWithZone //apple_ref/c/tdef/allocWithZone //apple_ref/c/tag/allocWithZone //apple_ref/c/struct/allocWithZone //apple_ref/c/intf/allocWithZone //apple_ref/c/econst/allocWithZone //apple_ref/c/data/allocWithZone //apple_ref/c/clconst/allocWithZone //apple_ref/c/instm/allocWithZone //apple_ref/c/clm/allocWithZone //apple_ref/c/intfcm/allocWithZone //apple_ref/c/intfm/allocWithZone //apple_ref/c/func/allocWithZone //apple_ref/c/ftmplt/allocWithZone //apple_ref/c/defn/allocWithZone //apple_ref/c/macro/allocWithZone //apple_ref/doc/com/intfm/allocWithZone //apple_ref/doc/anysymbol/allocWithZone" machineGenerated="true" --><span class="preprocessor">allocWithZone</span><!-- /a --> <span class="preprocessor">:</span> <span class="preprocessor">(</span><!-- a logicalPath="//apple_ref/c/cl/NSZone //apple_ref/c/tdef/NSZone //apple_ref/c/tag/NSZone //apple_ref/c/struct/NSZone //apple_ref/c/intf/NSZone //apple_ref/c/econst/NSZone //apple_ref/c/data/NSZone //apple_ref/c/clconst/NSZone //apple_ref/c/instm/NSZone //apple_ref/c/clm/NSZone //apple_ref/c/intfcm/NSZone //apple_ref/c/intfm/NSZone //apple_ref/c/func/NSZone //apple_ref/c/ftmplt/NSZone //apple_ref/c/defn/NSZone //apple_ref/c/macro/NSZone //apple_ref/doc/com/intfm/NSZone //apple_ref/doc/anysymbol/NSZone" machineGenerated="true" --><span class="preprocessor">NSZone</span><!-- /a --> <span class="preprocessor">*</span><span class="preprocessor">)</span><!-- a logicalPath="//apple_ref/c/cl/zone //apple_ref/c/tdef/zone //apple_ref/c/tag/zone //apple_ref/c/struct/zone //apple_ref/c/intf/zone //apple_ref/c/econst/zone //apple_ref/c/data/zone //apple_ref/c/clconst/zone //apple_ref/c/instm/zone //apple_ref/c/clm/zone //apple_ref/c/intfcm/zone //apple_ref/c/intfm/zone //apple_ref/c/func/zone //apple_ref/c/ftmplt/zone //apple_ref/c/defn/zone //apple_ref/c/macro/zone //apple_ref/doc/com/intfm/zone //apple_ref/doc/anysymbol/zone" machineGenerated="true" --><span class="preprocessor">zone</span><!-- /a --> <span class="preprocessor">{</span> <span class="preprocessor">\</span> 
+    <span class="preprocessor">@</span><!-- a logicalPath="//apple_ref/c/cl/synchronized //apple_ref/c/tdef/synchronized //apple_ref/c/tag/synchronized //apple_ref/c/struct/synchronized //apple_ref/c/intf/synchronized //apple_ref/c/econst/synchronized //apple_ref/c/data/synchronized //apple_ref/c/clconst/synchronized //apple_ref/c/instm/synchronized //apple_ref/c/clm/synchronized //apple_ref/c/intfcm/synchronized //apple_ref/c/intfm/synchronized //apple_ref/c/func/synchronized //apple_ref/c/ftmplt/synchronized //apple_ref/c/defn/synchronized //apple_ref/c/macro/synchronized //apple_ref/doc/com/intfm/synchronized //apple_ref/doc/anysymbol/synchronized" machineGenerated="true" --><span class="preprocessor">synchronized</span><!-- /a --><span class="preprocessor">(</span><!-- a logicalPath="//apple_ref/c/cl/self //apple_ref/c/tdef/self //apple_ref/c/tag/self //apple_ref/c/struct/self //apple_ref/c/intf/self //apple_ref/c/econst/self //apple_ref/c/data/self //apple_ref/c/clconst/self //apple_ref/c/instm/self //apple_ref/c/clm/self //apple_ref/c/intfcm/self //apple_ref/c/intfm/self //apple_ref/c/func/self //apple_ref/c/ftmplt/self //apple_ref/c/defn/self //apple_ref/c/macro/self //apple_ref/doc/com/intfm/self //apple_ref/doc/anysymbol/self" machineGenerated="true" --><span class="preprocessor">self</span><!-- /a --><span class="preprocessor">)</span> <span class="preprocessor">{</span> <span class="preprocessor">\</span> 
+    <!-- a logicalPath="//apple_ref/c/cl/static //apple_ref/c/tdef/static //apple_ref/c/tag/static //apple_ref/c/struct/static //apple_ref/c/intf/static //apple_ref/c/econst/static //apple_ref/c/data/static //apple_ref/c/clconst/static //apple_ref/c/instm/static //apple_ref/c/clm/static //apple_ref/c/intfcm/static //apple_ref/c/intfm/static //apple_ref/c/func/static //apple_ref/c/ftmplt/static //apple_ref/c/defn/static //apple_ref/c/macro/static //apple_ref/doc/com/intfm/static //apple_ref/doc/anysymbol/static" machineGenerated="true" --><span class="preprocessor">static</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/cl/id //apple_ref/c/tdef/id //apple_ref/c/tag/id //apple_ref/c/struct/id //apple_ref/c/intf/id //apple_ref/c/econst/id //apple_ref/c/data/id //apple_ref/c/clconst/id //apple_ref/c/instm/id //apple_ref/c/clm/id //apple_ref/c/intfcm/id //apple_ref/c/intfm/id //apple_ref/c/func/id //apple_ref/c/ftmplt/id //apple_ref/c/defn/id //apple_ref/c/macro/id //apple_ref/doc/com/intfm/id //apple_ref/doc/anysymbol/id" machineGenerated="true" --><span class="preprocessor">id</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/cl/singleInstance //apple_ref/c/tdef/singleInstance //apple_ref/c/tag/singleInstance //apple_ref/c/struct/singleInstance //apple_ref/c/intf/singleInstance //apple_ref/c/econst/singleInstance //apple_ref/c/data/singleInstance //apple_ref/c/clconst/singleInstance //apple_ref/c/instm/singleInstance //apple_ref/c/clm/singleInstance //apple_ref/c/intfcm/singleInstance //apple_ref/c/intfm/singleInstance //apple_ref/c/func/singleInstance //apple_ref/c/ftmplt/singleInstance //apple_ref/c/defn/singleInstance //apple_ref/c/macro/singleInstance //apple_ref/doc/com/intfm/singleInstance //apple_ref/doc/anysymbol/singleInstance" machineGenerated="true" --><span class="preprocessor">singleInstance</span><!-- /a --> <span class="preprocessor">=</span> <!-- a logicalPath="//apple_ref/c/cl/nil //apple_ref/c/tdef/nil //apple_ref/c/tag/nil //apple_ref/c/struct/nil //apple_ref/c/intf/nil //apple_ref/c/econst/nil //apple_ref/c/data/nil //apple_ref/c/clconst/nil //apple_ref/c/instm/nil //apple_ref/c/clm/nil //apple_ref/c/intfcm/nil //apple_ref/c/intfm/nil //apple_ref/c/func/nil //apple_ref/c/ftmplt/nil //apple_ref/c/defn/nil //apple_ref/c/macro/nil //apple_ref/doc/com/intfm/nil //apple_ref/doc/anysymbol/nil" machineGenerated="true" --><span class="preprocessor">nil</span><!-- /a --><span class="preprocessor">;</span> <span class="preprocessor">\</span> 
+    <!-- a logicalPath="//apple_ref/c/cl/if //apple_ref/c/tdef/if //apple_ref/c/tag/if //apple_ref/c/struct/if //apple_ref/c/intf/if //apple_ref/c/econst/if //apple_ref/c/data/if //apple_ref/c/clconst/if //apple_ref/c/instm/if //apple_ref/c/clm/if //apple_ref/c/intfcm/if //apple_ref/c/intfm/if //apple_ref/c/func/if //apple_ref/c/ftmplt/if //apple_ref/c/defn/if //apple_ref/c/macro/if //apple_ref/doc/com/intfm/if //apple_ref/doc/anysymbol/if" machineGenerated="true" --><span class="preprocessor">if</span><!-- /a --> <span class="preprocessor">(</span><!-- a logicalPath="//apple_ref/c/cl/singleInstance //apple_ref/c/tdef/singleInstance //apple_ref/c/tag/singleInstance //apple_ref/c/struct/singleInstance //apple_ref/c/intf/singleInstance //apple_ref/c/econst/singleInstance //apple_ref/c/data/singleInstance //apple_ref/c/clconst/singleInstance //apple_ref/c/instm/singleInstance //apple_ref/c/clm/singleInstance //apple_ref/c/intfcm/singleInstance //apple_ref/c/intfm/singleInstance //apple_ref/c/func/singleInstance //apple_ref/c/ftmplt/singleInstance //apple_ref/c/defn/singleInstance //apple_ref/c/macro/singleInstance //apple_ref/doc/com/intfm/singleInstance //apple_ref/doc/anysymbol/singleInstance" machineGenerated="true" --><span class="preprocessor">singleInstance</span><!-- /a --> <span class="preprocessor">!=</span> <!-- a logicalPath="//apple_ref/c/cl/nil //apple_ref/c/tdef/nil //apple_ref/c/tag/nil //apple_ref/c/struct/nil //apple_ref/c/intf/nil //apple_ref/c/econst/nil //apple_ref/c/data/nil //apple_ref/c/clconst/nil //apple_ref/c/instm/nil //apple_ref/c/clm/nil //apple_ref/c/intfcm/nil //apple_ref/c/intfm/nil //apple_ref/c/func/nil //apple_ref/c/ftmplt/nil //apple_ref/c/defn/nil //apple_ref/c/macro/nil //apple_ref/doc/com/intfm/nil //apple_ref/doc/anysymbol/nil" machineGenerated="true" --><span class="preprocessor">nil</span><!-- /a --><span class="preprocessor">)</span> <span class="preprocessor">{</span> <span class="preprocessor">\</span> 
+    <!-- a logicalPath="//apple_ref/c/cl/NSLog //apple_ref/c/tdef/NSLog //apple_ref/c/tag/NSLog //apple_ref/c/struct/NSLog //apple_ref/c/intf/NSLog //apple_ref/c/econst/NSLog //apple_ref/c/data/NSLog //apple_ref/c/clconst/NSLog //apple_ref/c/instm/NSLog //apple_ref/c/clm/NSLog //apple_ref/c/intfcm/NSLog //apple_ref/c/intfm/NSLog //apple_ref/c/func/NSLog //apple_ref/c/ftmplt/NSLog //apple_ref/c/defn/NSLog //apple_ref/c/macro/NSLog //apple_ref/doc/com/intfm/NSLog //apple_ref/doc/anysymbol/NSLog" machineGenerated="true" --><span class="preprocessor">NSLog</span><!-- /a --><span class="preprocessor">(</span><span class="preprocessor">@</span><span class="preprocessor">"</span><!-- a logicalPath="//apple_ref/c/cl/Error //apple_ref/c/tdef/Error //apple_ref/c/tag/Error //apple_ref/c/struct/Error //apple_ref/c/intf/Error //apple_ref/c/econst/Error //apple_ref/c/data/Error //apple_ref/c/clconst/Error //apple_ref/c/instm/Error //apple_ref/c/clm/Error //apple_ref/c/intfcm/Error //apple_ref/c/intfm/Error //apple_ref/c/func/Error //apple_ref/c/ftmplt/Error //apple_ref/c/defn/Error //apple_ref/c/macro/Error //apple_ref/doc/com/intfm/Error //apple_ref/doc/anysymbol/Error" machineGenerated="true" --><span class="preprocessor">Error</span><!-- /a --><span class="preprocessor">:</span> <!-- a logicalPath="//apple_ref/c/cl/Only //apple_ref/c/tdef/Only //apple_ref/c/tag/Only //apple_ref/c/struct/Only //apple_ref/c/intf/Only //apple_ref/c/econst/Only //apple_ref/c/data/Only //apple_ref/c/clconst/Only //apple_ref/c/instm/Only //apple_ref/c/clm/Only //apple_ref/c/intfcm/Only //apple_ref/c/intfm/Only //apple_ref/c/func/Only //apple_ref/c/ftmplt/Only //apple_ref/c/defn/Only //apple_ref/c/macro/Only //apple_ref/doc/com/intfm/Only //apple_ref/doc/anysymbol/Only" machineGenerated="true" --><span class="preprocessor">Only</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/cl/one //apple_ref/c/tdef/one //apple_ref/c/tag/one //apple_ref/c/struct/one //apple_ref/c/intf/one //apple_ref/c/econst/one //apple_ref/c/data/one //apple_ref/c/clconst/one //apple_ref/c/instm/one //apple_ref/c/clm/one //apple_ref/c/intfcm/one //apple_ref/c/intfm/one //apple_ref/c/func/one //apple_ref/c/ftmplt/one //apple_ref/c/defn/one //apple_ref/c/macro/one //apple_ref/doc/com/intfm/one //apple_ref/doc/anysymbol/one" machineGenerated="true" --><span class="preprocessor">one</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/cl/instance //apple_ref/c/tdef/instance //apple_ref/c/tag/instance //apple_ref/c/struct/instance //apple_ref/c/intf/instance //apple_ref/c/econst/instance //apple_ref/c/data/instance //apple_ref/c/clconst/instance //apple_ref/c/instm/instance //apple_ref/c/clm/instance //apple_ref/c/intfcm/instance //apple_ref/c/intfm/instance //apple_ref/c/func/instance //apple_ref/c/ftmplt/instance //apple_ref/c/defn/instance //apple_ref/c/macro/instance //apple_ref/doc/com/intfm/instance //apple_ref/doc/anysymbol/instance" machineGenerated="true" --><span class="preprocessor">instance</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/cl/allowed //apple_ref/c/tdef/allowed //apple_ref/c/tag/allowed //apple_ref/c/struct/allowed //apple_ref/c/intf/allowed //apple_ref/c/econst/allowed //apple_ref/c/data/allowed //apple_ref/c/clconst/allowed //apple_ref/c/instm/allowed //apple_ref/c/clm/allowed //apple_ref/c/intfcm/allowed //apple_ref/c/intfm/allowed //apple_ref/c/func/allowed //apple_ref/c/ftmplt/allowed //apple_ref/c/defn/allowed //apple_ref/c/macro/allowed //apple_ref/doc/com/intfm/allowed //apple_ref/doc/anysymbol/allowed" machineGenerated="true" --><span class="preprocessor">allowed</span><!-- /a --><span class="preprocessor">.</span> <!-- a logicalPath="//apple_ref/c/cl/Use //apple_ref/c/tdef/Use //apple_ref/c/tag/Use //apple_ref/c/struct/Use //apple_ref/c/intf/Use //apple_ref/c/econst/Use //apple_ref/c/data/Use //apple_ref/c/clconst/Use //apple_ref/c/instm/Use //apple_ref/c/clm/Use //apple_ref/c/intfcm/Use //apple_ref/c/intfm/Use //apple_ref/c/func/Use //apple_ref/c/ftmplt/Use //apple_ref/c/defn/Use //apple_ref/c/macro/Use //apple_ref/doc/com/intfm/Use //apple_ref/doc/anysymbol/Use" machineGenerated="true" --><span class="preprocessor">Use</span><!-- /a --> <span class="preprocessor">[</span><span class="preprocessor">%</span><span class="preprocessor">@</span> <span class="preprocessor">"</span> <span class="preprocessor">\</span> 
+    <span class="preprocessor">@</span><span class="preprocessor">"</span><a machinegenerated="true" href="../BSG_KSCrash_h/Classes/BSG_KSCrash/index.html#//apple_ref/occ/clm/BSG_KSCrash/sharedInstance" logicalPath="//apple_ref/c/cl/sharedInstance //apple_ref/c/tdef/sharedInstance //apple_ref/c/tag/sharedInstance //apple_ref/c/struct/sharedInstance //apple_ref/c/intf/sharedInstance //apple_ref/c/econst/sharedInstance //apple_ref/c/data/sharedInstance //apple_ref/c/clconst/sharedInstance //apple_ref/c/instm/sharedInstance //apple_ref/c/clm/sharedInstance //apple_ref/c/intfcm/sharedInstance //apple_ref/c/intfm/sharedInstance //apple_ref/c/func/sharedInstance //apple_ref/c/ftmplt/sharedInstance //apple_ref/c/defn/sharedInstance //apple_ref/c/macro/sharedInstance //apple_ref/doc/com/intfm/sharedInstance //apple_ref/doc/anysymbol/sharedInstance" target="_top"><span class="preprocessor">sharedInstance</span></a><span class="preprocessor">]</span> <!-- a logicalPath="//apple_ref/c/cl/to //apple_ref/c/tdef/to //apple_ref/c/tag/to //apple_ref/c/struct/to //apple_ref/c/intf/to //apple_ref/c/econst/to //apple_ref/c/data/to //apple_ref/c/clconst/to //apple_ref/c/instm/to //apple_ref/c/clm/to //apple_ref/c/intfcm/to //apple_ref/c/intfm/to //apple_ref/c/func/to //apple_ref/c/ftmplt/to //apple_ref/c/defn/to //apple_ref/c/macro/to //apple_ref/doc/com/intfm/to //apple_ref/doc/anysymbol/to" machineGenerated="true" --><span class="preprocessor">to</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/cl/access //apple_ref/c/tdef/access //apple_ref/c/tag/access //apple_ref/c/struct/access //apple_ref/c/intf/access //apple_ref/c/econst/access //apple_ref/c/data/access //apple_ref/c/clconst/access //apple_ref/c/instm/access //apple_ref/c/clm/access //apple_ref/c/intfcm/access //apple_ref/c/intfm/access //apple_ref/c/func/access //apple_ref/c/ftmplt/access //apple_ref/c/defn/access //apple_ref/c/macro/access //apple_ref/doc/com/intfm/access //apple_ref/doc/anysymbol/access" machineGenerated="true" --><span class="preprocessor">access</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/cl/it //apple_ref/c/tdef/it //apple_ref/c/tag/it //apple_ref/c/struct/it //apple_ref/c/intf/it //apple_ref/c/econst/it //apple_ref/c/data/it //apple_ref/c/clconst/it //apple_ref/c/instm/it //apple_ref/c/clm/it //apple_ref/c/intfcm/it //apple_ref/c/intfm/it //apple_ref/c/func/it //apple_ref/c/ftmplt/it //apple_ref/c/defn/it //apple_ref/c/macro/it //apple_ref/doc/com/intfm/it //apple_ref/doc/anysymbol/it" machineGenerated="true" --><span class="preprocessor">it</span><!-- /a --><span class="preprocessor">"</span><span class="preprocessor">,</span> <span class="preprocessor">\</span> 
+    <!-- a logicalPath="//apple_ref/c/cl/self //apple_ref/c/tdef/self //apple_ref/c/tag/self //apple_ref/c/struct/self //apple_ref/c/intf/self //apple_ref/c/econst/self //apple_ref/c/data/self //apple_ref/c/clconst/self //apple_ref/c/instm/self //apple_ref/c/clm/self //apple_ref/c/intfcm/self //apple_ref/c/intfm/self //apple_ref/c/func/self //apple_ref/c/ftmplt/self //apple_ref/c/defn/self //apple_ref/c/macro/self //apple_ref/doc/com/intfm/self //apple_ref/doc/anysymbol/self" machineGenerated="true" --><span class="preprocessor">self</span><!-- /a --><span class="preprocessor">)</span><span class="preprocessor">;</span> <span class="preprocessor">\</span> 
+    <!-- a logicalPath="//apple_ref/c/cl/return //apple_ref/c/tdef/return //apple_ref/c/tag/return //apple_ref/c/struct/return //apple_ref/c/intf/return //apple_ref/c/econst/return //apple_ref/c/data/return //apple_ref/c/clconst/return //apple_ref/c/instm/return //apple_ref/c/clm/return //apple_ref/c/intfcm/return //apple_ref/c/intfm/return //apple_ref/c/func/return //apple_ref/c/ftmplt/return //apple_ref/c/defn/return //apple_ref/c/macro/return //apple_ref/doc/com/intfm/return //apple_ref/doc/anysymbol/return" machineGenerated="true" --><span class="preprocessor">return</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/cl/nil //apple_ref/c/tdef/nil //apple_ref/c/tag/nil //apple_ref/c/struct/nil //apple_ref/c/intf/nil //apple_ref/c/econst/nil //apple_ref/c/data/nil //apple_ref/c/clconst/nil //apple_ref/c/instm/nil //apple_ref/c/clm/nil //apple_ref/c/intfcm/nil //apple_ref/c/intfm/nil //apple_ref/c/func/nil //apple_ref/c/ftmplt/nil //apple_ref/c/defn/nil //apple_ref/c/macro/nil //apple_ref/doc/com/intfm/nil //apple_ref/doc/anysymbol/nil" machineGenerated="true" --><span class="preprocessor">nil</span><!-- /a --><span class="preprocessor">;</span> <span class="preprocessor">\</span> 
+    <span class="preprocessor">}</span> <span class="preprocessor">\</span> 
+    <!-- a logicalPath="//apple_ref/c/cl/singleInstance //apple_ref/c/tdef/singleInstance //apple_ref/c/tag/singleInstance //apple_ref/c/struct/singleInstance //apple_ref/c/intf/singleInstance //apple_ref/c/econst/singleInstance //apple_ref/c/data/singleInstance //apple_ref/c/clconst/singleInstance //apple_ref/c/instm/singleInstance //apple_ref/c/clm/singleInstance //apple_ref/c/intfcm/singleInstance //apple_ref/c/intfm/singleInstance //apple_ref/c/func/singleInstance //apple_ref/c/ftmplt/singleInstance //apple_ref/c/defn/singleInstance //apple_ref/c/macro/singleInstance //apple_ref/doc/com/intfm/singleInstance //apple_ref/doc/anysymbol/singleInstance" machineGenerated="true" --><span class="preprocessor">singleInstance</span><!-- /a --> <span class="preprocessor">=</span> <span class="preprocessor">[</span><!-- a logicalPath="//apple_ref/c/cl/super //apple_ref/c/tdef/super //apple_ref/c/tag/super //apple_ref/c/struct/super //apple_ref/c/intf/super //apple_ref/c/econst/super //apple_ref/c/data/super //apple_ref/c/clconst/super //apple_ref/c/instm/super //apple_ref/c/clm/super //apple_ref/c/intfcm/super //apple_ref/c/intfm/super //apple_ref/c/func/super //apple_ref/c/ftmplt/super //apple_ref/c/defn/super //apple_ref/c/macro/super //apple_ref/doc/com/intfm/super //apple_ref/doc/anysymbol/super" machineGenerated="true" --><span class="preprocessor">super</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/cl/allocWithZone //apple_ref/c/tdef/allocWithZone //apple_ref/c/tag/allocWithZone //apple_ref/c/struct/allocWithZone //apple_ref/c/intf/allocWithZone //apple_ref/c/econst/allocWithZone //apple_ref/c/data/allocWithZone //apple_ref/c/clconst/allocWithZone //apple_ref/c/instm/allocWithZone //apple_ref/c/clm/allocWithZone //apple_ref/c/intfcm/allocWithZone //apple_ref/c/intfm/allocWithZone //apple_ref/c/func/allocWithZone //apple_ref/c/ftmplt/allocWithZone //apple_ref/c/defn/allocWithZone //apple_ref/c/macro/allocWithZone //apple_ref/doc/com/intfm/allocWithZone //apple_ref/doc/anysymbol/allocWithZone" machineGenerated="true" --><span class="preprocessor">allocWithZone</span><!-- /a --><span class="preprocessor">:</span><!-- a logicalPath="//apple_ref/c/cl/zone //apple_ref/c/tdef/zone //apple_ref/c/tag/zone //apple_ref/c/struct/zone //apple_ref/c/intf/zone //apple_ref/c/econst/zone //apple_ref/c/data/zone //apple_ref/c/clconst/zone //apple_ref/c/instm/zone //apple_ref/c/clm/zone //apple_ref/c/intfcm/zone //apple_ref/c/intfm/zone //apple_ref/c/func/zone //apple_ref/c/ftmplt/zone //apple_ref/c/defn/zone //apple_ref/c/macro/zone //apple_ref/doc/com/intfm/zone //apple_ref/doc/anysymbol/zone" machineGenerated="true" --><span class="preprocessor">zone</span><!-- /a --><span class="preprocessor">]</span><span class="preprocessor">;</span> <span class="preprocessor">\</span> 
+    <!-- a logicalPath="//apple_ref/c/cl/return //apple_ref/c/tdef/return //apple_ref/c/tag/return //apple_ref/c/struct/return //apple_ref/c/intf/return //apple_ref/c/econst/return //apple_ref/c/data/return //apple_ref/c/clconst/return //apple_ref/c/instm/return //apple_ref/c/clm/return //apple_ref/c/intfcm/return //apple_ref/c/intfm/return //apple_ref/c/func/return //apple_ref/c/ftmplt/return //apple_ref/c/defn/return //apple_ref/c/macro/return //apple_ref/doc/com/intfm/return //apple_ref/doc/anysymbol/return" machineGenerated="true" --><span class="preprocessor">return</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/cl/singleInstance //apple_ref/c/tdef/singleInstance //apple_ref/c/tag/singleInstance //apple_ref/c/struct/singleInstance //apple_ref/c/intf/singleInstance //apple_ref/c/econst/singleInstance //apple_ref/c/data/singleInstance //apple_ref/c/clconst/singleInstance //apple_ref/c/instm/singleInstance //apple_ref/c/clm/singleInstance //apple_ref/c/intfcm/singleInstance //apple_ref/c/intfm/singleInstance //apple_ref/c/func/singleInstance //apple_ref/c/ftmplt/singleInstance //apple_ref/c/defn/singleInstance //apple_ref/c/macro/singleInstance //apple_ref/doc/com/intfm/singleInstance //apple_ref/doc/anysymbol/singleInstance" machineGenerated="true" --><span class="preprocessor">singleInstance</span><!-- /a --><span class="preprocessor">;</span> <span class="preprocessor">\</span> 
+    <span class="preprocessor">}</span> <span class="preprocessor">\</span> 
+    <span class="preprocessor">}</span> <!-- headerDoc=declaration;uid=//apple_ref/c/macro/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=defineparam;  uid=//apple_ref/doc/defineparam/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE/TYPE;   name=TYPE -->
+<a name="//apple_ref/doc/defineparam/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE/TYPE"></a>
+<code>TYPE</code>
+</dt>
+<dd><p>The type to return from "sharedInstance".</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/macro/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE;name=start --><p>Create an exclusive "sharedInstance" method with the specified type.
+This will also implement "allocWithZone:" and actively prohibit multiple
+instances from existing.
+</p>
+<p>Note: This won't stop someone from manually creating an instance BEFORE
+sharedInstance is called, but if that does happen, you'll still see a failed
+alloc.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/macro/IMPLEMENT_EXCLUSIVE_SHARED_INSTANCE;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=macro;  uid=//apple_ref/c/macro/IMPLEMENT_SHARED_INSTANCE;   name=IMPLEMENT_SHARED_INSTANCE -->
+<a name="//apple_ref/c/macro/IMPLEMENT_SHARED_INSTANCE"></a>
+<h3><a name="IMPLEMENT_SHARED_INSTANCE">IMPLEMENT_SHARED_INSTANCE</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/macro/IMPLEMENT_SHARED_INSTANCE;name=start --><span class="preprocessor">#define</span> <a machinegenerated="true" href="index.html#//apple_ref/c/macro/IMPLEMENT_SHARED_INSTANCE" logicalPath="//apple_ref/c/cl/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/tdef/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/tag/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/struct/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/intf/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/econst/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/data/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/clconst/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/instm/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/clm/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/intfcm/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/intfm/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/func/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/ftmplt/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/defn/IMPLEMENT_SHARED_INSTANCE //apple_ref/c/macro/IMPLEMENT_SHARED_INSTANCE" target="_top"><span class="preprocessor">IMPLEMENT_SHARED_INSTANCE</span></a><span class="preprocessor">(</span><a machinegenerated="true" href="index.html#//apple_ref/doc/defineparam/IMPLEMENT_SHARED_INSTANCE/TYPE" logicalPath="//apple_ref/c/cl/TYPE //apple_ref/c/tdef/TYPE //apple_ref/c/tag/TYPE //apple_ref/c/struct/TYPE //apple_ref/c/intf/TYPE //apple_ref/c/econst/TYPE //apple_ref/c/data/TYPE //apple_ref/c/clconst/TYPE //apple_ref/c/instm/TYPE //apple_ref/c/clm/TYPE //apple_ref/c/intfcm/TYPE //apple_ref/c/intfm/TYPE //apple_ref/c/func/TYPE //apple_ref/c/ftmplt/TYPE //apple_ref/c/defn/TYPE //apple_ref/c/macro/TYPE //apple_ref/doc/com/intfm/TYPE //apple_ref/doc/anysymbol/TYPE" target="_top"><span class="preprocessor">TYPE</span></a><span class="preprocessor">)</span> <span class="preprocessor">\</span> 
+    <span class="preprocessor">+</span><span class="preprocessor">(</span><a machinegenerated="true" href="index.html#//apple_ref/doc/defineparam/IMPLEMENT_SHARED_INSTANCE/TYPE" logicalPath="//apple_ref/c/cl/TYPE //apple_ref/c/tdef/TYPE //apple_ref/c/tag/TYPE //apple_ref/c/struct/TYPE //apple_ref/c/intf/TYPE //apple_ref/c/econst/TYPE //apple_ref/c/data/TYPE //apple_ref/c/clconst/TYPE //apple_ref/c/instm/TYPE //apple_ref/c/clm/TYPE //apple_ref/c/intfcm/TYPE //apple_ref/c/intfm/TYPE //apple_ref/c/func/TYPE //apple_ref/c/ftmplt/TYPE //apple_ref/c/defn/TYPE //apple_ref/c/macro/TYPE //apple_ref/doc/com/intfm/TYPE //apple_ref/doc/anysymbol/TYPE" target="_top"><span class="preprocessor">TYPE</span></a> <span class="preprocessor">*</span><span class="preprocessor">)</span><a machinegenerated="true" href="../BSG_KSCrash_h/Classes/BSG_KSCrash/index.html#//apple_ref/occ/clm/BSG_KSCrash/sharedInstance" logicalPath="//apple_ref/c/cl/sharedInstance //apple_ref/c/tdef/sharedInstance //apple_ref/c/tag/sharedInstance //apple_ref/c/struct/sharedInstance //apple_ref/c/intf/sharedInstance //apple_ref/c/econst/sharedInstance //apple_ref/c/data/sharedInstance //apple_ref/c/clconst/sharedInstance //apple_ref/c/instm/sharedInstance //apple_ref/c/clm/sharedInstance //apple_ref/c/intfcm/sharedInstance //apple_ref/c/intfm/sharedInstance //apple_ref/c/func/sharedInstance //apple_ref/c/ftmplt/sharedInstance //apple_ref/c/defn/sharedInstance //apple_ref/c/macro/sharedInstance //apple_ref/doc/com/intfm/sharedInstance //apple_ref/doc/anysymbol/sharedInstance" target="_top"><span class="preprocessor">sharedInstance</span></a> <span class="preprocessor">{</span> <span class="preprocessor">\</span> 
+    <!-- a logicalPath="//apple_ref/c/cl/static //apple_ref/c/tdef/static //apple_ref/c/tag/static //apple_ref/c/struct/static //apple_ref/c/intf/static //apple_ref/c/econst/static //apple_ref/c/data/static //apple_ref/c/clconst/static //apple_ref/c/instm/static //apple_ref/c/clm/static //apple_ref/c/intfcm/static //apple_ref/c/intfm/static //apple_ref/c/func/static //apple_ref/c/ftmplt/static //apple_ref/c/defn/static //apple_ref/c/macro/static //apple_ref/doc/com/intfm/static //apple_ref/doc/anysymbol/static" machineGenerated="true" --><span class="preprocessor">static</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/cl/id //apple_ref/c/tdef/id //apple_ref/c/tag/id //apple_ref/c/struct/id //apple_ref/c/intf/id //apple_ref/c/econst/id //apple_ref/c/data/id //apple_ref/c/clconst/id //apple_ref/c/instm/id //apple_ref/c/clm/id //apple_ref/c/intfcm/id //apple_ref/c/intfm/id //apple_ref/c/func/id //apple_ref/c/ftmplt/id //apple_ref/c/defn/id //apple_ref/c/macro/id //apple_ref/doc/com/intfm/id //apple_ref/doc/anysymbol/id" machineGenerated="true" --><span class="preprocessor">id</span><!-- /a --> <a machinegenerated="true" href="../BSG_KSCrash_h/Classes/BSG_KSCrash/index.html#//apple_ref/occ/clm/BSG_KSCrash/sharedInstance" logicalPath="//apple_ref/c/cl/sharedInstance //apple_ref/c/tdef/sharedInstance //apple_ref/c/tag/sharedInstance //apple_ref/c/struct/sharedInstance //apple_ref/c/intf/sharedInstance //apple_ref/c/econst/sharedInstance //apple_ref/c/data/sharedInstance //apple_ref/c/clconst/sharedInstance //apple_ref/c/instm/sharedInstance //apple_ref/c/clm/sharedInstance //apple_ref/c/intfcm/sharedInstance //apple_ref/c/intfm/sharedInstance //apple_ref/c/func/sharedInstance //apple_ref/c/ftmplt/sharedInstance //apple_ref/c/defn/sharedInstance //apple_ref/c/macro/sharedInstance //apple_ref/doc/com/intfm/sharedInstance //apple_ref/doc/anysymbol/sharedInstance" target="_top"><span class="preprocessor">sharedInstance</span></a> <span class="preprocessor">=</span> <!-- a logicalPath="//apple_ref/c/cl/nil //apple_ref/c/tdef/nil //apple_ref/c/tag/nil //apple_ref/c/struct/nil //apple_ref/c/intf/nil //apple_ref/c/econst/nil //apple_ref/c/data/nil //apple_ref/c/clconst/nil //apple_ref/c/instm/nil //apple_ref/c/clm/nil //apple_ref/c/intfcm/nil //apple_ref/c/intfm/nil //apple_ref/c/func/nil //apple_ref/c/ftmplt/nil //apple_ref/c/defn/nil //apple_ref/c/macro/nil //apple_ref/doc/com/intfm/nil //apple_ref/doc/anysymbol/nil" machineGenerated="true" --><span class="preprocessor">nil</span><!-- /a --><span class="preprocessor">;</span> <span class="preprocessor">\</span> 
+    <!-- a logicalPath="//apple_ref/c/cl/static //apple_ref/c/tdef/static //apple_ref/c/tag/static //apple_ref/c/struct/static //apple_ref/c/intf/static //apple_ref/c/econst/static //apple_ref/c/data/static //apple_ref/c/clconst/static //apple_ref/c/instm/static //apple_ref/c/clm/static //apple_ref/c/intfcm/static //apple_ref/c/intfm/static //apple_ref/c/func/static //apple_ref/c/ftmplt/static //apple_ref/c/defn/static //apple_ref/c/macro/static //apple_ref/doc/com/intfm/static //apple_ref/doc/anysymbol/static" machineGenerated="true" --><span class="preprocessor">static</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/cl/dispatch_once_t //apple_ref/c/tdef/dispatch_once_t //apple_ref/c/tag/dispatch_once_t //apple_ref/c/struct/dispatch_once_t //apple_ref/c/intf/dispatch_once_t //apple_ref/c/econst/dispatch_once_t //apple_ref/c/data/dispatch_once_t //apple_ref/c/clconst/dispatch_once_t //apple_ref/c/instm/dispatch_once_t //apple_ref/c/clm/dispatch_once_t //apple_ref/c/intfcm/dispatch_once_t //apple_ref/c/intfm/dispatch_once_t //apple_ref/c/func/dispatch_once_t //apple_ref/c/ftmplt/dispatch_once_t //apple_ref/c/defn/dispatch_once_t //apple_ref/c/macro/dispatch_once_t //apple_ref/doc/com/intfm/dispatch_once_t //apple_ref/doc/anysymbol/dispatch_once_t" machineGenerated="true" --><span class="preprocessor">dispatch_once_t</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/cl/onceToken //apple_ref/c/tdef/onceToken //apple_ref/c/tag/onceToken //apple_ref/c/struct/onceToken //apple_ref/c/intf/onceToken //apple_ref/c/econst/onceToken //apple_ref/c/data/onceToken //apple_ref/c/clconst/onceToken //apple_ref/c/instm/onceToken //apple_ref/c/clm/onceToken //apple_ref/c/intfcm/onceToken //apple_ref/c/intfm/onceToken //apple_ref/c/func/onceToken //apple_ref/c/ftmplt/onceToken //apple_ref/c/defn/onceToken //apple_ref/c/macro/onceToken //apple_ref/doc/com/intfm/onceToken //apple_ref/doc/anysymbol/onceToken" machineGenerated="true" --><span class="preprocessor">onceToken</span><!-- /a --><span class="preprocessor">;</span> <span class="preprocessor">\</span> 
+    <!-- a logicalPath="//apple_ref/c/cl/dispatch_once //apple_ref/c/tdef/dispatch_once //apple_ref/c/tag/dispatch_once //apple_ref/c/struct/dispatch_once //apple_ref/c/intf/dispatch_once //apple_ref/c/econst/dispatch_once //apple_ref/c/data/dispatch_once //apple_ref/c/clconst/dispatch_once //apple_ref/c/instm/dispatch_once //apple_ref/c/clm/dispatch_once //apple_ref/c/intfcm/dispatch_once //apple_ref/c/intfm/dispatch_once //apple_ref/c/func/dispatch_once //apple_ref/c/ftmplt/dispatch_once //apple_ref/c/defn/dispatch_once //apple_ref/c/macro/dispatch_once //apple_ref/doc/com/intfm/dispatch_once //apple_ref/doc/anysymbol/dispatch_once" machineGenerated="true" --><span class="preprocessor">dispatch_once</span><!-- /a --><span class="preprocessor">(</span><span class="preprocessor">&amp;</span><!-- a logicalPath="//apple_ref/c/cl/onceToken //apple_ref/c/tdef/onceToken //apple_ref/c/tag/onceToken //apple_ref/c/struct/onceToken //apple_ref/c/intf/onceToken //apple_ref/c/econst/onceToken //apple_ref/c/data/onceToken //apple_ref/c/clconst/onceToken //apple_ref/c/instm/onceToken //apple_ref/c/clm/onceToken //apple_ref/c/intfcm/onceToken //apple_ref/c/intfm/onceToken //apple_ref/c/func/onceToken //apple_ref/c/ftmplt/onceToken //apple_ref/c/defn/onceToken //apple_ref/c/macro/onceToken //apple_ref/doc/com/intfm/onceToken //apple_ref/doc/anysymbol/onceToken" machineGenerated="true" --><span class="preprocessor">onceToken</span><!-- /a --><span class="preprocessor">,</span> <span class="preprocessor">^</span><span class="preprocessor">{</span> <span class="preprocessor">\</span> 
+    <a machinegenerated="true" href="../BSG_KSCrash_h/Classes/BSG_KSCrash/index.html#//apple_ref/occ/clm/BSG_KSCrash/sharedInstance" logicalPath="//apple_ref/c/cl/sharedInstance //apple_ref/c/tdef/sharedInstance //apple_ref/c/tag/sharedInstance //apple_ref/c/struct/sharedInstance //apple_ref/c/intf/sharedInstance //apple_ref/c/econst/sharedInstance //apple_ref/c/data/sharedInstance //apple_ref/c/clconst/sharedInstance //apple_ref/c/instm/sharedInstance //apple_ref/c/clm/sharedInstance //apple_ref/c/intfcm/sharedInstance //apple_ref/c/intfm/sharedInstance //apple_ref/c/func/sharedInstance //apple_ref/c/ftmplt/sharedInstance //apple_ref/c/defn/sharedInstance //apple_ref/c/macro/sharedInstance //apple_ref/doc/com/intfm/sharedInstance //apple_ref/doc/anysymbol/sharedInstance" target="_top"><span class="preprocessor">sharedInstance</span></a> <span class="preprocessor">=</span> <span class="preprocessor">[</span><span class="preprocessor">[</span><!-- a logicalPath="//apple_ref/c/cl/self //apple_ref/c/tdef/self //apple_ref/c/tag/self //apple_ref/c/struct/self //apple_ref/c/intf/self //apple_ref/c/econst/self //apple_ref/c/data/self //apple_ref/c/clconst/self //apple_ref/c/instm/self //apple_ref/c/clm/self //apple_ref/c/intfcm/self //apple_ref/c/intfm/self //apple_ref/c/func/self //apple_ref/c/ftmplt/self //apple_ref/c/defn/self //apple_ref/c/macro/self //apple_ref/doc/com/intfm/self //apple_ref/doc/anysymbol/self" machineGenerated="true" --><span class="preprocessor">self</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/cl/alloc //apple_ref/c/tdef/alloc //apple_ref/c/tag/alloc //apple_ref/c/struct/alloc //apple_ref/c/intf/alloc //apple_ref/c/econst/alloc //apple_ref/c/data/alloc //apple_ref/c/clconst/alloc //apple_ref/c/instm/alloc //apple_ref/c/clm/alloc //apple_ref/c/intfcm/alloc //apple_ref/c/intfm/alloc //apple_ref/c/func/alloc //apple_ref/c/ftmplt/alloc //apple_ref/c/defn/alloc //apple_ref/c/macro/alloc //apple_ref/doc/com/intfm/alloc //apple_ref/doc/anysymbol/alloc" machineGenerated="true" --><span class="preprocessor">alloc</span><!-- /a --><span class="preprocessor">]</span> <!-- a logicalPath="//apple_ref/c/cl/init //apple_ref/c/tdef/init //apple_ref/c/tag/init //apple_ref/c/struct/init //apple_ref/c/intf/init //apple_ref/c/econst/init //apple_ref/c/data/init //apple_ref/c/clconst/init //apple_ref/c/instm/init //apple_ref/c/clm/init //apple_ref/c/intfcm/init //apple_ref/c/intfm/init //apple_ref/c/func/init //apple_ref/c/ftmplt/init //apple_ref/c/defn/init //apple_ref/c/macro/init //apple_ref/doc/com/intfm/init //apple_ref/doc/anysymbol/init" machineGenerated="true" --><span class="preprocessor">init</span><!-- /a --><span class="preprocessor">]</span><span class="preprocessor">;</span> <span class="preprocessor">\</span> 
+    <span class="preprocessor">}</span><span class="preprocessor">)</span><span class="preprocessor">;</span> <span class="preprocessor">\</span> 
+    <!-- a logicalPath="//apple_ref/c/cl/return //apple_ref/c/tdef/return //apple_ref/c/tag/return //apple_ref/c/struct/return //apple_ref/c/intf/return //apple_ref/c/econst/return //apple_ref/c/data/return //apple_ref/c/clconst/return //apple_ref/c/instm/return //apple_ref/c/clm/return //apple_ref/c/intfcm/return //apple_ref/c/intfm/return //apple_ref/c/func/return //apple_ref/c/ftmplt/return //apple_ref/c/defn/return //apple_ref/c/macro/return //apple_ref/doc/com/intfm/return //apple_ref/doc/anysymbol/return" machineGenerated="true" --><span class="preprocessor">return</span><!-- /a --> <a machinegenerated="true" href="../BSG_KSCrash_h/Classes/BSG_KSCrash/index.html#//apple_ref/occ/clm/BSG_KSCrash/sharedInstance" logicalPath="//apple_ref/c/cl/sharedInstance //apple_ref/c/tdef/sharedInstance //apple_ref/c/tag/sharedInstance //apple_ref/c/struct/sharedInstance //apple_ref/c/intf/sharedInstance //apple_ref/c/econst/sharedInstance //apple_ref/c/data/sharedInstance //apple_ref/c/clconst/sharedInstance //apple_ref/c/instm/sharedInstance //apple_ref/c/clm/sharedInstance //apple_ref/c/intfcm/sharedInstance //apple_ref/c/intfm/sharedInstance //apple_ref/c/func/sharedInstance //apple_ref/c/ftmplt/sharedInstance //apple_ref/c/defn/sharedInstance //apple_ref/c/macro/sharedInstance //apple_ref/doc/com/intfm/sharedInstance //apple_ref/doc/anysymbol/sharedInstance" target="_top"><span class="preprocessor">sharedInstance</span></a><span class="preprocessor">;</span> <span class="preprocessor">\</span> 
+    <span class="preprocessor">}</span> <!-- headerDoc=declaration;uid=//apple_ref/c/macro/IMPLEMENT_SHARED_INSTANCE;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=defineparam;  uid=//apple_ref/doc/defineparam/IMPLEMENT_SHARED_INSTANCE/TYPE;   name=TYPE -->
+<a name="//apple_ref/doc/defineparam/IMPLEMENT_SHARED_INSTANCE/TYPE"></a>
+<code>TYPE</code>
+</dt>
+<dd><p>The type to return from "sharedInstance".</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/macro/IMPLEMENT_SHARED_INSTANCE;name=start --><p>Create a "sharedInstance" method with the specified type.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/macro/IMPLEMENT_SHARED_INSTANCE;name=end --><!-- end discussion -->
+<p class="gapBeforeFooter">&nbsp;</p>
+<hr class="afterFooter">
+<div class="hd_copyright_and_timestamp">
+<p class="hd_timestamp">Last Updated: Thursday, February 28, 2019
+</p>
+</div>
+</td>
+</tr></table>
+</body>
+</html>

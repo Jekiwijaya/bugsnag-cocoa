@@ -1,0 +1,524 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html>
+<head>
+    <title>BSG_KSCrashSentry_MachException.c</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta name="generator" content="HeaderDoc">
+<meta name="xcode-display" content="render">
+<style type="text/css"><!--.char {background: #ffffff; color:#0000ff;}.comment {background:#ffffff; color:#236e25}.function {background:#ffffff; color:#000000;}.keyword {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.param {background:#ffffff; color:#000000;}.preprocessor {background:#ffffff; color:#236e25}.string {background: #ffffff; color:#891315;}.template {background:#ffffff; color:#761550;}.type {background:#ffffff; color:#761550;}.var {background:#ffffff; color:#000000;}body {border: 0px; margin: 0px;}div {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}td {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}span.hd_tocAccessSpace { display: block; font-size: 1px; height: 3px; min-height: 3px; }span.hd_tocGroupSpace { display: block; font-size: 1px; height: 3px; min-height: 3px; }span.hd_tocGroup { display: block; font-weight: bold; font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000; margin-left: 0px; padding-left: 40px; }span.hd_tocGroup + span.hd_tocAccess { padding-top: 5px; }td.toc_contents_text {font-size: 11pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000; }li.tocSubEntry {font-size: 11pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}p {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}h2.h2tight { margin-top: 0px; padding-top: 0px; }h1 { margin-top: 13px; padding-top: 0px; }h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}h5 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10.1pt; font-weight: bold;}pre {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666; font-size: 10pt;}pre a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}pre a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}code a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}code a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}tt a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}tt a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}body  {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt; padding-left: 0px; padding-top: 0px; margin-left: 0px; margin-top: 0px; border: none; }#hd_outermost_table { margin-left: 0px; border-spacing: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; }#hd_outermost_table > tbody > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tbody > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-top: 3px; }.afterName { display: none; }.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px; min-height: 12px; vertical-align: middle; }.declaration_indent pre { margin-top: 20px; padding-top: 0px; margin-bottom: 20px; padding-bottom: 0px; }.gapBeforeFooter { display: none; }hr { height: 0px; min-height: 0px; border-top: none; border-left: none; border-right: none; border-bottom: 1px solid #909090;}hr.afterHeader { display: none }.param_group_indent { margin-left: 25px; }.param_indent { margin-left: 40px; margin-top: 0px; padding-top: 0px; }.param_indent dl { margin-top: 4px; padding-top: 0px; }dl dd > p:first-child { margin-top: 2px; padding-top: 0px; }.param_indent dl dd > p:first-child { margin-top: 2px; padding-top: 0px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.note_indent { margin-left: 40px; }h3 {       color: #3C4C6C;}.tight {       margin-top: 2px; margin-bottom: 0px;       padding-top: 0px; padding-bottom: 0px;}h3 a {       color: #3C4C6C;	font-size: 16px;	font-style: normal;	font-variant: normal;	font-weight: bold;	height: 0px;	line-height: normal;}.hd_tocAccess { display: block; margin-left: 40px; font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }.tocSubheading { margin-bottom: 4px; }--></style>
+<style><!--
+body {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+.toc_contents_text {
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+ul.tocSubEntryList li.tocSubEntry {
+    list-style: none;
+}
+
+#colorbox {
+		display: none;
+}
+.spec_sheet_line {
+		margin-bottom: 1px;
+}
+.collapsible {
+		display: none;
+}
+.toc_leadspace {
+		width: 10; min-width: 10;
+}
+.disclosure_triangle_td {
+		width: 14; min-width: 14;
+		font-size: 10px;
+		vertical-align: middle;
+}
+.specbox td {
+		font-size: 13px;
+}
+.specbox td a {
+		font-size: 13px;
+}
+.specbox td code {
+		font-size: 13px;
+}
+.specbox td tt {
+		font-size: 13px;
+}
+.specbox td pre {
+		font-size: 13px;
+}
+.specbox a {
+		font-size: 12px;
+}
+.disclosure_triangle_td a {
+		text-decoration: none;
+}
+.disclosure_triangle_td a:link {
+		text-decoration: none;
+}
+.disclosure_triangle_td a:active {
+		text-decoration: none;
+}
+.disclosure_triangle_td a:visited:hover {
+		text-decoration: none;
+}
+.disclosure_triangle_td a:hover {
+		text-decoration: none;
+}
+.hd_toc_box {
+		padding-top: 10px;
+		padding-right: 15px;
+}.tocSeparator {
+		margin-top: 15px;
+		padding-bottom: 0px;
+		margin-bottom: 0px;
+}
+.tocSubEntryList {
+		margin-left: 0px;
+		padding-left: 40px;
+		padding-top: 0px;
+		margin-top: 2px;
+		padding-bottom: 0px;
+		margin-bottom: 8px;
+}
+.hd_toc_heading_table {
+		margin-top: 2px;
+		margin-bottom: 2px;
+}
+.hd_toc_entry_table {
+		margin-top: 2px;
+		margin-bottom: 2px;
+}
+.tocSubEntry {
+		margin-left: 0px;
+		padding-left: 0px;
+		margin-top: 0px;
+		margin-bottom: 1px;
+}
+.tocSubEntry a {
+		font-size: 10pt;
+}
+.tocSubheading {
+		padding-left: 14px;
+		margin-left: 0px;
+		margin-top: 5px;
+		padding-top: 0px;
+		font-size: 16px;
+		color: #808080;
+}
+
+#hd_outermost_table { margin-left: 0px; border-spacing: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }
+#hd_outermost_table > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }
+#hd_outermost_table > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; }
+#hd_outermost_table > tbody > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }
+#hd_outermost_table > tbody > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-top: 3px; }
+
+#tocMenu {
+		border-right: 1px solid #c0c0c0;
+		background-color: #f4f4ff;
+		top:0px;
+		left:0px;
+		width:230px;
+		height:100%;
+}
+#bodyContents {
+		width: auto;
+		padding-left: 15px;
+}
+--></style>
+<style id="disable_before_iOS_5"><!--
+#tocMenu {
+		position: fixed;
+		height: 100%;
+		overflow: auto;
+}
+#bodyContents {
+		width: auto;
+		left: 235px;
+		right: 0;
+		padding-left: 15px;
+		position: fixed;
+		height: 100%;
+		overflow-y: scroll;
+}
+--></style>
+<script language="JavaScript" type="text/javascript"><!--
+    if (navigator.platform && (navigator.platform.match(/iPad/) || navigator.platform.match(/iPhone/) || navigator.platform.match(/iPod/))) {
+        if (navigator.userAgent.match(/OS 1(_\d)+/) ||
+            navigator.userAgent.match(/OS 2(_\d)+/) ||
+            navigator.userAgent.match(/OS 3(_\d)+/) ||
+            navigator.userAgent.match(/OS 4(_\d)+/)) {
+                /* Earlier iOS versions require different scrolling gestures with position: fixed. */
+                var del_style_elt = document.getElementById("disable_before_iOS_5");
+                if (del_style_elt) del_style_elt.parentNode.removeChild(del_style_elt);
+        }
+    }
+// --></script>
+<script language="JavaScript" type="text/javascript"><!--
+function getNewHTTPObject()
+{
+        var xmlhttp;
+
+        /** Special IE only code ... */
+        /*@cc_on
+          @if (@_jscript_version >= 5)
+              try
+              {
+                  xmlhttp = new ActiveXObject('Msxml2.XMLHTTP');
+              }
+              catch (e)
+              {
+                  try
+                  {
+                      xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+                  }
+                  catch (E)
+                  {
+                      xmlhttp = false;
+                  }
+             }
+          @else
+             xmlhttp = false;
+        @end @*/
+
+        /** Every other browser on the planet */
+        if (!xmlhttp && typeof XMLHttpRequest != 'undefined')
+        {
+            try
+            {
+                xmlhttp = new XMLHttpRequest();
+            }
+            catch (e)
+            {
+                xmlhttp = false;
+            }
+        }
+
+        return xmlhttp;
+}
+
+function hidetoc() {
+	var toc = document.getElementById('tocMenu');
+	var src = toc.getAttribute('src');
+	var xhr = getNewHTTPObject();
+	xhr.open('GET', src, true);
+	xhr.onreadystatechange = function() {
+		if(xhr.readyState == 4) {
+			var toc = document.getElementById('tocMenu');
+			toc.innerHTML = xhr.responseText;
+		}
+	}
+	xhr.send(null);
+	var origURL = parent.document.URL;
+	var contentURL = origURL.substring(origURL.indexOf('?')+1, origURL.length);
+	if (contentURL.length == origURL.length) {
+		jumpPos = origURL.substring(origURL.indexOf('#')+1, origURL.length);
+	}
+	if (contentURL == "hidetoc") {
+		var body = document.getElementById('bodyContents');
+		if (toc && body) {
+			toc.style.display = 'none';
+			body.style.marginLeft = '0px';
+		}
+	}
+}
+
+function disclosure_triangle(elt) {
+   var linkelt = elt;
+   while (elt && elt.tagName != 'TABLE') { elt = elt.parentNode;}
+   if (!elt) { return; }
+   while (elt && elt.tagName != 'DIV') { elt = elt.nextSibling;}
+   if (!elt) { return; }
+   if (parseInt(linkelt.getAttribute('state'))) {
+      // It's open.  Close it
+      linkelt.innerHTML = '&#x25B7;';
+      linkelt.setAttribute('state', 0);
+      linkelt.setAttribute('class', 'closed_disclosure_triangle');
+      elt.style.display = 'none';
+   } else {
+      // It's closed.  Open it
+      linkelt.innerHTML = '&#x25BC;';
+      linkelt.setAttribute('state', 1);
+      linkelt.setAttribute('class', 'open_disclosure_triangle');
+      elt.style.display = 'block';
+   }
+}
+--></script>
+<style type="text/css"><!--.char {background: #ffffff; color:#0000ff;}.comment {background:#ffffff; color:#236e25}.function {background:#ffffff; color:#000000;}.keyword {background:#ffffff; color:#761550;}.number {background: #ffffff; color:#0000ff;}.param {background:#ffffff; color:#000000;}.preprocessor {background:#ffffff; color:#236e25}.string {background: #ffffff; color:#891315;}.template {background:#ffffff; color:#761550;}.type {background:#ffffff; color:#761550;}.var {background:#ffffff; color:#000000;}body {border: 0px; margin: 0px;}div {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}td {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}span.hd_tocAccessSpace { display: block; font-size: 1px; height: 3px; min-height: 3px; }span.hd_tocGroupSpace { display: block; font-size: 1px; height: 3px; min-height: 3px; }span.hd_tocGroup { display: block; font-weight: bold; font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000; margin-left: 0px; padding-left: 40px; }span.hd_tocGroup + span.hd_tocAccess { padding-top: 5px; }td.toc_contents_text {font-size: 11pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000; }li.tocSubEntry {font-size: 11pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}p {font-size: 10pt; text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #000000;}a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; color: #36c;}h2.h2tight { margin-top: 0px; padding-top: 0px; }h1 { margin-top: 13px; padding-top: 0px; }h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}h5 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10.1pt; font-weight: bold;}pre {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666; font-size: 10pt;}pre a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}pre a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}pre a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}code a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}code a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}code a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}tt a { font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt;}tt a:link { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:visited { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:visited:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:active { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}tt a:hover { font-family: Courier, Consolas, monospace; color: #36c;font-size: 10pt;}body  {text-decoration: none; font-family: Courier, Consolas, monospace; color: #666;font-size: 10pt; padding-left: 0px; padding-top: 0px; margin-left: 0px; margin-top: 0px; border: none; }#hd_outermost_table { margin-left: 0px; border-spacing: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; }#hd_outermost_table > tbody > tr { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-left: 0px; padding-top: 0px; border: none; }#hd_outermost_table > tbody > tr > td { border-spacing: 0px; margin-left: 0px; margin-top: 0px; padding-top: 3px; }.afterName { display: none; }.list_indent { margin-left: 40px; }.declaration_indent { margin-left: 40px; margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px; min-height: 12px; vertical-align: middle; }.declaration_indent pre { margin-top: 20px; padding-top: 0px; margin-bottom: 20px; padding-bottom: 0px; }.gapBeforeFooter { display: none; }hr { height: 0px; min-height: 0px; border-top: none; border-left: none; border-right: none; border-bottom: 1px solid #909090;}hr.afterHeader { display: none }.param_group_indent { margin-left: 25px; }.param_indent { margin-left: 40px; margin-top: 0px; padding-top: 0px; }.param_indent dl { margin-top: 4px; padding-top: 0px; }dl dd > p:first-child { margin-top: 2px; padding-top: 0px; }.param_indent dl dd > p:first-child { margin-top: 2px; padding-top: 0px; }.group_indent { margin-left: 40px; }.group_desc_indent { margin-left: 20px; }.warning_indent { margin-left: 40px; }.important_indent { margin-left: 40px; }.note_indent { margin-left: 40px; }h3 {       color: #3C4C6C;}.tight {       margin-top: 2px; margin-bottom: 0px;       padding-top: 0px; padding-bottom: 0px;}h3 a {       color: #3C4C6C;	font-size: 16px;	font-style: normal;	font-variant: normal;	font-weight: bold;	height: 0px;	line-height: normal;}.hd_tocAccess { display: block; margin-left: 40px; font-style: italic; font-size: 10px; font-weight: normal; color: #303030; }.tocSubheading { margin-bottom: 4px; }--></style>
+</head>
+<body bgcolor="#ffffff" onload="hidetoc();">
+<!-- headerDoc=Header;  uid=//apple_ref/doc/header/BSG_KSCrashSentry_MachException.c;   name=BSG_KSCrashSentry_MachException.c -->
+<a name="//apple_ref/doc/header/BSG_KSCrashSentry_MachException.c"></a>
+<table id="hd_outermost_table" height="100%" width="100%"><tr>
+<td valign="top" id="tocMenu" src="toc.html"></td>
+<td id="bodyContents" valign="top">
+<a name="top"></a>
+<h1><a name="BSG_KSCrashSentry_MachException.c">BSG_KSCrashSentry_MachException.c</a></h1>
+<div class="spec_sheet_info_box"><table cellspacing="0" class="specbox">
+<tr>
+<td scope="row"><b>Includes:</b></td>
+<td><div style="margin-bottom:1px"><div class="content_text">
+<a machinegenerated="true" href="../BSG_KSCrashSentry_MachException_h/index.html#//apple_ref/doc/header/BSG_KSCrashSentry_MachException.h" logicalPath="//apple_ref/doc/header/BSG_KSCrashSentry_MachException.h" target="_top">"BSG_KSCrashSentry_MachException.h"</a><br>
+<!-- a logicalPath="//apple_ref/doc/header/BSG_KSSystemCapabilities.h" machineGenerated="true" -->"BSG_KSSystemCapabilities.h"<!-- /a --><br>
+<a machinegenerated="true" href="../BSG_KSLogger_h/index.html#//apple_ref/doc/header/BSG_KSLogger.h" logicalPath="//apple_ref/doc/header/BSG_KSLogger.h" target="_top">"BSG_KSLogger.h"</a><br>
+<a machinegenerated="true" href="../BSG_KSMach_h/index.html#//apple_ref/doc/header/BSG_KSMach.h" logicalPath="//apple_ref/doc/header/BSG_KSMach.h" target="_top">"BSG_KSMach.h"</a><br>
+<a machinegenerated="true" href="../BSG_KSCrashSentry_Private_h/index.html#//apple_ref/doc/header/BSG_KSCrashSentry_Private.h" logicalPath="//apple_ref/doc/header/BSG_KSCrashSentry_Private.h" target="_top">"BSG_KSCrashSentry_Private.h"</a><br>
+<!-- a logicalPath="//apple_ref/doc/header/pthread.h" machineGenerated="true" -->&lt;pthread.h&gt;<!-- /a --><br>
+<!-- a logicalPath="//apple_ref/doc/header/mach.h" machineGenerated="true" -->&lt;mach/mach.h&gt;<!-- /a -->
+</div></div></td>
+</tr>
+</table></div>
+<h2>Introduction</h2>
+<p><!-- headerDoc=abstract;uid=//apple_ref/doc/header/BSG_KSCrashSentry_MachException.c;name=start --><!-- begin abstract -->Use the links in the table of contents to the left to access the documentation.<br>
+<!-- end abstract --><!-- headerDoc=abstract;uid=//apple_ref/doc/header/BSG_KSCrashSentry_MachException.c;name=end --></p>
+<hr class="afterClassOrHeaderInfo">
+<br><a name="HeaderDoc_functions"></a>
+<h2 class="h2tight">Functions</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachexc_i_fetchMachineState" target="_top">bsg_ksmachexc_i_fetchMachineState</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/bsg_ksmachexc_i_restoreExceptionPorts" target="_top">bsg_ksmachexc_i_restoreExceptionPorts</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/func/ksmachexc_i_handleExceptions" target="_top">ksmachexc_i_handleExceptions</a></tt></dt>
+<dd></dd>
+</dl>
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachexc_i_fetchMachineState;   name=bsg_ksmachexc_i_fetchMachineState -->
+<a name="//apple_ref/c/func/bsg_ksmachexc_i_fetchMachineState"></a>
+<h3><a name="bsg_ksmachexc_i_fetchMachineState">bsg_ksmachexc_i_fetchMachineState</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachexc_i_fetchMachineState;name=start --><!-- a logicalPath="//apple_ref/c/cl/bool //apple_ref/c/tdef/bool //apple_ref/c/tag/bool //apple_ref/c/struct/bool //apple_ref/c/intf/bool //apple_ref/doc/anysymbol/bool" machineGenerated="true" --><span class="type">bool</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachexc_i_fetchMachineState" logicalPath="//apple_ref/c/instm/bsg_ksmachexc_i_fetchMachineState //apple_ref/c/clm/bsg_ksmachexc_i_fetchMachineState //apple_ref/c/intfcm/bsg_ksmachexc_i_fetchMachineState //apple_ref/c/intfm/bsg_ksmachexc_i_fetchMachineState //apple_ref/c/func/bsg_ksmachexc_i_fetchMachineState" target="_top"><span class="function">bsg_ksmachexc_i_fetchMachineState</span></a>( 
+    <span class="keyword">const</span> <!-- a logicalPath="//apple_ref/c/cl/thread_t //apple_ref/c/tdef/thread_t //apple_ref/c/tag/thread_t //apple_ref/c/struct/thread_t //apple_ref/c/intf/thread_t //apple_ref/doc/anysymbol/thread_t" machineGenerated="true" --><span class="type">thread_t</span><!-- /a --> <span class="param">thread</span>,
+    <!-- a logicalPath="//apple_ref/c/cl/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tdef/BSG_STRUCT_MCONTEXT_L //apple_ref/c/tag/BSG_STRUCT_MCONTEXT_L //apple_ref/c/struct/BSG_STRUCT_MCONTEXT_L //apple_ref/c/intf/BSG_STRUCT_MCONTEXT_L //apple_ref/doc/anysymbol/BSG_STRUCT_MCONTEXT_L" machineGenerated="true" --><span class="type">BSG_STRUCT_MCONTEXT_L</span><!-- /a --> <span class="type">*</span><span class="keyword">const</span> <span class="param">machineContext</span>) <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachexc_i_fetchMachineState;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Parameters</font></h5>
+<div class="param_indent">
+<dl>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachexc_i_fetchMachineState/thread;   name=bsg_ksmachexc_i_fetchMachineState::thread -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachexc_i_fetchMachineState/thread"></a>
+<code>thread</code>
+</dt>
+<dd><p>The thread to get state for.</p></dd>
+<dt>
+<!-- headerDoc=functionparam;  uid=//apple_ref/doc/functionparam/bsg_ksmachexc_i_fetchMachineState/machineContext;   name=bsg_ksmachexc_i_fetchMachineState::machineContext -->
+<a name="//apple_ref/doc/functionparam/bsg_ksmachexc_i_fetchMachineState/machineContext"></a>
+<code>machineContext</code>
+</dt>
+<dd><p>The machine context to fill out.</p></dd>
+</dl>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachexc_i_fetchMachineState;name=start --><p>Get all parts of the machine state required for a dump.
+This includes basic thread state, and exception registers.
+</p>
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachexc_i_fetchMachineState;name=end --><!-- end discussion -->
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/bsg_ksmachexc_i_restoreExceptionPorts;   name=bsg_ksmachexc_i_restoreExceptionPorts -->
+<a name="//apple_ref/c/func/bsg_ksmachexc_i_restoreExceptionPorts"></a>
+<h3><a name="bsg_ksmachexc_i_restoreExceptionPorts">bsg_ksmachexc_i_restoreExceptionPorts</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachexc_i_restoreExceptionPorts;name=start --><!-- a logicalPath="//apple_ref/c/cl/void //apple_ref/c/tdef/void //apple_ref/c/tag/void //apple_ref/c/struct/void //apple_ref/c/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/func/bsg_ksmachexc_i_restoreExceptionPorts" logicalPath="//apple_ref/c/instm/bsg_ksmachexc_i_restoreExceptionPorts //apple_ref/c/clm/bsg_ksmachexc_i_restoreExceptionPorts //apple_ref/c/intfcm/bsg_ksmachexc_i_restoreExceptionPorts //apple_ref/c/intfm/bsg_ksmachexc_i_restoreExceptionPorts //apple_ref/c/func/bsg_ksmachexc_i_restoreExceptionPorts" target="_top"><span class="function">bsg_ksmachexc_i_restoreExceptionPorts</span></a>(
+    <span class="param">void</span>) <!-- headerDoc=declaration;uid=//apple_ref/c/func/bsg_ksmachexc_i_restoreExceptionPorts;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachexc_i_restoreExceptionPorts;name=start --><p>Restore the original mach exception ports.
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/bsg_ksmachexc_i_restoreExceptionPorts;name=end --><!-- end discussion -->
+</p>
+<hr class="betweenAPIEntries">
+<!-- headerDoc=func;  uid=//apple_ref/c/func/ksmachexc_i_handleExceptions;   name=ksmachexc_i_handleExceptions -->
+<a name="//apple_ref/c/func/ksmachexc_i_handleExceptions"></a>
+<h3><a name="ksmachexc_i_handleExceptions">ksmachexc_i_handleExceptions</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/func/ksmachexc_i_handleExceptions;name=start --><!-- a logicalPath="//apple_ref/c/cl/void //apple_ref/c/tdef/void //apple_ref/c/tag/void //apple_ref/c/struct/void //apple_ref/c/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a --> <span class="type">*</span><a machinegenerated="true" href="index.html#//apple_ref/c/func/ksmachexc_i_handleExceptions" logicalPath="//apple_ref/c/instm/ksmachexc_i_handleExceptions //apple_ref/c/clm/ksmachexc_i_handleExceptions //apple_ref/c/intfcm/ksmachexc_i_handleExceptions //apple_ref/c/intfm/ksmachexc_i_handleExceptions //apple_ref/c/func/ksmachexc_i_handleExceptions" target="_top"><span class="function">ksmachexc_i_handleExceptions</span></a>(
+    <!-- a logicalPath="//apple_ref/c/cl/void //apple_ref/c/tdef/void //apple_ref/c/tag/void //apple_ref/c/struct/void //apple_ref/c/intf/void //apple_ref/doc/anysymbol/void" machineGenerated="true" --><span class="type">void</span><!-- /a --> <span class="type">*</span><span class="keyword">const</span> <span class="param">userData</span>) <!-- headerDoc=declaration;uid=//apple_ref/c/func/ksmachexc_i_handleExceptions;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/func/ksmachexc_i_handleExceptions;name=start --><p>Our exception handler thread routine.
+Wait for an exception message, uninstall our exception port, record the
+exception information, and write a report.
+<!-- headerDoc=discussion;uid=//apple_ref/c/func/ksmachexc_i_handleExceptions;name=end --><!-- end discussion -->
+</p>
+<hr class="betweenSections">
+<a name="HeaderDoc_datatypes"></a>
+<h2 class="h2tight">Typedefs</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/c/tdef/MachExceptionMessage" target="_top">MachExceptionMessage</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/tdef/MachReplyMessage" target="_top">MachReplyMessage</a></tt></dt>
+<dd></dd>
+</dl>
+<hr class="betweenAPIEntries">
+<!-- headerDoc=tdef;  uid=//apple_ref/c/tdef/MachExceptionMessage;   name=MachExceptionMessage -->
+<a name="//apple_ref/c/tdef/MachExceptionMessage"></a>
+<h3><a name="MachExceptionMessage">MachExceptionMessage</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/tdef/MachExceptionMessage;name=start --><span class="keyword">typedef</span> <span class="keyword">struct</span> { 
+    <span class="comment">/** Mach header. */</span>
+    <!-- a logicalPath="//apple_ref/c/cl/mach_msg_header_t //apple_ref/c/tdef/mach_msg_header_t //apple_ref/c/tag/mach_msg_header_t //apple_ref/c/struct/mach_msg_header_t //apple_ref/c/intf/mach_msg_header_t //apple_ref/doc/anysymbol/mach_msg_header_t" machineGenerated="true" --><span class="type">mach_msg_header_t</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/econst/header //apple_ref/c/data/header //apple_ref/c/clconst/header " machineGenerated="true" --><span class="var">header</span><!-- /a -->;  
+    <span class="comment">// Start of the kernel processed data.</span>  
+    <span class="comment">/** Basic message body data. */</span>
+    <!-- a logicalPath="//apple_ref/c/cl/mach_msg_body_t //apple_ref/c/tdef/mach_msg_body_t //apple_ref/c/tag/mach_msg_body_t //apple_ref/c/struct/mach_msg_body_t //apple_ref/c/intf/mach_msg_body_t //apple_ref/doc/anysymbol/mach_msg_body_t" machineGenerated="true" --><span class="type">mach_msg_body_t</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/econst/body //apple_ref/c/data/body //apple_ref/c/clconst/body " machineGenerated="true" --><span class="var">body</span><!-- /a -->;  
+    <span class="comment">/** The thread that raised the exception. */</span>
+    <!-- a logicalPath="//apple_ref/c/cl/mach_msg_port_descriptor_t //apple_ref/c/tdef/mach_msg_port_descriptor_t //apple_ref/c/tag/mach_msg_port_descriptor_t //apple_ref/c/struct/mach_msg_port_descriptor_t //apple_ref/c/intf/mach_msg_port_descriptor_t //apple_ref/doc/anysymbol/mach_msg_port_descriptor_t" machineGenerated="true" --><span class="type">mach_msg_port_descriptor_t</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/econst/thread //apple_ref/c/data/thread //apple_ref/c/clconst/thread " machineGenerated="true" --><span class="var">thread</span><!-- /a -->;  
+    <span class="comment">/** The task that raised the exception. */</span>
+    <!-- a logicalPath="//apple_ref/c/cl/mach_msg_port_descriptor_t //apple_ref/c/tdef/mach_msg_port_descriptor_t //apple_ref/c/tag/mach_msg_port_descriptor_t //apple_ref/c/struct/mach_msg_port_descriptor_t //apple_ref/c/intf/mach_msg_port_descriptor_t //apple_ref/doc/anysymbol/mach_msg_port_descriptor_t" machineGenerated="true" --><span class="type">mach_msg_port_descriptor_t</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/econst/task //apple_ref/c/data/task //apple_ref/c/clconst/task " machineGenerated="true" --><span class="var">task</span><!-- /a -->;  
+    <span class="comment">// End of the kernel processed data.</span>  
+    <span class="comment">/** Network Data Representation. */</span>
+    <!-- a logicalPath="//apple_ref/c/cl/NDR_record_t //apple_ref/c/tdef/NDR_record_t //apple_ref/c/tag/NDR_record_t //apple_ref/c/struct/NDR_record_t //apple_ref/c/intf/NDR_record_t //apple_ref/doc/anysymbol/NDR_record_t" machineGenerated="true" --><span class="type">NDR_record_t</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/econst/NDR //apple_ref/c/data/NDR //apple_ref/c/clconst/NDR " machineGenerated="true" --><span class="var">NDR</span><!-- /a -->;  
+    <span class="comment">/** The exception that was raised. */</span>
+    <!-- a logicalPath="//apple_ref/c/cl/exception_type_t //apple_ref/c/tdef/exception_type_t //apple_ref/c/tag/exception_type_t //apple_ref/c/struct/exception_type_t //apple_ref/c/intf/exception_type_t //apple_ref/doc/anysymbol/exception_type_t" machineGenerated="true" --><span class="type">exception_type_t</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/econst/exception //apple_ref/c/data/exception //apple_ref/c/clconst/exception " machineGenerated="true" --><span class="var">exception</span><!-- /a -->;  
+    <span class="comment">/** The number of codes. */</span>
+    <!-- a logicalPath="//apple_ref/c/cl/mach_msg_type_number_t //apple_ref/c/tdef/mach_msg_type_number_t //apple_ref/c/tag/mach_msg_type_number_t //apple_ref/c/struct/mach_msg_type_number_t //apple_ref/c/intf/mach_msg_type_number_t //apple_ref/doc/anysymbol/mach_msg_type_number_t" machineGenerated="true" --><span class="type">mach_msg_type_number_t</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/econst/codeCount //apple_ref/c/data/codeCount //apple_ref/c/clconst/codeCount " machineGenerated="true" --><span class="var">codeCount</span><!-- /a -->;  
+    <span class="comment">/** Exception code and subcode. */</span>
+    <span class="comment">// ux_exception.c defines this as mach_exception_data_t for some reason.</span> 
+    <span class="comment">// But it's not actually a pointer; it's an embedded array.</span> 
+    <span class="comment">// On 32-bit systems, only the lower 32 bits of the code and subcode</span> 
+    <span class="comment">// are valid.</span> 
+    <!-- a logicalPath="//apple_ref/c/cl/mach_exception_data_type_t //apple_ref/c/tdef/mach_exception_data_type_t //apple_ref/c/tag/mach_exception_data_type_t //apple_ref/c/struct/mach_exception_data_type_t //apple_ref/c/intf/mach_exception_data_type_t //apple_ref/doc/anysymbol/mach_exception_data_type_t" machineGenerated="true" --><span class="type">mach_exception_data_type_t</span><!-- /a --> <a machinegenerated="true" href="../NSError+BSG_SimpleConstructor_h/Categories/NSError_BSG_SimpleConstructor_/index.html#//apple_ref/doc/methodparam/NSError(BSG_SimpleConstructor)/bsg_fillError:withDomain:code:description:/code" logicalPath="//apple_ref/c/cl/code //apple_ref/c/tdef/code //apple_ref/c/tag/code //apple_ref/c/struct/code //apple_ref/c/intf/code //apple_ref/doc/anysymbol/code" target="_top"><span class="type">code</span></a>[<span class="number">0</span>];  
+    <span class="comment">/** Padding to avoid RCV_TOO_LARGE. */</span>
+    <!-- a logicalPath="//apple_ref/c/cl/char //apple_ref/c/tdef/char //apple_ref/c/tag/char //apple_ref/c/struct/char //apple_ref/c/intf/char //apple_ref/doc/anysymbol/char" machineGenerated="true" --><span class="type">char</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/cl/padding //apple_ref/c/tdef/padding //apple_ref/c/tag/padding //apple_ref/c/struct/padding //apple_ref/c/intf/padding //apple_ref/doc/anysymbol/padding" machineGenerated="true" --><span class="type">padding</span><!-- /a -->[<span class="number">512</span>]; 
+} <!-- a logicalPath="//apple_ref/c/econst/MachExceptionMessage //apple_ref/c/data/MachExceptionMessage //apple_ref/c/clconst/MachExceptionMessage " machineGenerated="true" --><span class="var">MachExceptionMessage</span><!-- /a -->;  <!-- headerDoc=declaration;uid=//apple_ref/c/tdef/MachExceptionMessage;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/tdef/MachExceptionMessage;name=start --><p>A mach exception message (according to ux_exception.c, xnu-1699.22.81).
+<!-- headerDoc=discussion;uid=//apple_ref/c/tdef/MachExceptionMessage;name=end --><!-- end discussion -->
+</p>
+<hr class="betweenAPIEntries">
+<!-- headerDoc=tdef;  uid=//apple_ref/c/tdef/MachReplyMessage;   name=MachReplyMessage -->
+<a name="//apple_ref/c/tdef/MachReplyMessage"></a>
+<h3><a name="MachReplyMessage">MachReplyMessage</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/tdef/MachReplyMessage;name=start --><span class="keyword">typedef</span> <span class="keyword">struct</span> { 
+    <span class="comment">/** Mach header. */</span>
+    <!-- a logicalPath="//apple_ref/c/cl/mach_msg_header_t //apple_ref/c/tdef/mach_msg_header_t //apple_ref/c/tag/mach_msg_header_t //apple_ref/c/struct/mach_msg_header_t //apple_ref/c/intf/mach_msg_header_t //apple_ref/doc/anysymbol/mach_msg_header_t" machineGenerated="true" --><span class="type">mach_msg_header_t</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/econst/header //apple_ref/c/data/header //apple_ref/c/clconst/header " machineGenerated="true" --><span class="var">header</span><!-- /a -->;  
+    <span class="comment">/** Network Data Representation. */</span>
+    <!-- a logicalPath="//apple_ref/c/cl/NDR_record_t //apple_ref/c/tdef/NDR_record_t //apple_ref/c/tag/NDR_record_t //apple_ref/c/struct/NDR_record_t //apple_ref/c/intf/NDR_record_t //apple_ref/doc/anysymbol/NDR_record_t" machineGenerated="true" --><span class="type">NDR_record_t</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/econst/NDR //apple_ref/c/data/NDR //apple_ref/c/clconst/NDR " machineGenerated="true" --><span class="var">NDR</span><!-- /a -->;  
+    <span class="comment">/** Return code. */</span>
+    <!-- a logicalPath="//apple_ref/c/cl/kern_return_t //apple_ref/c/tdef/kern_return_t //apple_ref/c/tag/kern_return_t //apple_ref/c/struct/kern_return_t //apple_ref/c/intf/kern_return_t //apple_ref/doc/anysymbol/kern_return_t" machineGenerated="true" --><span class="type">kern_return_t</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/econst/returnCode //apple_ref/c/data/returnCode //apple_ref/c/clconst/returnCode " machineGenerated="true" --><span class="var">returnCode</span><!-- /a -->; 
+} <!-- a logicalPath="//apple_ref/c/econst/MachReplyMessage //apple_ref/c/data/MachReplyMessage //apple_ref/c/clconst/MachReplyMessage " machineGenerated="true" --><span class="var">MachReplyMessage</span><!-- /a -->;  <!-- headerDoc=declaration;uid=//apple_ref/c/tdef/MachReplyMessage;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/tdef/MachReplyMessage;name=start --><p>A mach reply message (according to ux_exception.c, xnu-1699.22.81).
+<!-- headerDoc=discussion;uid=//apple_ref/c/tdef/MachReplyMessage;name=end --><!-- end discussion -->
+</p>
+<hr class="betweenSections">
+<a name="HeaderDoc_structs"></a>
+<h2 class="h2tight">Structs&nbsp;and&nbsp;Unions</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/c/tag/BSG_KSCrashSentry_MachException.c/bsg_g_previousExceptionPorts" target="_top">bsg_g_previousExceptionPorts</a></tt></dt>
+<dd></dd>
+</dl>
+<hr class="betweenAPIEntries">
+<!-- headerDoc=tag;  uid=//apple_ref/c/tag/BSG_KSCrashSentry_MachException.c/bsg_g_previousExceptionPorts;   name=bsg_g_previousExceptionPorts -->
+<a name="//apple_ref/c/tag/BSG_KSCrashSentry_MachException.c/bsg_g_previousExceptionPorts"></a>
+<h3><a name="bsg_g_previousExceptionPorts">bsg_g_previousExceptionPorts</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/tag/BSG_KSCrashSentry_MachException.c/bsg_g_previousExceptionPorts;name=start --><span class="keyword">static</span> <span class="keyword">struct</span> { 
+    <!-- a logicalPath="//apple_ref/c/cl/exception_mask_t //apple_ref/c/tdef/exception_mask_t //apple_ref/c/tag/exception_mask_t //apple_ref/c/struct/exception_mask_t //apple_ref/c/intf/exception_mask_t //apple_ref/doc/anysymbol/exception_mask_t" machineGenerated="true" --><span class="type">exception_mask_t</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/cl/masks //apple_ref/c/tdef/masks //apple_ref/c/tag/masks //apple_ref/c/struct/masks //apple_ref/c/intf/masks //apple_ref/doc/anysymbol/masks" machineGenerated="true" --><span class="type">masks</span><!-- /a -->[<!-- a logicalPath="//apple_ref/c/cl/EXC_TYPES_COUNT //apple_ref/c/tdef/EXC_TYPES_COUNT //apple_ref/c/tag/EXC_TYPES_COUNT //apple_ref/c/struct/EXC_TYPES_COUNT //apple_ref/c/intf/EXC_TYPES_COUNT //apple_ref/doc/anysymbol/EXC_TYPES_COUNT" machineGenerated="true" --><span class="type">EXC_TYPES_COUNT</span><!-- /a -->]; 
+    <!-- a logicalPath="//apple_ref/c/cl/exception_handler_t //apple_ref/c/tdef/exception_handler_t //apple_ref/c/tag/exception_handler_t //apple_ref/c/struct/exception_handler_t //apple_ref/c/intf/exception_handler_t //apple_ref/doc/anysymbol/exception_handler_t" machineGenerated="true" --><span class="type">exception_handler_t</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/cl/ports //apple_ref/c/tdef/ports //apple_ref/c/tag/ports //apple_ref/c/struct/ports //apple_ref/c/intf/ports //apple_ref/doc/anysymbol/ports" machineGenerated="true" --><span class="type">ports</span><!-- /a -->[<!-- a logicalPath="//apple_ref/c/cl/EXC_TYPES_COUNT //apple_ref/c/tdef/EXC_TYPES_COUNT //apple_ref/c/tag/EXC_TYPES_COUNT //apple_ref/c/struct/EXC_TYPES_COUNT //apple_ref/c/intf/EXC_TYPES_COUNT //apple_ref/doc/anysymbol/EXC_TYPES_COUNT" machineGenerated="true" --><span class="type">EXC_TYPES_COUNT</span><!-- /a -->]; 
+    <!-- a logicalPath="//apple_ref/c/cl/exception_behavior_t //apple_ref/c/tdef/exception_behavior_t //apple_ref/c/tag/exception_behavior_t //apple_ref/c/struct/exception_behavior_t //apple_ref/c/intf/exception_behavior_t //apple_ref/doc/anysymbol/exception_behavior_t" machineGenerated="true" --><span class="type">exception_behavior_t</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/cl/behaviors //apple_ref/c/tdef/behaviors //apple_ref/c/tag/behaviors //apple_ref/c/struct/behaviors //apple_ref/c/intf/behaviors //apple_ref/doc/anysymbol/behaviors" machineGenerated="true" --><span class="type">behaviors</span><!-- /a -->[<!-- a logicalPath="//apple_ref/c/cl/EXC_TYPES_COUNT //apple_ref/c/tdef/EXC_TYPES_COUNT //apple_ref/c/tag/EXC_TYPES_COUNT //apple_ref/c/struct/EXC_TYPES_COUNT //apple_ref/c/intf/EXC_TYPES_COUNT //apple_ref/doc/anysymbol/EXC_TYPES_COUNT" machineGenerated="true" --><span class="type">EXC_TYPES_COUNT</span><!-- /a -->]; 
+    <!-- a logicalPath="//apple_ref/c/cl/thread_state_flavor_t //apple_ref/c/tdef/thread_state_flavor_t //apple_ref/c/tag/thread_state_flavor_t //apple_ref/c/struct/thread_state_flavor_t //apple_ref/c/intf/thread_state_flavor_t //apple_ref/doc/anysymbol/thread_state_flavor_t" machineGenerated="true" --><span class="type">thread_state_flavor_t</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/cl/flavors //apple_ref/c/tdef/flavors //apple_ref/c/tag/flavors //apple_ref/c/struct/flavors //apple_ref/c/intf/flavors //apple_ref/doc/anysymbol/flavors" machineGenerated="true" --><span class="type">flavors</span><!-- /a -->[<!-- a logicalPath="//apple_ref/c/cl/EXC_TYPES_COUNT //apple_ref/c/tdef/EXC_TYPES_COUNT //apple_ref/c/tag/EXC_TYPES_COUNT //apple_ref/c/struct/EXC_TYPES_COUNT //apple_ref/c/intf/EXC_TYPES_COUNT //apple_ref/doc/anysymbol/EXC_TYPES_COUNT" machineGenerated="true" --><span class="type">EXC_TYPES_COUNT</span><!-- /a -->]; 
+    <!-- a logicalPath="//apple_ref/c/cl/mach_msg_type_number_t //apple_ref/c/tdef/mach_msg_type_number_t //apple_ref/c/tag/mach_msg_type_number_t //apple_ref/c/struct/mach_msg_type_number_t //apple_ref/c/intf/mach_msg_type_number_t //apple_ref/doc/anysymbol/mach_msg_type_number_t" machineGenerated="true" --><span class="type">mach_msg_type_number_t</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/econst/count //apple_ref/c/data/count //apple_ref/c/clconst/count " machineGenerated="true" --><span class="var">count</span><!-- /a -->; 
+} <!-- a logicalPath="//apple_ref/c/econst/bsg_g_previousExceptionPorts //apple_ref/c/data/bsg_g_previousExceptionPorts //apple_ref/c/clconst/bsg_g_previousExceptionPorts " machineGenerated="true" --><span class="var">bsg_g_previousExceptionPorts</span><!-- /a -->;  <!-- headerDoc=declaration;uid=//apple_ref/c/tag/BSG_KSCrashSentry_MachException.c/bsg_g_previousExceptionPorts;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/tag/BSG_KSCrashSentry_MachException.c/bsg_g_previousExceptionPorts;name=start --><p>Holds exception port info regarding the previously installed exception
+handlers.
+<!-- headerDoc=discussion;uid=//apple_ref/c/tag/BSG_KSCrashSentry_MachException.c/bsg_g_previousExceptionPorts;name=end --><!-- end discussion -->
+</p>
+<hr class="betweenSections">
+<a name="HeaderDoc_vars"></a>
+<h2 class="h2tight">Globals</h2>
+<dl>
+<dt><tt><a href="index.html#//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_context" target="_top">bsg_g_context</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_exceptionPort" target="_top">bsg_g_exceptionPort</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_installed" target="_top">bsg_g_installed</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_primaryPThread" target="_top">bsg_g_primaryPThread</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="index.html#//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_secondaryPThread" target="_top">bsg_g_secondaryPThread</a></tt></dt>
+<dd></dd>
+</dl>
+<hr class="betweenAPIEntries">
+<!-- headerDoc=data;  uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_context;   name=bsg_g_context -->
+<a name="//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_context"></a>
+<h3><a name="bsg_g_context">bsg_g_context</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_context;name=start --><span class="keyword">static</span> <a machinegenerated="true" href="../BSG_KSCrashSentry_h/index.html#//apple_ref/c/tdef/BSG_KSCrash_SentryContext" logicalPath="//apple_ref/c/cl/BSG_KSCrash_SentryContext //apple_ref/c/tdef/BSG_KSCrash_SentryContext" target="_top"><span class="type">BSG_KSCrash_SentryContext</span></a> <span class="type">*</span><!-- a logicalPath="//apple_ref/c/econst/bsg_g_context //apple_ref/c/data/bsg_g_context //apple_ref/c/clconst/bsg_g_context " machineGenerated="true" --><span class="var">bsg_g_context</span><!-- /a -->;  <!-- headerDoc=declaration;uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_context;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_context;name=start --><p>Context to fill with crash information. <!-- headerDoc=discussion;uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_context;name=end --><!-- end discussion -->
+</p>
+<hr class="betweenAPIEntries">
+<!-- headerDoc=data;  uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_exceptionPort;   name=bsg_g_exceptionPort -->
+<a name="//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_exceptionPort"></a>
+<h3><a name="bsg_g_exceptionPort">bsg_g_exceptionPort</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_exceptionPort;name=start --><span class="keyword">static</span> <!-- a logicalPath="//apple_ref/c/cl/mach_port_t //apple_ref/c/tdef/mach_port_t //apple_ref/c/tag/mach_port_t //apple_ref/c/struct/mach_port_t //apple_ref/c/intf/mach_port_t //apple_ref/doc/anysymbol/mach_port_t" machineGenerated="true" --><span class="type">mach_port_t</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_exceptionPort" logicalPath="//apple_ref/c/cl/bsg_g_exceptionPort //apple_ref/c/tdef/bsg_g_exceptionPort //apple_ref/c/tag/bsg_g_exceptionPort //apple_ref/c/struct/bsg_g_exceptionPort //apple_ref/c/intf/bsg_g_exceptionPort //apple_ref/doc/anysymbol/bsg_g_exceptionPort" target="_top"><span class="type">bsg_g_exceptionPort</span></a> = <!-- a logicalPath="//apple_ref/c/econst/MACH_PORT_NULL //apple_ref/c/data/MACH_PORT_NULL //apple_ref/c/clconst/MACH_PORT_NULL " machineGenerated="true" --><span class="var">MACH_PORT_NULL</span><!-- /a -->;  <!-- headerDoc=declaration;uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_exceptionPort;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_exceptionPort;name=start --><p>Our exception port. <!-- headerDoc=discussion;uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_exceptionPort;name=end --><!-- end discussion -->
+</p>
+<hr class="betweenAPIEntries">
+<!-- headerDoc=data;  uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_installed;   name=bsg_g_installed -->
+<a name="//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_installed"></a>
+<h3><a name="bsg_g_installed">bsg_g_installed</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_installed;name=start --><span class="keyword">static</span> <span class="keyword">volatile</span> <!-- a logicalPath="//apple_ref/c/cl/sig_atomic_t //apple_ref/c/tdef/sig_atomic_t //apple_ref/c/tag/sig_atomic_t //apple_ref/c/struct/sig_atomic_t //apple_ref/c/intf/sig_atomic_t //apple_ref/doc/anysymbol/sig_atomic_t" machineGenerated="true" --><span class="type">sig_atomic_t</span><!-- /a --> <a machinegenerated="true" href="index.html#//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_installed" logicalPath="//apple_ref/c/cl/bsg_g_installed //apple_ref/c/tdef/bsg_g_installed //apple_ref/c/tag/bsg_g_installed //apple_ref/c/struct/bsg_g_installed //apple_ref/c/intf/bsg_g_installed //apple_ref/doc/anysymbol/bsg_g_installed" target="_top"><span class="type">bsg_g_installed</span></a> = <span class="number">0</span>;  <!-- headerDoc=declaration;uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_installed;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_installed;name=start --><p>Flag noting if we've installed our custom handlers or not.
+It's not fully thread safe, but it's safer than locking and slightly better
+than nothing.
+<!-- headerDoc=discussion;uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_installed;name=end --><!-- end discussion -->
+</p>
+<hr class="betweenAPIEntries">
+<!-- headerDoc=data;  uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_primaryPThread;   name=bsg_g_primaryPThread -->
+<a name="//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_primaryPThread"></a>
+<h3><a name="bsg_g_primaryPThread">bsg_g_primaryPThread</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_primaryPThread;name=start --><span class="keyword">static</span> <!-- a logicalPath="//apple_ref/c/cl/pthread_t //apple_ref/c/tdef/pthread_t //apple_ref/c/tag/pthread_t //apple_ref/c/struct/pthread_t //apple_ref/c/intf/pthread_t //apple_ref/doc/anysymbol/pthread_t" machineGenerated="true" --><span class="type">pthread_t</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/econst/bsg_g_primaryPThread //apple_ref/c/data/bsg_g_primaryPThread //apple_ref/c/clconst/bsg_g_primaryPThread " machineGenerated="true" --><span class="var">bsg_g_primaryPThread</span><!-- /a -->;  <!-- headerDoc=declaration;uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_primaryPThread;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_primaryPThread;name=start --><p>Primary exception handler thread. <!-- headerDoc=discussion;uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_primaryPThread;name=end --><!-- end discussion -->
+</p>
+<hr class="betweenAPIEntries">
+<!-- headerDoc=data;  uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_secondaryPThread;   name=bsg_g_secondaryPThread -->
+<a name="//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_secondaryPThread"></a>
+<h3><a name="bsg_g_secondaryPThread">bsg_g_secondaryPThread</a></h3>
+<hr class="afterName">
+<div class="declaration_indent">
+<pre><!-- headerDoc=declaration;uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_secondaryPThread;name=start --><span class="keyword">static</span> <!-- a logicalPath="//apple_ref/c/cl/pthread_t //apple_ref/c/tdef/pthread_t //apple_ref/c/tag/pthread_t //apple_ref/c/struct/pthread_t //apple_ref/c/intf/pthread_t //apple_ref/doc/anysymbol/pthread_t" machineGenerated="true" --><span class="type">pthread_t</span><!-- /a --> <!-- a logicalPath="//apple_ref/c/econst/bsg_g_secondaryPThread //apple_ref/c/data/bsg_g_secondaryPThread //apple_ref/c/clconst/bsg_g_secondaryPThread " machineGenerated="true" --><span class="var">bsg_g_secondaryPThread</span><!-- /a -->;  <!-- headerDoc=declaration;uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_secondaryPThread;name=end --></pre>
+</div>
+<h5 class="tight"><font face="Lucida Grande,Helvetica,Arial">Discussion</font></h5>
+<!-- begin discussion --><!-- headerDoc=discussion;uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_secondaryPThread;name=start --><p>Secondary exception handler thread in case crash handler crashes. <!-- headerDoc=discussion;uid=//apple_ref/c/data/BSG_KSCrashSentry_MachException.c/bsg_g_secondaryPThread;name=end --><!-- end discussion -->
+</p>
+<p class="gapBeforeFooter">&nbsp;</p>
+<hr class="afterFooter">
+<div class="hd_copyright_and_timestamp">
+<p class="hd_timestamp">Last Updated: Thursday, February 28, 2019
+</p>
+</div>
+</td>
+</tr></table>
+</body>
+</html>
